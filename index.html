@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="ne" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>झविन्द्र पोखरेल | आधिकारिक वेबसाइट - www.jhabindrapokharel.com.np</title>
+  
+  <!-- गुगल फन्ट: मुक्त (Mukta) देवनागरी फन्ट -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- फन्ट असम (FontAwesome) आइकनहरू -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- टेलविन्ड सीएसएस (Tailwind CSS) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Mukta', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* अनुकूलित स्क्रोलबार */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #94a3b8;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #64748b;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 font-sans transition-colors duration-300 antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- माथिल्लो नेभिगेसन बार (Header & Navbar) -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- लोगो तथा नाम -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 text-white flex items-center justify-center font-bold text-2xl shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+            <span>झ</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-500 transition-colors">
+              झविन्द्र पोखरेल
+            </span>
+            <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">
+              www.jhabindrapokharel.com.np
+            </span>
+          </div>
+        </a>
+
+        <!-- डेस्कटप मेनू -->
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-base font-semibold">
+          <a href="#home" class="px-3 py-2 rounded-lg hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">गृहपृष्ठ</a>
+          <a href="#about" class="px-3 py-2 rounded-lg hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">परिचय</a>
+          <a href="#skills" class="px-3 py-2 rounded-lg hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">दक्षता</a>
+          <a href="#services" class="px-3 py-2 rounded-lg hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">सेवाहरू</a>
+          <a href="#articles" class="px-3 py-2 rounded-lg hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">विचार/लेख</a>
+          <a href="#contact" class="px-3 py-2 rounded-lg hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">सम्पर्क</a>
+        </nav>
+
+        <!-- दायाँपट्टिको बटनहरू (डार्क मोड र सम्पर्क बटन) -->
+        <div class="flex items-center gap-3">
+          <!-- थिम बदल्ने बटन -->
+          <button id="themeToggleBtn" aria-label="थिम परिवर्तन गर्नुहोस्" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+            <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
+          </button>
+
+          <!-- द्रुत सम्पर्क बटन (डेस्कटप) -->
+          <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-md shadow-brand-600/30 hover:shadow-lg transition">
+            <i class="fa-regular fa-paper-plane"></i>
+            <span>कुरा गरौँ</span>
+          </a>
+
+          <!-- मोबाइल मेनू खोल्ने बटन -->
+          <button id="mobileMenuBtn" aria-label="मेनू खोल्नुहोस्" class="md:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- मोबाइल ड्रपडाउन मेनू -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-3 pb-6 space-y-2 text-base font-semibold shadow-xl">
+      <a href="#home" class="mobile-nav-link block px-4 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">गृहपृष्ठ</a>
+      <a href="#about" class="mobile-nav-link block px-4 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">परिचय</a>
+      <a href="#skills" class="mobile-nav-link block px-4 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">दक्षता तथा ज्ञान</a>
+      <a href="#services" class="mobile-nav-link block px-4 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">सेवाहरू</a>
+      <a href="#articles" class="mobile-nav-link block px-4 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">विचार तथा लेखहरू</a>
+      <a href="#contact" class="mobile-nav-link block px-4 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">सम्पर्क फारम</a>
+      <div class="pt-2">
+        <a href="#contact" class="mobile-nav-link flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-brand-600 text-white text-center font-bold">
+          <i class="fa-regular fa-paper-plane"></i> सम्पर्क गर्नुहोस्
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- मुख्य ब्यानर सेक्सन (Hero Section) -->
+    <section id="home" class="relative pt-12 pb-24 sm:pt-20 sm:pb-32 overflow-hidden">
+      <!-- पृष्ठभूमि सजावट -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-400/15 dark:bg-brand-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- बायाँपट्टि: परिचय विवरण र कल-टु-एक्सन -->
+          <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 dark:bg-brand-900/30 border border-brand-200 dark:border-brand-800/60 text-brand-700 dark:text-brand-300 text-sm font-semibold">
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-500 animate-pulse"></span>
+              <span>स्वागतम् | व्यक्तिगत तथा व्यावसायिक प्रोफाइल</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
+              नमस्ते, म <br class="hidden sm:inline"/>
+              <span class="bg-gradient-to-r from-brand-600 via-emerald-600 to-teal-500 bg-clip-text text-transparent">
+                झविन्द्र पोखरेल
+              </span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+              सामाजिक रूपान्तरण, नवप्रवर्तन, अनुसन्धान तथा व्यावसायिक परामर्शमा समर्पित व्यक्तित्व। यस आधिकारिक पोर्टलमा तपाईंलाई हार्दिक स्वागत गर्दछु।
+            </p>
+
+            <!-- मुख्य बटनहरू -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+              <a href="#contact" class="inline-flex items-center gap-3 px-7 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-base shadow-lg shadow-brand-600/30 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                <span>सिधै सम्पर्क गर्नुहोस्</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+              <a href="#about" class="inline-flex items-center gap-3 px-7 py-3.5 rounded-xl border-2 border-slate-300 dark:border-slate-700 hover:border-brand-500 text-slate-700 dark:text-slate-200 font-bold text-base bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all">
+                <i class="fa-regular fa-user"></i>
+                <span>विस्तृत विवरण</span>
+              </a>
+            </div>
+
+            <!-- संक्षिप्त तथ्याङ्क (Stats) -->
+            <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-200 dark:border-slate-800 max-w-lg mx-auto lg:mx-0">
+              <div class="text-center lg:text-left">
+                <p class="text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400">१०+ वर्ष</p>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">अनुभव तथा संलग्नता</p>
+              </div>
+              <div class="text-center lg:text-left">
+                <p class="text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400">५०+ कार्य</p>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">सफल परियोजनाहरू</p>
+              </div>
+              <div class="text-center lg:text-left">
+                <p class="text-2xl sm:text-3xl font-extrabold text-brand-600 dark:text-brand-400">१००%</p>
+                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">निष्ठा तथा समर्पण</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- दायाँपट्टि: प्रोफाइल कार्ड / फोटो स्वरूप -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="relative w-72 sm:w-[22rem] max-w-full">
+              <!-- सजावटी घेरा -->
+              <div class="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-brand-600 to-teal-400 opacity-30 blur-lg"></div>
+              
+              <!-- मुख्य कार्ड -->
+              <div class="relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-2xl border border-slate-200 dark:border-slate-700 text-center">
+                <div class="w-48 h-48 mx-auto rounded-full bg-gradient-to-tr from-emerald-100 to-brand-50 dark:from-slate-700 dark:to-slate-800 border-4 border-brand-500/30 flex items-center justify-center relative overflow-hidden shadow-inner mb-6">
+                  <!-- अवतार आइकन वा तस्बिर -->
+                  <i class="fa-solid fa-user-tie text-7xl text-brand-700 dark:text-brand-400"></i>
+                </div>
+
+                <h3 class="text-2xl font-black text-slate-900 dark:text-white">झविन्द्र पोखरेल</h3>
+                <p class="text-brand-600 dark:text-brand-400 font-semibold text-sm mb-4">परामर्शदाता / सामाजिक अनुसन्धाता</p>
+                
+                <div class="flex items-center justify-center gap-3 text-slate-500 dark:text-slate-400 text-sm py-2 px-3 bg-slate-100 dark:bg-slate-900 rounded-lg mb-4">
+                  <i class="fa-solid fa-location-dot text-red-500"></i>
+                  <span>नेपाल (Nepal)</span>
+                </div>
+
+                <!-- सामाजिक सञ्जाल लिङ्कहरू -->
+                <div class="flex justify-center gap-3 pt-2">
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="फेसबुक" class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:bg-brand-600 hover:text-white transition">
+                    <i class="fa-brands fa-facebook-f"></i>
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="लिंक्डइन" class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:bg-brand-600 hover:text-white transition">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="ट्विटर" class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:bg-brand-600 hover:text-white transition">
+                    <i class="fa-brands fa-x-twitter"></i>
+                  </a>
+                  <button onclick="copyDomain()" aria-label="डोमेन प्रतिलिपि" class="w-10 h-10 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:bg-brand-600 hover:text-white transition" title="वेबसाइट लिङ्क कपी गर्नुहोस्">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- परिचय सेक्सन (About Section) -->
+    <section id="about" class="py-20 bg-white dark:bg-slate-800/50 border-y border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- सेक्सन शीर्षक -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs sm:text-sm uppercase tracking-widest font-extrabold text-brand-600 dark:text-brand-400 mb-2">
+            मेरो बारेमा
+          </h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+            व्यक्तित्व तथा कार्यदिशा
+          </p>
+          <div class="w-16 h-1.5 bg-brand-500 rounded-full mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          <!-- बायाँपट्टि: विवरण -->
+          <div class="space-y-6 text-slate-700 dark:text-slate-300 text-lg leading-relaxed">
+            <p>
+              म <strong class="text-slate-900 dark:text-white font-bold">झविन्द्र पोखरेल</strong>। नेपालको समसामयिक विकास, नीतिगत अनुसन्धान, सामुदायिक सशक्तीकरण तथा नेतृत्व विकासको क्षेत्रमा सक्रिय रूपमा कार्यरत छु।
+            </p>
+            <p>
+              हाम्रो समाज र राष्ट्रको समुन्नतिको आधार सही योजना, इमान्दार नेतृत्व र आधुनिक प्रविधिको सही सदुपयोग हो भन्ने मेरो दृढ मान्यता छ। ज्ञान, सीप र अनुभवलाई समाजको हितमा परिचालन गर्न म सधैं क्रियाशील रहन्छु।
+            </p>
+
+            <!-- मुख्य विशेषताहरू -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-600 text-xl mt-1"></i>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white">दक्ष नेतृत्व</h4>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">कुशल टोली परिचालन र योजना निर्माण।</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-600 text-xl mt-1"></i>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white">अनुसन्धानमुखी</h4>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">तथ्य र विश्लेषणमा आधारित निर्णय प्रक्रिया।</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-600 text-xl mt-1"></i>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white">निरन्तर सिकाइ</h4>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">नयाँ प्रविधि र समयसापेक्ष विचार आत्मसात्।</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-600 text-xl mt-1"></i>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white">व्यावसायिक निष्ठा</h4>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">इमान्दारिता र समयपालनामा दृढ विश्वास।</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- दायाँपट्टि: व्यक्तिगत जानकारी कार्ड -->
+          <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-sm space-y-6">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-800 pb-4">
+              संक्षिप्त परिचय सूची
+            </h3>
+
+            <dl class="space-y-4 text-base">
+              <div class="flex flex-col sm:flex-row sm:justify-between pb-3 border-b border-slate-200/60 dark:border-slate-800">
+                <dt class="text-slate-500 dark:text-slate-400 font-medium">पूरा नाम:</dt>
+                <dd class="font-bold text-slate-900 dark:text-white">झविन्द्र पोखरेल (Jhabindra Pokharel)</dd>
+              </div>
+
+              <div class="flex flex-col sm:flex-row sm:justify-between pb-3 border-b border-slate-200/60 dark:border-slate-800">
+                <dt class="text-slate-500 dark:text-slate-400 font-medium">ठेगाना:</dt>
+                <dd class="font-bold text-slate-900 dark:text-white">काठमाडौँ / रूपन्देही, नेपाल</dd>
+              </div>
+
+              <div class="flex flex-col sm:flex-row sm:justify-between pb-3 border-b border-slate-200/60 dark:border-slate-800">
+                <dt class="text-slate-500 dark:text-slate-400 font-medium">इमेल:</dt>
+                <dd class="font-bold text-brand-600 dark:text-brand-400">info@jhabindrapokharel.com.np</dd>
+              </div>
+
+              <div class="flex flex-col sm:flex-row sm:justify-between pb-3 border-b border-slate-200/60 dark:border-slate-800">
+                <dt class="text-slate-500 dark:text-slate-400 font-medium">वेब ठेगाना:</dt>
+                <dd class="font-bold text-slate-900 dark:text-white">www.jhabindrapokharel.com.np</dd>
+              </div>
+
+              <div class="flex flex-col sm:flex-row sm:justify-between">
+                <dt class="text-slate-500 dark:text-slate-400 font-medium">भाषाहरू:</dt>
+                <dd class="font-bold text-slate-900 dark:text-white">नेपाली, अङ्ग्रेजी, हिन्दी</dd>
+              </div>
+            </dl>
+
+            <div class="pt-4">
+              <button onclick="downloadInfoModal()" class="w-full py-3 px-4 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold hover:opacity-90 transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-file-arrow-down"></i>
+                <span>परिचय-पत्र (Profile) सुरक्षित गर्नुहोस्</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- दक्षता तथा सीप (Skills Section) -->
+    <section id="skills" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs sm:text-sm uppercase tracking-widest font-extrabold text-brand-600 dark:text-brand-400 mb-2">
+            दक्षता तथा विशेषज्ञता
+          </h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+            मेरो कार्यकुशलता र क्षमता
+          </p>
+          <div class="w-16 h-1.5 bg-brand-500 rounded-full mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- सीप १ -->
+          <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition group">
+            <div class="w-14 h-14 rounded-2xl bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+              <i class="fa-solid fa-people-roof"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">नेतृत्व तथा व्यवस्थापन</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+              विभिन्न संस्थागत कार्य तथा सामाजिक कार्यक्रमहरूको कुशल नेतृत्व र सफल योजना व्यवस्थापन।
+            </p>
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-brand-600 h-full rounded-full" style="width: 95%"></div>
+            </div>
+          </div>
+
+          <!-- सीप २ -->
+          <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition group">
+            <div class="w-14 h-14 rounded-2xl bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+              <i class="fa-solid fa-pen-nib"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">लेखन तथा अनुसन्धान</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+              नीतिगत विश्लेषण, सामाजिक अनुसन्धान प्रतिवेदन र विचारमूलक समसामयिक आलेख लेखन।
+            </p>
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-brand-600 h-full rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+
+          <!-- सीप ३ -->
+          <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition group">
+            <div class="w-14 h-14 rounded-2xl bg-brand-50 dark:bg-brand-900/40 text-brand-600 dark:text-brand-400 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">डिजिटल तथा प्राविधिक ज्ञान</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+              सूचना प्रविधि, डिजिटल साक्षरता र आधुनिक कार्यालय स्वचालनका उपकरणहरूको प्रयोग।
+            </p>
+            <div class="w-full bg-slate-100 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-brand-600 h-full rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- सेवाहरू (Services Section) -->
+    <section id="services" class="py-20 bg-slate-100/70 dark:bg-slate-800/40 border-y border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs sm:text-sm uppercase tracking-widest font-extrabold text-brand-600 dark:text-brand-400 mb-2">
+            सेवा तथा सहकार्यका क्षेत्रहरू
+          </h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+            म कसरी सहयोग गर्न सक्छु?
+          </p>
+          <div class="w-16 h-1.5 bg-brand-500 rounded-full mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition duration-300">
+            <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">व्यावसायिक परामर्श</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+              संस्थागत सुदृढीकरण, परियोजना रूपरेखा निर्माण र लक्ष्य प्राप्तिका रणनीतिक उपायहरूमा परामर्श सेवा।
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition duration-300">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-chalkboard-user"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">तालिम तथा सहजीकरण</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+              नेतृत्व विकास, कार्यक्षमता अभिवृद्धि, उत्प्रेरणा र सामुदायिक कार्यक्रमहरूको प्रभावकारी सहजीकरण।
+            </p>
+          </div>
+
+          <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:-translate-y-1 transition duration-300">
+            <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center text-xl mb-6">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">लेखन तथा प्रतिवेदन</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+              अनुसन्धानमूलक प्रतिवेदन, प्रस्तावना (Proposal Writing) र संस्थागत अभिलेखीकरणमा सहकार्य।
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- विचार तथा लेखहरू (Articles/Thoughts Section) -->
+    <section id="articles" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs sm:text-sm uppercase tracking-widest font-extrabold text-brand-600 dark:text-brand-400 mb-2">
+            विचार तथा स्तम्भ
+          </h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+            समसामयिक दृष्टिकोण
+          </p>
+          <div class="w-16 h-1.5 bg-brand-500 rounded-full mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+            <div class="h-44 bg-gradient-to-r from-emerald-600 to-teal-700 p-6 flex flex-col justify-end text-white relative">
+              <span class="text-xs font-semibold px-2.5 py-1 bg-white/20 rounded-md backdrop-blur-sm self-start mb-2">विचार</span>
+              <h4 class="font-bold text-lg leading-snug">नेपालमा डिजिटल सशक्तीकरणको आवश्यकता</h4>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <p class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed">
+                दूरदराजका बस्तीहरूमा सूचना प्रविधिको पहुँच पुर्‍याउँदा मात्रै समग्र राष्ट्रको आर्थिक विकास सम्भव छ...
+              </p>
+              <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-700/60 pt-4">
+                <span><i class="fa-regular fa-calendar mr-1"></i> २०८१ फागुन</span>
+                <span class="text-brand-600 dark:text-brand-400 font-semibold cursor-pointer hover:underline" onclick="readArticleModal('नेपालमा डिजिटल सशक्तीकरणको आवश्यकता')">पूरा पढ्नुहोस् →</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+            <div class="h-44 bg-gradient-to-r from-blue-600 to-indigo-700 p-6 flex flex-col justify-end text-white relative">
+              <span class="text-xs font-semibold px-2.5 py-1 bg-white/20 rounded-md backdrop-blur-sm self-start mb-2">सामाजिक दृष्टिकोण</span>
+              <h4 class="font-bold text-lg leading-snug">स्थानीय तहमा युवा नेतृत्वको भूमिका</h4>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <p class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed">
+                परिवर्तनका लागि युवा वर्गको ऊर्जा र पाका पुस्ताको अनुभवको संयोजन नै समाज विकासको मुख्य कडी हो...
+              </p>
+              <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-700/60 pt-4">
+                <span><i class="fa-regular fa-calendar mr-1"></i> २०८१ माघ</span>
+                <span class="text-brand-600 dark:text-brand-400 font-semibold cursor-pointer hover:underline" onclick="readArticleModal('स्थानीय तहमा युवा नेतृत्वको भूमिका')">पूरा पढ्नुहोस् →</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-md transition flex flex-col">
+            <div class="h-44 bg-gradient-to-r from-teal-600 to-green-700 p-6 flex flex-col justify-end text-white relative">
+              <span class="text-xs font-semibold px-2.5 py-1 bg-white/20 rounded-md backdrop-blur-sm self-start mb-2">शिक्षा तथा प्रविधि</span>
+              <h4 class="font-bold text-lg leading-snug">समयसापेक्ष शिक्षा प्रणाली र रोजगारी</h4>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+              <p class="text-slate-600 dark:text-slate-300 text-sm mb-4 leading-relaxed">
+                सैद्धान्तिक ज्ञान मात्र नभई व्यावहारिक सीप विकासले मात्र नेपाली युवाहरूलाई आत्मनिर्भर बनाउन सक्छ...
+              </p>
+              <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 border-t border-slate-100 dark:border-slate-700/60 pt-4">
+                <span><i class="fa-regular fa-calendar mr-1"></i> २०८१ पुस</span>
+                <span class="text-brand-600 dark:text-brand-400 font-semibold cursor-pointer hover:underline" onclick="readArticleModal('समयसापेक्ष शिक्षा प्रणाली र रोजगारी')">पूरा पढ्नुहोस् →</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- सम्पर्क सेक्सन (Contact Section) -->
+    <section id="contact" class="py-20 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-xs sm:text-sm uppercase tracking-widest font-extrabold text-brand-600 dark:text-brand-400 mb-2">
+            सम्पर्क
+          </h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+            कुनै जिज्ञासा वा सहकार्यका लागि
+          </p>
+          <p class="text-slate-600 dark:text-slate-400 text-base mt-2">
+            तलको फारम भरेर वा इमेलमार्फत सिधै मलाई सन्देश पठाउन सक्नुहुन्छ।
+          </p>
+          <div class="w-16 h-1.5 bg-brand-500 rounded-full mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- बायाँपट्टि: सम्पर्क सूचनाहरू -->
+          <div class="lg:col-span-5 space-y-6">
+            
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/50 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-bold text-slate-900 dark:text-white text-lg">इमेल ठेगाना</h4>
+                <p class="text-slate-600 dark:text-slate-300 text-sm break-all font-mono">info@jhabindrapokharel.com.np</p>
+                <button onclick="copyEmail()" class="mt-2 text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                  <i class="fa-regular fa-copy"></i>
+                  <span>इमेल प्रतिलिपि गर्नुहोस्</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/50 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-bold text-slate-900 dark:text-white text-lg">आधिकारिक वेबसाइट</h4>
+                <p class="text-slate-600 dark:text-slate-300 text-sm font-mono">www.jhabindrapokharel.com.np</p>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-100 dark:bg-brand-900/50 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-bold text-slate-900 dark:text-white text-lg">स्थान</h4>
+                <p class="text-slate-600 dark:text-slate-300 text-sm">काठमाडौँ तथा बुटवल, नेपाल</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- दायाँपट्टि: अन्तरक्रियात्मक सम्पर्क फारम -->
+          <div class="lg:col-span-7">
+            <form id="contactForm" class="bg-slate-50 dark:bg-slate-800/80 p-8 sm:p-10 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-5">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="name" class="block text-sm font-bold text-slate-700 dark:text-slate-200 mb-1.5">
+                    तपाईंको पूरा नाम *
+                  </label>
+                  <input type="text" id="name" required placeholder="उदा. राम शर्मा" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition text-base">
+                </div>
+
+                <div>
+                  <label for="email" class="block text-sm font-bold text-slate-700 dark:text-slate-200 mb-1.5">
+                    इमेल ठेगाना *
+                  </label>
+                  <input type="email" id="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition text-base">
+                </div>
+              </div>
+
+              <div>
+                <label for="subject" class="block text-sm font-bold text-slate-700 dark:text-slate-200 mb-1.5">
+                  विषय *
+                </label>
+                <input type="text" id="subject" required placeholder="सन्देशको मुख्य विषय" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition text-base">
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-bold text-slate-700 dark:text-slate-200 mb-1.5">
+                  सन्देश विवरण *
+                </label>
+                <textarea id="message" rows="5" required placeholder="तपाईंको सन्देश वा प्रतिक्रिया यहाँ लेख्नुहोस्..." class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition text-base resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-base shadow-lg shadow-brand-600/30 hover:scale-[1.01] active:scale-[0.99] transition flex items-center justify-center gap-2">
+                <i class="fa-regular fa-paper-plane"></i>
+                <span>सन्देश पठाउनुहोस्</span>
+              </button>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- फुटर (Footer) -->
+  <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      
+      <div class="flex items-center justify-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center font-bold text-lg">
+          <span>झ</span>
+        </div>
+        <span class="text-xl font-bold text-white tracking-wide">झविन्द्र पोखरेल</span>
+      </div>
+
+      <p class="text-sm max-w-md mx-auto text-slate-400">
+        सत्य, निष्ठा र निरन्तर कार्यदक्षतामार्फत समाज र राष्ट्रको सकारात्मक रूपान्तरण।
+      </p>
+
+      <div class="flex justify-center space-x-6 text-sm font-medium">
+        <a href="#home" class="hover:text-brand-400 transition">गृहपृष्ठ</a>
+        <a href="#about" class="hover:text-brand-400 transition">परिचय</a>
+        <a href="#skills" class="hover:text-brand-400 transition">दक्षता</a>
+        <a href="#articles" class="hover:text-brand-400 transition">लेखहरू</a>
+        <a href="#contact" class="hover:text-brand-400 transition">सम्पर्क</a>
+      </div>
+
+      <div class="pt-6 border-t border-slate-800 text-xs text-slate-400">
+        <p>© 2026 झविन्द्र पोखरेल (Jhabindra Pokharel) | सर्वाधिकार सुरक्षित।</p>
+        <p class="mt-1">डोमेन: <span class="text-slate-300 font-mono">www.jhabindrapokharel.com.np</span></p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- सन्देश र सूचना मोडल (Custom Notification / Toast Dialog) -->
+  <div id="toastBox" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 pointer-events-none transition-all duration-300 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-4 rounded-2xl shadow-2xl flex items-center gap-3 border border-slate-700">
+    <i id="toastIcon" class="fa-solid fa-circle-check text-brand-500 text-xl"></i>
+    <span id="toastMsg" class="text-sm font-semibold"></span>
+  </div>
+
+  <!-- विवरण पपअप मोडल (Generic Modal) -->
+  <div id="customModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-800 max-w-lg w-full rounded-2xl p-6 sm:p-8 shadow-2xl border border-slate-200 dark:border-slate-700 space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-3">
+        <h3 id="modalTitle" class="text-xl font-bold text-slate-900 dark:text-white"></h3>
+        <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-white text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div id="modalContent" class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed space-y-3"></div>
+      <div class="pt-2 text-right">
+        <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-brand-600 text-white font-semibold text-sm hover:bg-brand-700 transition">
+          बन्द गर्नुहोस्
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- जाभास्क्रिप्ट लजिक (JavaScript) -->
+  <script>
+    // डार्क तथा लाइट थिम व्यवस्थापन
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const htmlElem = document.documentElement;
+
+    // प्राथमिक थिम सेटिङ
+    const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (userPrefersDark) {
+      htmlElem.classList.add('dark');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      htmlElem.classList.toggle('dark');
+      if (htmlElem.classList.contains('dark')) {
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        showToast('डार्क मोड सक्रिय गरियो');
+      } else {
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        showToast('लाइट मोड सक्रिय गरियो');
+      }
+    });
+
+    // मोबाइल मेनू टगल
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // सूचना (Toast Notification) प्रदर्शन गर्ने फङ्सन
+    function showToast(message, isSuccess = true) {
+      const toastBox = document.getElementById('toastBox');
+      const toastMsg = document.getElementById('toastMsg');
+      const toastIcon = document.getElementById('toastIcon');
+
+      toastMsg.innerText = message;
+      if (isSuccess) {
+        toastIcon.className = 'fa-solid fa-circle-check text-brand-500 text-xl';
+      } else {
+        toastIcon.className = 'fa-solid fa-circle-exclamation text-amber-500 text-xl';
+      }
+
+      toastBox.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toastBox.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toastBox.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+        toastBox.classList.remove('translate-y-0', 'opacity-100');
+      }, 3500);
+    }
+
+    // सम्पर्क फारम ह्यान्डलर (Form Submit Handler)
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+
+      if (!name || !email || !subject) {
+        showToast('कृपया सबै आवश्यक विवरण भर्नुहोस्।', false);
+        return;
+      }
+
+      // फारम सफल सन्देश देखाउने
+      showToast(`धन्यवाद ${name} ज्यू! तपाईंको सन्देश प्राप्त भयो।`);
+      contactForm.reset();
+    });
+
+    // इमेल प्रतिलिपि गर्ने फङ्सन (Clipboard Copy)
+    function copyEmail() {
+      const tempInput = document.createElement('input');
+      tempInput.value = 'info@jhabindrapokharel.com.np';
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      showToast('इमेल ठेगाना प्रतिलिपि गरियो!');
+    }
+
+    // डोमेन लिङ्क सेयर/कपी
+    function copyDomain() {
+      const tempInput = document.createElement('input');
+      tempInput.value = 'https://www.jhabindrapokharel.com.np';
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+      showToast('वेबसाइट लिङ्क प्रतिलिपि गरियो!');
+    }
+
+    // मोडल खोल्ने र बन्द गर्ने फङ्सनहरू
+    function openModal(title, contentHtml) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalContent').innerHTML = contentHtml;
+      const modal = document.getElementById('customModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('customModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // परिचय-पत्र मोडल
+    function downloadInfoModal() {
+      openModal('झविन्द्र पोखरेल - प्रोफाइल संक्षेप', `
+        <p><strong>आधिकारिक डोमेन:</strong> www.jhabindrapokharel.com.np</p>
+        <p><strong>पेशा/संलग्नता:</strong> नीतिगत विश्लेषण, सामाजिक विकास तथा नेतृत्व परामर्श।</p>
+        <p><strong>सम्पर्क:</strong> info@jhabindrapokharel.com.np</p>
+        <p class="text-xs text-slate-500 mt-2">यस वेबसाइटबाट सीधै सन्देश आदानप्रदान गर्न सकिने व्यवस्था मिलाइएको छ। विस्तृत बायोडाटा/CV को लागि सम्पर्क फारम प्रयोग गर्नुहोस्।</p>
+      `);
+    }
+
+    // लेख मोडल
+    function readArticleModal(title) {
+      openModal(title, `
+        <p class="font-medium text-slate-800 dark:text-slate-200">यो लेखको पूर्ण अंश सम्पादन वा प्रकाशन प्रक्रियामा रहेको छ।</p>
+        <p>यस विषयमा थप छलफल, अन्तरक्रिया वा विचार विमर्शका लागि तपाईं सिधै तलको सम्पर्क फारम मार्फत जोडिन सक्नुहुन्छ।</p>
+        <p class="text-xs text-slate-500 mt-3">— झविन्द्र पोखरेल</p>
+      `);
+    }
+
+    // बाहिर क्लिक गर्दा मोडल बन्द गर्ने
+    window.addEventListener('click', function(e) {
+      const modal = document.getElementById('customModal');
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
