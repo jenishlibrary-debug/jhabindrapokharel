@@ -1,837 +1,1246 @@
 <!DOCTYPE html>
-<html lang="ne" class="scroll-smooth">
+<html lang="ne">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="झविन्द्र पोखरेल — Veterinary Technician, कृषि, पशुपन्छी, नेपालको आर्थिक तथा सामाजिक तथ्याङ्क, कृषि गणना, जनगणना र सम्बन्धित ऐन-कानुन।" />
-  <meta name="theme-color" content="#0f766e" />
-  <title>झविन्द्र पोखरेल | Veterinary Technician & Nepal Knowledge Portal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>झबिन्द्र पोखरेल - नेपाल, कृषि तथा पशुपालन पोर्टल</title>
+    <!-- Google Fonts for Clean Modern Nepali Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sky-50: #f0f9ff;
+            --sky-100: #e0f2fe;
+            --sky-200: #bae6fd;
+            --sky-300: #7dd3fc;
+            --sky-400: #38bdf8;
+            --sky-500: #0ea5e9;
+            --sky-600: #0284c7;
+            --sky-700: #0369a1;
+            --sky-800: #075985;
+            --sky-900: #0c4a6e;
+            --sky-950: #082f49;
+            --text-dark: #0f172a;
+            --text-body: #334155;
+            --text-muted: #64748b;
+            --card-bg: #ffffff;
+            --gold-50: #fffbeb;
+            --gold-100: #fef3c7;
+            --gold-600: #d97706;
+            --gold-700: #b45309;
+            --gold-800: #92400e;
+            --border-light: rgba(186, 230, 253, 0.6);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(2, 132, 199, 0.08), 0 2px 4px -2px rgba(2, 132, 199, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(2, 132, 199, 0.1), 0 4px 6px -4px rgba(2, 132, 199, 0.08);
+            --shadow-xl: 0 20px 25px -5px rgba(2, 132, 199, 0.12), 0 8px 10px -6px rgba(2, 132, 199, 0.08);
+        }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  <style>
-    :root{
-      --green:#0f766e;
-      --green-dark:#064e3b;
-      --green-soft:#ecfdf5;
-      --blue:#0369a1;
-      --blue-soft:#eff6ff;
-      --gold:#d97706;
-      --gold-soft:#fffbeb;
-      --ink:#10231f;
-      --muted:#60706b;
-      --line:#dce8e4;
-      --paper:#ffffff;
-      --bg:#f5faf8;
-      --shadow:0 18px 45px rgba(15,118,110,.10);
-      --radius:22px;
-    }
+        body {
+            background-color: var(--sky-50);
+            color: var(--text-body);
+            font-family: 'Mukta', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            font-size: 16px;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:"Noto Sans Devanagari",system-ui,sans-serif;
-      color:var(--ink);
-      background:var(--bg);
-      line-height:1.75;
-    }
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    button,input{font:inherit}
+        /* -------------------------------------------------------------
+           CLEAN & ELEGANT TOP STATUS BAR
+        ------------------------------------------------------------- */
+        .top-bar {
+            background: linear-gradient(90deg, var(--sky-900) 0%, var(--sky-800) 100%);
+            color: #f8fafc;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.88rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-    .container{width:min(1120px,92%);margin:auto}
-    .section{padding:82px 0;scroll-margin-top:80px}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:8px;
-      color:var(--green);font-weight:800;font-size:.86rem;
-      letter-spacing:.02em;margin-bottom:10px
-    }
-    .section-title{
-      font-size:clamp(1.8rem,4vw,2.7rem);
-      line-height:1.2;margin-bottom:12px
-    }
-    .section-lead{color:var(--muted);max-width:760px}
-    .section-head{margin-bottom:34px}
+        .top-bar-inner {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
 
-    /* NAV */
-    .nav{
-      position:sticky;top:0;z-index:1000;
-      background:rgba(255,255,255,.94);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(220,232,228,.9);
-    }
-    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .brand-mark{
-      width:42px;height:42px;border-radius:14px;
-      display:grid;place-items:center;color:#fff;
-      background:linear-gradient(135deg,var(--green),var(--blue));
-      box-shadow:0 8px 18px rgba(15,118,110,.2)
-    }
-    .brand small{display:block;color:var(--muted);font-size:.7rem;font-weight:600}
-    .nav-links{display:flex;align-items:center;gap:20px;font-size:.9rem;font-weight:700}
-    .nav-links a{color:#40514d}
-    .nav-links a:hover{color:var(--green)}
-    .menu-btn{display:none;border:0;background:#eef7f4;color:var(--green);width:44px;height:44px;border-radius:12px}
-    .mobile-menu{display:none;padding:8px 0 18px}
-    .mobile-menu a{display:block;padding:11px 5px;font-weight:700;border-bottom:1px solid var(--line)}
+        .portal-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            color: var(--sky-200);
+        }
 
-    /* HERO */
-    .hero{
-      position:relative;overflow:hidden;
-      background:
-        radial-gradient(circle at 90% 15%,rgba(14,165,233,.18),transparent 28%),
-        radial-gradient(circle at 10% 15%,rgba(16,185,129,.17),transparent 30%),
-        linear-gradient(135deg,#f0fdf4,#f8fbff 55%,#ecfeff);
-      padding:78px 0 68px;
-    }
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
-    .badge{
-      display:inline-flex;align-items:center;gap:9px;
-      padding:7px 13px;border-radius:999px;background:#fff;
-      color:var(--green);font-weight:800;font-size:.83rem;
-      border:1px solid #cce9df;box-shadow:0 8px 22px rgba(15,118,110,.07)
-    }
-    .hero h1{
-      font-size:clamp(2.35rem,6vw,4.8rem);
-      line-height:1.06;margin:20px 0 12px;
-      letter-spacing:-.035em
-    }
-    .hero h1 span{color:var(--green)}
-    .hero-role{font-size:clamp(1.05rem,2.5vw,1.35rem);font-weight:800;color:#33534c}
-    .hero p{color:var(--muted);max-width:700px;margin:17px 0 25px}
-    .actions{display:flex;flex-wrap:wrap;gap:11px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:9px;
-      padding:12px 17px;border-radius:13px;font-weight:800;
-      border:1px solid transparent;transition:.2s;cursor:pointer
-    }
-    .btn-primary{background:var(--green);color:#fff;box-shadow:0 9px 20px rgba(15,118,110,.2)}
-    .btn-primary:hover{transform:translateY(-2px);background:var(--green-dark)}
-    .btn-light{background:#fff;border-color:var(--line);color:var(--green)}
-    .btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+        .portal-meta span.dot {
+            width: 7px;
+            height: 7px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 8px #22c55e;
+        }
 
-    .profile-card{
-      position:relative;background:#fff;border:1px solid #dcece7;
-      border-radius:30px;padding:15px;box-shadow:var(--shadow);
-      max-width:390px;margin-left:auto
-    }
-    .profile-card img{
-      width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:22px;
-      background:linear-gradient(145deg,#dff7ee,#e0f2fe)
-    }
-    .profile-caption{
-      display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 6px 4px
-    }
-    .profile-caption strong{font-size:1.05rem}
-    .location{color:var(--muted);font-size:.82rem}
-    .hero-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
-    .mini{background:rgba(255,255,255,.8);border:1px solid #d9e9e5;border-radius:16px;padding:13px;text-align:center}
-    .mini b{display:block;color:var(--green);font-size:1.25rem}
-    .mini span{font-size:.72rem;color:var(--muted)}
+        .live-capsules {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
 
-    /* QUOTE */
-    .quote-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-    .quote-card{
-      background:linear-gradient(135deg,var(--green-dark),var(--green));
-      color:#fff;border-radius:var(--radius);padding:30px;position:relative;overflow:hidden
-    }
-    .quote-card:after{content:"“";position:absolute;right:15px;top:-25px;font:140px Georgia;color:rgba(255,255,255,.12)}
-    .quote-card h3{font-size:1rem;opacity:.85;margin-bottom:10px}
-    .quote-card blockquote{font-size:clamp(1.2rem,2.5vw,1.65rem);font-weight:700;line-height:1.55;position:relative;z-index:1}
-    .quote-card small{display:block;margin-top:14px;opacity:.8}
-    .fact-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.04)}
-    .fact-card h3{margin-bottom:8px}
-    .fact-card p{color:var(--muted)}
+        .capsule {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            padding: 0.22rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.84rem;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
 
-    /* CARDS */
-    .grid{display:grid;gap:18px}
-    .grid-2{grid-template-columns:repeat(2,1fr)}
-    .grid-3{grid-template-columns:repeat(3,1fr)}
-    .grid-4{grid-template-columns:repeat(4,1fr)}
-    .card{
-      background:#fff;border:1px solid var(--line);border-radius:var(--radius);
-      padding:23px;box-shadow:0 10px 28px rgba(15,118,110,.045);
-      transition:.22s
-    }
-    .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-    .icon{
-      width:48px;height:48px;border-radius:15px;display:grid;place-items:center;
-      background:var(--green-soft);color:var(--green);font-size:1.2rem;margin-bottom:15px
-    }
-    .card h3{font-size:1.08rem;margin-bottom:7px}
-    .card p{color:var(--muted);font-size:.91rem}
-    .tag{
-      display:inline-block;margin-top:12px;padding:4px 9px;border-radius:999px;
-      background:#f0fdfa;color:var(--green);font-size:.72rem;font-weight:800
-    }
+        .capsule strong {
+            color: var(--sky-200);
+            font-weight: 600;
+        }
 
-    /* STATISTICS */
-    .stats{
-      display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:28px 0
-    }
-    .stat{
-      background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;
-      text-align:center
-    }
-    .stat .num{font-size:clamp(1.55rem,4vw,2.3rem);font-weight:900;color:var(--green);line-height:1.2}
-    .stat .label{color:var(--muted);font-size:.78rem;margin-top:5px}
-    .note{font-size:.78rem;color:var(--muted);margin-top:15px}
+        /* -------------------------------------------------------------
+           CLEAN GLASSMORPHIC HEADER & NAVIGATION
+        ------------------------------------------------------------- */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--sky-100);
+            box-shadow: 0 2px 10px rgba(2, 132, 199, 0.04);
+        }
 
-    /* TABLE */
-    .table-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:18px}
-    table{width:100%;border-collapse:collapse;min-width:620px}
-    th,td{padding:13px 15px;text-align:left;border-bottom:1px solid #e7efec;font-size:.88rem}
-    th{background:#f1f8f5;color:var(--green-dark);font-weight:900}
-    tr:last-child td{border-bottom:0}
-    td:last-child{text-align:right;font-weight:800}
+        nav {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.85rem 1.5rem;
+        }
 
-    /* DISEASE */
-    .disease{border-left:5px solid var(--green)}
-    .disease.warning{border-left-color:var(--gold)}
-    .disease h3{display:flex;gap:10px;align-items:center}
-    .disease ul{margin:10px 0 0 19px;color:var(--muted);font-size:.88rem}
-    .alert{
-      margin-top:20px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;
-      padding:14px 16px;border-radius:14px;font-size:.85rem
-    }
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
 
-    /* GALLERY */
-    .gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-auto-rows:180px;gap:14px}
-    .gallery-item{border-radius:20px;overflow:hidden;position:relative;min-height:180px;background:linear-gradient(135deg,#b7e4d3,#b9dff3)}
-    .gallery-item.big{grid-row:span 2}
-    .gallery-item .scene{
-      width:100%;height:100%;display:grid;place-items:center;font-size:5rem;
-      background:
-        radial-gradient(circle at 25% 25%,rgba(255,255,255,.45),transparent 24%),
-        linear-gradient(160deg,#bfe8dc,#dff6ef 42%,#9ed0e7)
-    }
-    .gallery-item:nth-child(2) .scene{background:linear-gradient(160deg,#d6f5de,#8ecae6)}
-    .gallery-item:nth-child(3) .scene{background:linear-gradient(160deg,#f8d9a7,#c7e9bd)}
-    .gallery-item:nth-child(4) .scene{background:linear-gradient(160deg,#d7eefb,#e7f4dc)}
-    .gallery-item:nth-child(5) .scene{background:linear-gradient(160deg,#d5f5e3,#f5e5b9)}
-    .gallery-label{
-      position:absolute;left:12px;right:12px;bottom:11px;
-      padding:9px 11px;border-radius:12px;background:rgba(255,255,255,.88);
-      font-weight:900;font-size:.82rem
-    }
+        .brand-logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--sky-600), var(--sky-800));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.35rem;
+            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+        }
 
-    /* LAWS / LINKS */
-    .law-list{display:grid;gap:10px}
-    .law{
-      display:flex;align-items:center;justify-content:space-between;gap:14px;
-      padding:15px 16px;background:#fff;border:1px solid var(--line);border-radius:15px
-    }
-    .law strong{font-size:.9rem}
-    .law span{font-size:.74rem;color:var(--muted)}
-    .law i{color:var(--green)}
-    .gov{
-      display:flex;align-items:flex-start;gap:14px;
-      padding:16px;border-radius:16px;background:#fff;border:1px solid var(--line)
-    }
-    .gov .icon{flex:none;margin:0;width:42px;height:42px;border-radius:12px}
-    .gov a{color:var(--green);font-size:.78rem;font-weight:800;word-break:break-all}
+        .brand-text h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--sky-900);
+            line-height: 1.2;
+        }
 
-    /* SEARCH */
-    .search-box{position:relative;margin:0 0 22px}
-    .search-box i{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#7c918b}
-    .search-box input{
-      width:100%;padding:14px 16px 14px 45px;border:1px solid var(--line);
-      border-radius:15px;outline:none;background:#fff
-    }
-    .search-box input:focus{border-color:#7cc8bb;box-shadow:0 0 0 4px rgba(15,118,110,.08)}
+        .brand-text p {
+            font-size: 0.78rem;
+            color: var(--sky-600);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
 
-    /* ABOUT / CONTACT */
-    .about{background:linear-gradient(135deg,#064e3b,#0f766e);color:#fff}
-    .about .section-lead{color:rgba(255,255,255,.78)}
-    .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
-    .about-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:26px}
-    .about-card p{color:rgba(255,255,255,.82)}
-    .contact-list{display:grid;gap:12px;margin-top:15px}
-    .contact-item{display:flex;gap:12px;align-items:center}
-    .contact-item i{width:35px;height:35px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.12)}
-    .socials{display:flex;gap:10px;margin-top:20px}
-    .socials a{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:rgba(255,255,255,.12)}
-    .socials a:hover{background:rgba(255,255,255,.22)}
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0.4rem;
+            align-items: center;
+        }
 
-    footer{background:#042f2a;color:#a9c4bd;padding:28px 0}
-    .footer-inner{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}
-    .footer-inner strong{color:#fff}
-    .tiny{font-size:.75rem}
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.94rem;
+            padding: 0.45rem 0.85rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
 
-    .top{
-      position:fixed;right:18px;bottom:18px;width:45px;height:45px;border:0;border-radius:14px;
-      background:var(--green);color:#fff;display:grid;place-items:center;z-index:900;
-      box-shadow:0 12px 25px rgba(15,118,110,.25);cursor:pointer
-    }
+        .nav-links a:hover {
+            color: var(--sky-700);
+            background: var(--sky-100);
+        }
 
-    @media(max-width:900px){
-      .nav-links{display:none}.menu-btn{display:block}
-      .mobile-menu.open{display:block}
-      .hero-grid,.quote-wrap,.about-grid{grid-template-columns:1fr}
-      .profile-card{margin:auto}
-      .grid-4{grid-template-columns:repeat(2,1fr)}
-      .stats{grid-template-columns:repeat(2,1fr)}
-      .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:160px}
-      .gallery-item.big{grid-row:span 1}
-    }
-    @media(max-width:620px){
-      .section{padding:62px 0}
-      .nav-inner{height:64px}
-      .brand small{display:none}
-      .hero{padding:55px 0}
-      .hero h1{font-size:2.35rem}
-      .hero-mini{grid-template-columns:1fr 1fr 1fr}
-      .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
-      .stats{grid-template-columns:1fr 1fr}
-      .gallery{grid-template-columns:1fr;grid-auto-rows:170px}
-      .gallery-item{min-height:170px}
-      .gallery-item.big{grid-row:span 1}
-      .actions .btn{flex:1 1 100%}
-      .footer-inner{align-items:flex-start;flex-direction:column}
-    }
-  
-/* ===== NEWS + ADMIN PANEL ===== */
-.news-section{background:#f0fdf4}.news-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.news-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 8px 25px rgba(15,118,110,.05)}.news-card img{width:100%;height:190px;object-fit:cover;background:#dff7ee}.news-body{padding:20px}.news-meta{font-size:.75rem;color:var(--muted);margin-bottom:7px}.news-body h3{font-size:1.12rem;margin-bottom:8px}.news-body p{color:var(--muted);font-size:.9rem}.admin-btn{position:fixed;left:18px;bottom:18px;width:48px;height:48px;border:0;border-radius:15px;background:#064e3b;color:#fff;z-index:950;cursor:pointer;box-shadow:0 12px 25px rgba(0,0,0,.2)}.modal{position:fixed;inset:0;background:rgba(2,25,21,.72);display:none;align-items:center;justify-content:center;padding:18px;z-index:2000}.modal.open{display:flex}.modal-box{width:min(760px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:24px;padding:25px}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.close-btn{border:0;background:#eef7f4;color:var(--green);width:40px;height:40px;border-radius:12px;cursor:pointer}.admin-form{display:grid;gap:12px}.admin-form label{font-weight:800;font-size:.85rem}.admin-form input,.admin-form textarea,.admin-form select{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:12px;outline:none}.admin-form textarea{min-height:120px;resize:vertical}.admin-actions{display:flex;gap:10px;flex-wrap:wrap}.admin-list{display:grid;gap:10px;margin-top:20px}.admin-item{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px;border:1px solid var(--line);border-radius:14px;background:#f8fcfa}.admin-item small{color:var(--muted)}.hidden{display:none!important}@media(max-width:900px){.news-grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.news-grid{grid-template-columns:1fr}}
-  </style>
-<!-- Website design version: 2026-09-05 -->
+        .nav-cta {
+            background: var(--sky-600) !important;
+            color: white !important;
+            box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);
+        }
+
+        .nav-cta:hover {
+            background: var(--sky-700) !important;
+        }
+
+        /* -------------------------------------------------------------
+           MODERN CRISP HERO (EVEREST & PROFILE IDENTITY)
+        ------------------------------------------------------------- */
+        .hero {
+            position: relative;
+            min-height: 460px;
+            background: linear-gradient(180deg, rgba(8, 47, 73, 0.72) 0%, rgba(3, 105, 161, 0.58) 100%), 
+                        url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 3.5rem 1.5rem;
+        }
+
+        .hero-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            padding: 0.35rem 1.1rem;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.7rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+        }
+
+        .hero p {
+            font-size: 1.18rem;
+            font-weight: 400;
+            max-width: 760px;
+            margin: 0 auto 1.8rem auto;
+            color: #f1f5f9;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+        }
+
+        .hero-action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #ffffff;
+            color: var(--sky-800);
+            padding: 0.7rem 1.6rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--sky-50);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 0.7rem 1.6rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            backdrop-filter: blur(8px);
+            transition: all 0.2s ease;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+
+        /* -------------------------------------------------------------
+           BUDDHIST PHILOSOPHY BANNER (ELEGANT GOLD EMBELLISHMENT)
+        ------------------------------------------------------------- */
+        .buddha-section {
+            background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+            border-top: 3px solid var(--gold-600);
+            border-bottom: 3px solid var(--gold-600);
+            padding: 1.6rem 1.5rem;
+            text-align: center;
+            box-shadow: inset 0 2px 4px rgba(217, 119, 6, 0.05);
+        }
+
+        .buddha-mantra {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--gold-800);
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.5px;
+        }
+
+        .buddha-subtext {
+            font-size: 0.98rem;
+            color: var(--gold-700);
+            max-width: 860px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* -------------------------------------------------------------
+           SHARED SECTION UTILITIES
+        ------------------------------------------------------------- */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 3.5rem 1.5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--sky-700);
+            background: var(--sky-100);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--sky-950);
+            margin-bottom: 0.4rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* -------------------------------------------------------------
+           ACTS & LAWS SECTION (COMPREHENSIVE AGRICULTURAL LAWS)
+        ------------------------------------------------------------- */
+        .law-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .law-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.6rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .law-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--sky-300);
+        }
+
+        .law-card-top {
+            margin-bottom: 1rem;
+        }
+
+        .law-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.6rem;
+            gap: 0.5rem;
+        }
+
+        .law-badge {
+            background: var(--sky-100);
+            color: var(--sky-700);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+
+        .law-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--sky-900);
+            line-height: 1.35;
+        }
+
+        .law-desc {
+            font-size: 0.94rem;
+            color: var(--text-body);
+            margin-bottom: 1rem;
+        }
+
+        .law-keypoints {
+            list-style: none;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 0.8rem;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .law-keypoints li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .law-keypoints li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--sky-600);
+            font-weight: 800;
+        }
+
+        /* -------------------------------------------------------------
+           LIVESTOCK HEALTH & DISEASES
+        ------------------------------------------------------------- */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.6rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-md);
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .card-category-badge {
+            display: inline-block;
+            background: var(--sky-100);
+            color: var(--sky-700);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 0.25rem 0.65rem;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--sky-900);
+            margin-bottom: 0.8rem;
+        }
+
+        .disease-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .disease-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .disease-name {
+            font-weight: 700;
+            color: #b91c1c;
+            font-size: 0.98rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .disease-text {
+            font-size: 0.9rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        /* -------------------------------------------------------------
+           PHOTO GALLERY
+        ------------------------------------------------------------- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.4rem;
+        }
+
+        .gallery-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.2s ease;
+        }
+
+        .gallery-card:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-info {
+            padding: 1rem 1.2rem;
+            text-align: center;
+        }
+
+        .gallery-info h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--sky-900);
+            margin-bottom: 0.2rem;
+        }
+
+        .gallery-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* -------------------------------------------------------------
+           VEGETABLE PRICE TABLE
+        ------------------------------------------------------------- */
+        .table-wrap {
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-md);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.96rem;
+        }
+
+        table thead tr {
+            background: linear-gradient(90deg, var(--sky-700), var(--sky-600));
+            color: #ffffff;
+        }
+
+        table th {
+            padding: 0.9rem 1.2rem;
+            font-weight: 700;
+        }
+
+        table td {
+            padding: 0.85rem 1.2rem;
+            border-bottom: 1px solid var(--sky-50);
+            color: var(--text-dark);
+        }
+
+        table tbody tr:hover {
+            background: var(--sky-50);
+        }
+
+        /* -------------------------------------------------------------
+           GOVERNMENT PORTAL LINKS
+        ------------------------------------------------------------- */
+        .govt-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        .govt-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: var(--sky-900);
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .govt-card:hover {
+            background: var(--sky-600);
+            color: #ffffff;
+            border-color: var(--sky-600);
+            transform: translateY(-2px);
+        }
+
+        /* -------------------------------------------------------------
+           FOOTER
+        ------------------------------------------------------------- */
+        footer {
+            background: var(--sky-950);
+            color: #e2e8f0;
+            padding: 3rem 1.5rem 2rem 1.5rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        footer p {
+            color: var(--sky-200);
+            font-size: 0.92rem;
+        }
+
+        .copyright {
+            margin-top: 1.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        /* -------------------------------------------------------------
+           RESPONSIVE TWEAKS
+        ------------------------------------------------------------- */
+        .mobile-menu-btn {
+            display: none;
+            border: 0;
+            background: var(--sky-600);
+            color: #fff;
+            border-radius: 8px;
+            padding: 0.45rem 0.7rem;
+            font-size: 1.15rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 860px) {
+            nav {
+                position: relative;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: calc(100% + 1px);
+                left: 0;
+                right: 0;
+                background: #fff;
+                padding: 0.7rem 1rem 1rem;
+                border-bottom: 1px solid var(--sky-100);
+                box-shadow: var(--shadow-lg);
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links a {
+                display: block;
+                width: 100%;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .top-bar-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .live-capsules {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
-
 <body>
-<style>
-/* Mobile-safe fallback */
-html,body{margin:0;padding:0}
-body{background:#f5faf8;color:#10231f;font-family:system-ui,sans-serif}
-main{display:block}
-.container{max-width:1120px;margin:0 auto;width:92%}
-</style>
 
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="मुख्य पृष्ठ">
-        <span class="brand-mark"><i class="fa-solid fa-leaf"></i></span>
-        <span>झविन्द्र पोखरेल<small>Veterinary • Agriculture • Nepal</small></span>
-      </a>
-      <nav class="nav-links" aria-label="मुख्य मेनु">
-        <a href="#news">समाचार</a>
-        <a href="#news">समाचार</a>
-      <a href="#about">परिचय</a>
-        <a href="#quote">दैनिक विचार</a>
-        <a href="#agriculture">कृषि</a>
-        <a href="#livestock">पशुपन्छी</a>
-        <a href="#diseases">रोग</a>
-        <a href="#census">गणना</a>
-        <a href="#laws">ऐन-कानुन</a>
-        <a href="#contact">सम्पर्क</a>
-      </nav>
-      <button class="menu-btn" id="menuBtn" aria-label="मेनु खोल्नुहोस्"><i class="fa-solid fa-bars"></i></button>
+    <!-- 1. CLEAN REFINED TOP BAR (PALPA WEATHER & OFFICIAL NEPAL TIME) -->
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div class="portal-meta">
+                <span class="dot"></span>
+                <span>नेपाल राष्ट्रिय कृषि तथा सूचना पोर्टल | पाल्पा जिल्ला विशेष</span>
+            </div>
+            <div class="live-capsules">
+                <div class="capsule">
+                    <span>⏰ आधिकारिक समय:</span>
+                    <strong id="nepal-live-clock">लोड हुँदैछ...</strong>
+                </div>
+                <div class="capsule">
+                    <span>⛅ पाल्पा मौसम:</span>
+                    <strong>२६°C | सफा / आंशिक बदली</strong>
+                </div>
+                <div class="capsule">
+                    <span>📅 संवत्:</span>
+                    <strong>२०८३ (नेपाल संवत् ११४६)</strong>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container mobile-menu" id="mobileMenu">
-      <a href="#about">परिचय</a>
-      <a href="#quote">दैनिक विचार</a>
-      <a href="#agriculture">कृषि</a>
-      <a href="#livestock">पशुपन्छी</a>
-      <a href="#diseases">रोग विवरण</a>
-      <a href="#census">जनगणना तथा कृषि गणना</a>
-      <a href="#laws">ऐन तथा कानुन</a>
-      <a href="#nature">नेपालका प्राकृतिक सम्पदा</a>
-      <a href="#gov">सरकारी स्रोत</a>
-      <a href="#contact">सम्पर्क</a>
-    </div>
-  </header>
 
-  <main id="home">
+    <!-- 2. STREAMLINED HEADER / NAVIGATION -->
+    <header>
+        <nav>
+            <a href="#" class="brand-container">
+                <div class="brand-logo-icon">🏔️</div>
+                <div class="brand-text">
+                    <h1>झबिन्द्र पोखरेल</h1>
+                    <p>PORTAL & KNOWLEDGE BASE</p>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="मेनु खोल्नुहोस्" aria-expanded="false">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">नेपाल तथा पाल्पा</a></li>
+                <li><a href="#gallery">फोटो ग्यालरी</a></li>
+                <li><a href="#laws">कृषि तथा संघ ऐन</a></li>
+                <li><a href="#livestock">पशु-पंक्षी स्वास्थ्य</a></li>
+                <li><a href="#prices">तरकारी दरभाउ</a></li>
+                <li><a href="#govt" class="nav-cta">सरकारी पोर्टलहरू ↗</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 3. MAIN HERO: MT. EVEREST -->
     <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="badge"><i class="fa-solid fa-stethoscope"></i> Veterinary Technician • Palpa, Nepal</span>
-          <h1>झविन्द्र <span>पोखरेल</span></h1>
-          <div class="hero-role">पशु स्वास्थ्य तथा कृषि ज्ञानका लागि व्यक्तिगत सूचना पोर्टल</div>
-          <p>
-            नेपालका कृषि, पशुपन्छी, मत्स्य, रोग व्यवस्थापन, आर्थिक तथा सामाजिक तथ्याङ्क,
-            जनगणना, कृषि गणना र सम्बन्धित ऐन-कानुनलाई सरल भाषामा प्रस्तुत गर्ने ज्ञान केन्द्र।
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#agriculture"><i class="fa-solid fa-seedling"></i> कृषि विवरण</a>
-            <a class="btn btn-light" href="#diseases"><i class="fa-solid fa-shield-virus"></i> रोग जानकारी</a>
-            <a class="btn btn-light" href="#contact"><i class="fa-solid fa-phone"></i> सम्पर्क</a>
-          </div>
-          <div class="hero-mini">
-            <div class="mini"><b>पाल्पा</b><span>ठेगाना</span></div>
-            <div class="mini"><b>Veterinary</b><span>पेशा</span></div>
-            <div class="mini"><b>Nepal</b><span>ज्ञान पोर्टल</span></div>
-          </div>
-        </div>
-
-        <div class="profile-card">
-          <!-- GitHub repository मा आफ्नो फोटो 'profile.jpg' नाममा राख्नुहोस् -->
-          <img src="profile.jpg" alt="झविन्द्र पोखरेलको प्रोफाइल फोटो"
-               onerror="this.style.display='none';this.parentElement.classList.add('photo-missing');">
-          <div class="profile-caption">
-            <div>
-              <strong>झविन्द्र पोखरेल</strong>
-              <div class="location"><i class="fa-solid fa-location-dot"></i> Palpa, Nepal</div>
+        <div class="hero-inner">
+            <div class="hero-badge">🏔️ गौरवमय सर्वोच्च शिखर (८,८४८.८६ मिटर)</div>
+            <h2>विश्वको सर्वोच्च शिखर सगरमाथा र समृद्ध नेपाल</h2>
+            <p>प्राकृतिक विविधता, कृषि क्रान्ति, पाल्पाको ऐतिहासिक पहिचान र विधिको शासनको साझा डिजिटल चौतारी।</p>
+            <div class="hero-action-buttons">
+                <a href="#laws" class="btn-primary">कृषि तथा संघ ऐनहरू हेर्नुहोस्</a>
+                <a href="#livestock" class="btn-outline">पशु-पंक्षी स्वास्थ्य जानकारी</a>
             </div>
-            <i class="fa-solid fa-user-doctor" style="color:var(--green);font-size:1.4rem"></i>
-          </div>
-          <div class="note">नोट: फोटो नदेखिएमा GitHub मा <b>profile.jpg</b> upload गर्नुहोस्।</div>
         </div>
-      </div>
     </section>
 
-
-    <section class="section news-section" id="news">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-newspaper"></i> समाचार</span>
-          <h2 class="section-title">ताजा समाचार तथा सूचना</h2>
-          <p class="section-lead">Admin Panel बाट थपिएका प्रकाशित समाचारहरू यहाँ स्वतः देखिन्छन्।</p>
+    <!-- 4. BUDDHIST PHILOSOPHY (TRIRATNA BANNER) -->
+    <section class="buddha-section">
+        <div class="buddha-mantra">
+            बुद्धं शरणं गच्छामि । धर्मं शरणं गच्छामि । सङ्घं शरणं गच्छामि ।
         </div>
-        <div class="news-toolbar">
-          <input id="newsSearch" class="search-box" style="margin:0;max-width:520px;padding-left:16px" type="search" placeholder="समाचार खोज्नुहोस्...">
+        <div class="buddha-subtext">
+            म ज्ञान, आत्मचेतना र सम्यक बोध (बुद्ध) को शरण पर्दछु। म सत्य, अहिंसा र प्रकृतिको शाश्वत नियम (धर्म) को शरण पर्दछु। म सत्कर्म र मेलमिलापमा आधारित अनुशासित समुदाय (संघ) को शरण पर्दछु।
         </div>
-        <div id="newsGrid" class="news-grid"></div>
-        <p id="noNews" class="note hidden">अहिले प्रकाशित समाचार छैन। Admin Panel बाट समाचार थप्नुहोस्।</p>
-      </div>
     </section>
 
-    <section class="section" id="quote">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-sun"></i> आजको प्रेरणा</span>
-          <h2 class="section-title">दैनिक विचार</h2>
-          <p class="section-lead">हरेक दिन स्वतः परिवर्तन हुने छोटो प्रेरणादायी सन्देश।</p>
-        </div>
-        <div class="quote-wrap">
-          <div class="quote-card">
-            <h3 id="quoteDate">आज</h3>
-            <blockquote id="dailyQuote">ज्ञान, मेहनत र सेवाले समाजलाई अगाडि बढाउँछ।</blockquote>
-            <small>— दैनिक प्रेरणादायी विचार</small>
-          </div>
-          <div class="fact-card">
-            <h3><i class="fa-solid fa-lightbulb" style="color:var(--gold)"></i> आजको सन्देश</h3>
-            <p>
-              कृषि र पशुपालन केवल पेशा होइनन्; नेपालको खाद्य सुरक्षा, रोजगारी,
-              ग्रामीण अर्थतन्त्र र सामाजिक जीवनसँग प्रत्यक्ष जोडिएका आधार हुन्।
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="economy" style="background:#fff">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-chart-line"></i> नेपाल परिचय</span>
-          <h2 class="section-title">आर्थिक तथा सामाजिक विवरण</h2>
-          <p class="section-lead">
-            राष्ट्रिय तथ्याङ्कलाई बुझ्न सजिलो हुने गरी प्रमुख सूचकहरू। तथ्याङ्कको वर्ष
-            र स्रोत सधैँ हेर्नुहोस्, किनकि सूचकहरू समयसँगै परिवर्तन हुन्छन्।
-          </p>
+    <!-- 5. NEPAL & PALPA PROFILE -->
+    <section id="about" class="container">
+        <div class="section-header">
+            <span class="section-tag">भौगोलिक तथा ऐतिहासिक पहिचान</span>
+            <h2 class="section-title">नेपाल परिचय तथा पाल्पा जिल्ला</h2>
+            <p class="section-subtitle">प्राकृतिक स्रोत, समृद्ध संस्कृति, र पहाडी कृषि अर्थतन्त्रको संगम</p>
         </div>
 
-        <div class="stats">
-          <div class="stat"><div class="num">2.916 करोड</div><div class="label">जनसंख्या — राष्ट्रिय जनगणना २०७८/2021</div></div>
-          <div class="stat"><div class="num">0.92%</div><div class="label">वार्षिक औसत जनसंख्या वृद्धि दर</div></div>
-          <div class="stat"><div class="num">25.16%</div><div class="label">कृषि, वन तथा मत्स्य क्षेत्रको GDP हिस्सा*</div></div>
-          <div class="stat"><div class="num">3.28%</div><div class="label">कृषि, वन तथा मत्स्य क्षेत्रको वास्तविक वृद्धि*</div></div>
-        </div>
-
-        <div class="grid grid-3">
-          <article class="card"><div class="icon"><i class="fa-solid fa-people-group"></i></div><h3>जनसंख्या र समाज</h3><p>जनसंख्या, घरपरिवार, लिङ्ग, उमेर, साक्षरता, शिक्षा, रोजगारी, बसाइँसराइ तथा आवाससम्बन्धी विवरण।</p></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-coins"></i></div><h3>अर्थतन्त्र</h3><p>कृषि, उद्योग र सेवा क्षेत्रको योगदान, आर्थिक वृद्धि, रोजगारी तथा ग्रामीण अर्थतन्त्रसँग सम्बन्धित विषय।</p></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-house-chimney"></i></div><h3>ग्रामीण विकास</h3><p>कृषि, पशुपालन, सिँचाइ, बजार, सहकारी, उद्यमशीलता र स्थानीय उत्पादनसँग जोडिएका विषयहरू।</p></article>
-        </div>
-        <p class="note">* कृषि, वन तथा मत्स्य क्षेत्रको 2024/25 प्रारम्भिक राष्ट्रिय आर्थिक तथ्याङ्कको आधारमा। आधिकारिक स्रोतबाट नयाँ तथ्याङ्क आएमा अपडेट गर्नुहोस्।</p>
-      </div>
-    </section>
-
-    <section class="section" id="agriculture">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-wheat-awn"></i> कृषि</span>
-          <h2 class="section-title">नेपालको कृषि विवरण</h2>
-          <p class="section-lead">बाली, फलफूल, कृषि प्रविधि, सिँचाइ, यान्त्रीकरण र दिगो कृषिसम्बन्धी जानकारी।</p>
-        </div>
-
-        <div class="stats">
-          <div class="stat"><div class="num">25.16%</div><div class="label">GDP मा कृषि, वन तथा मत्स्यको हिस्सा*</div></div>
-          <div class="stat"><div class="num">3.28%</div><div class="label">क्षेत्रगत वास्तविक वृद्धि*</div></div>
-          <div class="stat"><div class="num">धान</div><div class="label">प्रमुख खाद्यान्न बाली</div></div>
-          <div class="stat"><div class="num">3 तह</div><div class="label">हिमाल • पहाड • तराई</div></div>
-        </div>
-
-        <div class="grid grid-3">
-          <article class="card"><div class="icon"><i class="fa-solid fa-bowl-rice"></i></div><h3>खाद्यान्न बाली</h3><p>धान, मकै, गहुँ, कोदो, फापर, जौ लगायतका बाली, उत्पादन र कृषि व्यवस्थापन।</p></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-carrot"></i></div><h3>तरकारी तथा नगदे बाली</h3><p>तरकारी, आलु, अदुवा, अलैंची, चिया, कफी तथा उच्च मूल्यका कृषि उत्पादन।</p></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-apple-whole"></i></div><h3>फलफूल</h3><p>पहाडी क्षेत्रमा सुन्तला तथा हिमाली क्षेत्रमा स्याउलगायत फलफूल खेतीको सम्भावना।</p></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-droplet"></i></div><h3>सिँचाइ</h3><p>वर्षायाममा निर्भरता घटाउन सिँचाइ, पानी व्यवस्थापन र सूक्ष्म सिँचाइ प्रविधि।</p></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-tractor"></i></div><h3>कृषि यान्त्रीकरण</h3><p>ट्र्याक्टर, मिनी टिलर, धान रोप्ने/काट्ने उपकरण तथा डिजिटल कृषि प्रविधि।</p></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-recycle"></i></div><h3>दिगो कृषि</h3><p>माटो स्वास्थ्य, जैविक पदार्थ, एकीकृत कीरा व्यवस्थापन र वातावरणमैत्री उत्पादन।</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="livestock" style="background:#fff">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-cow"></i> पशुपन्छी तथा मत्स्य</span>
-          <h2 class="section-title">नेपालको पशु विवरण</h2>
-          <p class="section-lead">पशुधन, पक्षी, मत्स्य, उत्पादन, व्यवस्थापन र पशु स्वास्थ्यसम्बन्धी आधारभूत जानकारी।</p>
-        </div>
-
-        <div class="grid grid-4">
-          <article class="card"><div class="icon">🐄</div><h3>गाई / गोरु</h3><p>दूध, प्रजनन, पोषण, गोठ व्यवस्थापन र स्वास्थ्य।</p></article>
-          <article class="card"><div class="icon">🐃</div><h3>भैंसी</h3><p>दूध उत्पादन, आहार, प्रजनन र रोग रोकथाम।</p></article>
-          <article class="card"><div class="icon">🐐</div><h3>बाख्रा</h3><p>मासु उत्पादन, खोर व्यवस्थापन, PPR लगायत रोग सचेतना।</p></article>
-          <article class="card"><div class="icon">🐑</div><h3>भेडा / च्याङ्ग्रा</h3><p>उच्च पहाडी पशुपालन, ऊन/मासु र चरन व्यवस्थापन।</p></article>
-          <article class="card"><div class="icon">🐖</div><h3>सुँगुर</h3><p>आहार, जैविक सुरक्षा, प्रजनन तथा रोग नियन्त्रण।</p></article>
-          <article class="card"><div class="icon">🐔</div><h3>कुखुरा</h3><p>लेयर्स/ब्रोइलर, खोर व्यवस्थापन, खोप र जैविक सुरक्षा।</p></article>
-          <article class="card"><div class="icon">🦆</div><h3>हाँस तथा पक्षी</h3><p>हाँसपालन, स्थानीय पक्षी र रोग व्यवस्थापन।</p></article>
-          <article class="card"><div class="icon">🐟</div><h3>मत्स्य</h3><p>पोखरी व्यवस्थापन, पानीको गुणस्तर, आहार र सामान्य रोग।</p></article>
-        </div>
-
-        <div class="table-wrap" style="margin-top:24px">
-          <table>
-            <thead><tr><th>उत्पादन/समूह</th><th>वेबसाइटमा समेटिने विषय</th><th>विवरण</th></tr></thead>
-            <tbody>
-              <tr><td>दूध</td><td>दुग्ध पशुपालन</td><td>पोषण • स्वच्छ दुहाइ • बजार</td></tr>
-              <tr><td>मासु</td><td>बाख्रा, भैंसी, सुँगुर, कुखुरा</td><td>उत्पादन • जैविक सुरक्षा</td></tr>
-              <tr><td>अण्डा</td><td>कुखुरापालन</td><td>लेयर्स • खोप • व्यवस्थापन</td></tr>
-              <tr><td>माछा</td><td>मत्स्यपालन</td><td>पानी • आहार • रोग</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="technology">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-microchip"></i> Veterinary Technology</span>
-          <h2 class="section-title">नयाँ पशु चिकित्सा प्रविधि</h2>
-          <p class="section-lead">आधुनिक पशु स्वास्थ्य सेवामा प्रयोग हुँदै आएका प्रविधि र तिनको सम्भावित उपयोग।</p>
-        </div>
-        <div class="grid grid-3">
-          <article class="card"><div class="icon"><i class="fa-solid fa-mobile-screen-button"></i></div><h3>Digital Veterinary Records</h3><p>पशुको पहिचान, उपचार इतिहास, खोप र फार्म रेकर्ड डिजिटल रूपमा व्यवस्थापन।</p><span class="tag">Digital</span></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-wave-square"></i></div><h3>Remote Monitoring</h3><p>सेन्सर तथा डिजिटल उपकरणबाट पशुको गतिविधि, तापक्रम वा व्यवहार निगरानी गर्ने प्रविधि।</p><span class="tag">Smart Farm</span></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-flask"></i></div><h3>Rapid Diagnostics</h3><p>रोग पहिचानका लागि द्रुत परीक्षण र प्रयोगशाला आधारित निदान प्रणालीको प्रयोग।</p><span class="tag">Diagnostics</span></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-dna"></i></div><h3>Genetics & Breeding</h3><p>उत्पादन, प्रजनन र आनुवंशिक सुधारका लागि वैज्ञानिक breeding कार्यक्रम।</p><span class="tag">Breeding</span></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-robot"></i></div><h3>Automation</h3><p>स्वचालित feeding, milking तथा farm management प्रणालीको बढ्दो प्रयोग।</p><span class="tag">Automation</span></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-satellite-dish"></i></div><h3>GIS & Early Warning</h3><p>भौगोलिक सूचना र रोग निगरानी प्रणालीबाट जोखिम पहिचान तथा सूचना प्रवाह।</p><span class="tag">Data</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="diseases" style="background:#fff">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-virus"></i> पशु रोग जानकारी</span>
-          <h2 class="section-title">प्रमुख पशुपन्छी रोग</h2>
-          <p class="section-lead">लक्षण, रोकथाम र पेशेवर सेवाको आवश्यकता बुझ्नका लागि शैक्षिक जानकारी।</p>
-        </div>
-
-        <div class="search-box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input id="diseaseSearch" type="search" placeholder="रोग खोज्नुहोस्... जस्तै खोरेत, रेबिज, PPR">
-        </div>
-
-        <div class="grid grid-3" id="diseaseGrid">
-          <article class="card disease" data-name="खोरेत foot and mouth disease fmd"><h3>🐄 खोरेत (FMD)</h3><p>खुर र मुखमा असर गर्ने अत्यन्त संक्रामक पशु रोग।</p><ul><li>लक्षण: ज्वरो, मुख/खुर वरिपरि फोका वा घाउ।</li><li>रोकथाम: जैविक सुरक्षा र आधिकारिक खोप कार्यक्रम।</li></ul></article>
-          <article class="card disease warning" data-name="लम्पी स्किन lsd"><h3>🐄 लम्पी स्किन रोग</h3><p>गाईभैंसीमा देखिने संक्रामक भाइरल रोग।</p><ul><li>छालामा गाँठा, ज्वरो र उत्पादन घट्न सक्छ।</li><li>सन्देह भए पशु स्वास्थ्यकर्मीसँग सम्पर्क गर्नुहोस्।</li></ul></article>
-          <article class="card disease" data-name="रेबिज rabies"><h3>🐕 रेबिज</h3><p>मानिस र जनावर दुवैका लागि गम्भीर zoonotic रोग।</p><ul><li>असामान्य व्यवहार, स्नायु सम्बन्धी लक्षण देखिन सक्छ।</li><li>टोकेको अवस्थामा तुरुन्त स्वास्थ्य सेवा लिनु महत्त्वपूर्ण हुन्छ।</li></ul></article>
-          <article class="card disease" data-name="ppr बाख्रा भेडा"><h3>🐐 PPR</h3><p>भेडा तथा बाख्रामा प्रमुख संक्रामक रोग।</p><ul><li>ज्वरो, नाक/आँखाबाट स्राव र पाचनसम्बन्धी समस्या हुन सक्छ।</li><li>रोकथामका लागि आधिकारिक खोप/निगरानी कार्यक्रम महत्त्वपूर्ण।</li></ul></article>
-          <article class="card disease warning" data-name="bird flu avian influenza h5n1 बर्ड फ्लु"><h3>🐔 Bird Flu / Avian Influenza</h3><p>पक्षीमा देखिने महत्वपूर्ण संक्रामक रोग।</p><ul><li>अचानक मृत्यु वा असामान्य रोग लक्षण देखिए सूचना दिनुहोस्।</li><li>फार्म जैविक सुरक्षा कडाइका साथ पालना गर्नुहोस्।</li></ul></article>
-          <article class="card disease" data-name="african swine fever asf सुँगुर"><h3>🐖 African Swine Fever</h3><p>सुँगुरमा गम्भीर असर पार्ने संक्रामक रोग।</p><ul><li>जैविक सुरक्षा, आवतजावत नियन्त्रण र आधिकारिक सूचना महत्त्वपूर्ण।</li><li>सन्देहमा पशु स्वास्थ्य निकायसँग सम्पर्क गर्नुहोस्।</li></ul></article>
-        </div>
-
-        <div class="alert">
-          <strong><i class="fa-solid fa-triangle-exclamation"></i> महत्वपूर्ण:</strong>
-          यो खण्ड शैक्षिक जानकारीका लागि हो। रोगको निदान, औषधि वा खोपको निर्णय स्थानीय अवस्था,
-          आधिकारिक निर्देशिका र योग्य पशु चिकित्सक/प्राविधिकको सल्लाहअनुसार गर्नुहोस्।
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="census">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-database"></i> राष्ट्रिय तथ्याङ्क</span>
-          <h2 class="section-title">जनगणना तथा कृषि गणना</h2>
-          <p class="section-lead">नेपालको जनसंख्या र कृषि क्षेत्रको संरचना बुझ्नका लागि आधिकारिक गणनाका प्रमुख विषय।</p>
-        </div>
-
-        <div class="grid grid-2">
-          <article class="card">
-            <div class="icon"><i class="fa-solid fa-people-roof"></i></div>
-            <h3>राष्ट्रिय जनगणना २०७८ / 2021</h3>
-            <p>जनसंख्या, घरपरिवार, लिङ्ग, उमेर, साक्षरता, शिक्षा, रोजगारी, बसाइँसराइ, आवास लगायतका विवरण।</p>
-            <div class="stats" style="margin:18px 0 0;grid-template-columns:1fr 1fr">
-              <div class="stat"><div class="num">29,164,578</div><div class="label">कुल जनसंख्या</div></div>
-              <div class="stat"><div class="num">6,666,937</div><div class="label">घरपरिवार</div></div>
+        <div class="law-grid">
+            <div class="card">
+                <span class="card-category-badge">राष्ट्रिय गौरव</span>
+                <h3>नेपालको चिनारी</h3>
+                <p style="font-size: 0.94rem; color: #475569; line-height: 1.7;">
+                    नेपाल १,४७,१८१ वर्ग किलोमिटरमा फैलिएको जैविक, सांस्कृतिक तथा भौगोलिक विविधतायुक्त भूपरिवेष्ठित देश हो। उत्तरमा हिमाली श्रृङ्खला, मध्य पहाडको हरियाली, र दक्षिणमा उर्वर तराईको समथर भूमि यहाँको मुख्य विशेषता हो। कृषि र पशुपालन यहाँको मुख्य जीविकोपार्जनको स्रोत हुन्, जसले राष्ट्रिय अर्थतन्त्र र खाद्य सुरक्षामा प्रमुख योगदान पुर्‍याउँछ।
+                </p>
             </div>
-            <a class="btn btn-primary" style="margin-top:16px" href="https://censusresults.nsonepal.gov.np/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> आधिकारिक परिणाम</a>
-          </article>
-
-          <article class="card">
-            <div class="icon"><i class="fa-solid fa-tractor"></i></div>
-            <h3>राष्ट्रिय कृषि गणना २०७८/79 / 2021-22</h3>
-            <p>कृषि होल्डिङ, जग्गा, सिँचाइ, बाली, पशुधन, श्रम, कृषि मेसिनरी र कृषि व्यवस्थापनसम्बन्धी तथ्याङ्क।</p>
-            <div class="grid grid-2" style="margin-top:18px">
-              <div class="card" style="padding:14px"><strong>भूमि</strong><br><span style="color:var(--muted);font-size:.78rem">क्षेत्रफल • स्वामित्व • भाडा</span></div>
-              <div class="card" style="padding:14px"><strong>पशुधन</strong><br><span style="color:var(--muted);font-size:.78rem">पशु • पक्षी • मत्स्य</span></div>
+            <div class="card">
+                <span class="card-category-badge">लुम्बिनी प्रदेश</span>
+                <h3>पाल्पा जिल्लाको विशिष्टता</h3>
+                <p style="font-size: 0.94rem; color: #475569; line-height: 1.7;">
+                    पाल्पा ऐतिहासिक, सांस्कृतिक र पर्यटकीय दृष्टिले समृद्ध पहाडी जिल्ला हो। पाल्पाली ढाका, तानसेन बजार, कालीगण्डकी किनारको रानीमहल (नेपालको ताजमहल), र करुवा यहाँका मुख्य पहिचान हुन्। कृषि तर्फ कफी, सुन्तला, अदुवा, बाख्रापालन, उन्नत गाईभैंसी पालन तथा मौरीपालनमा पाल्पा अग्रणी मानिन्छ।
+                </p>
             </div>
-            <a class="btn btn-primary" style="margin-top:16px" href="https://microdata.nsonepal.gov.np/index.php/catalog/134" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> कृषि गणना स्रोत</a>
-          </article>
         </div>
-      </div>
     </section>
 
-    <section class="section" id="laws" style="background:#fff">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-scale-balanced"></i> कानुनी जानकारी</span>
-          <h2 class="section-title">कृषि तथा पशुपन्छीसम्बन्धी ऐन–कानुन</h2>
-          <p class="section-lead">सम्बन्धित कानूनहरूको सूची र आधिकारिक नेपाल कानून आयोगमा खोज्ने सुविधा। कानून संशोधन हुन सक्ने भएकाले मूल स्रोत हेर्नुहोस्।</p>
+    <!-- 6. REALISTIC PHOTO GALLERY -->
+    <section id="gallery" class="container" style="background: var(--sky-100); border-radius: 16px;">
+        <div class="section-header">
+            <span class="section-tag">वास्तविक दृश्यहरू</span>
+            <h2 class="section-title">वास्तविक फोटो ग्यालरी</h2>
+            <p class="section-subtitle">सगरमाथा, पशुपालन, कृषि फार्म तथा मौरी पूर्वाधारका प्रत्यक्ष तस्बिरहरू</p>
         </div>
 
-        <div class="law-list">
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>पशु स्वास्थ्य तथा पशु सेवा ऐन, २०५५</strong><br><span>पशु स्वास्थ्य, सेवा तथा सम्बन्धित व्यवस्था</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>पशु स्वास्थ्य तथा पशु सेवा नियमावली, २०५६</strong><br><span>नियमावली तथा कार्यान्वयनसम्बन्धी व्यवस्था</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>पशु वधशाला तथा मासु जाँच ऐन, २०५५</strong><br><span>वधशाला र मासु जाँचसम्बन्धी कानुनी व्यवस्था</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>बीउ बिजन ऐन, २०४५</strong><br><span>बीउको गुणस्तर, प्रमाणीकरण तथा नियमन</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>बिरुवा क्वारेन्टाइन तथा संरक्षण ऐन, २०६४</strong><br><span>बिरुवा स्वास्थ्य तथा क्वारेन्टाइनसम्बन्धी व्यवस्था</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>खाद्य अधिकार तथा खाद्य सम्प्रभुता सम्बन्धी ऐन, २०७५</strong><br><span>खाद्य अधिकार तथा खाद्य सुरक्षासँग सम्बन्धित व्यवस्था</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>जीवनाशक विषादी व्यवस्थापन ऐन, २०७६</strong><br><span>विषादीको व्यवस्थापन तथा नियमन</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>भूउपयोग ऐन, २०७६</strong><br><span>भूमिको वर्गीकरण तथा उपयोगसम्बन्धी व्यवस्था</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80" alt="सगरमाथा">
+                <div class="gallery-info">
+                    <h4>सगरमाथा (Mt. Everest)</h4>
+                    <p>८,८४८.८६ मिटर - विश्व शिखर</p>
+                </div>
+            </div>
 
-        <p class="note">कानुनी सूचीलाई पूर्ण/अद्यावधिक राख्न नेपाल कानून आयोगको मूल पाठ र हालको संशोधन हेर्नुहोस्।</p>
-      </div>
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=600&q=80" alt="उन्नत गाई तथा पशुपालन">
+                <div class="gallery-info">
+                    <h4>उन्नत गाई तथा पशुपालन</h4>
+                    <p>व्यावसायिक दुग्ध तथा पशु फार्म</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=600&q=80" alt="कुखुरा फार्म">
+                <div class="gallery-info">
+                    <h4>पोल्ट्री तथा कुखुरा पालन</h4>
+                    <p>जैविक सुरक्षा मापदण्ड सहित</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=600&q=80" alt="बंगुर पालन">
+                <div class="gallery-info">
+                    <h4>उन्नत बंगुर पालन फार्म</h4>
+                    <p>नश्ल सुधार र वैज्ञानिक आहारा</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=600&q=80" alt="टनेल तरकारी खेती">
+                <div class="gallery-info">
+                    <h4>व्यावसायिक तरकारी खेती</h4>
+                    <p>टनेल प्रविधि र थोपा सिँचाइ</p>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <img src="https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=600&q=80" alt="मौरीपालन">
+                <div class="gallery-info">
+                    <h4>आधुनिक मौरीपालन (Beekeeping)</h4>
+                    <p>मह उत्पादन र परागसेचन टेवा</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="section" id="animals">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-paw"></i> जैविक विविधता</span>
-          <h2 class="section-title">जनावर, पक्षी र माछा</h2>
-          <p class="section-lead">नेपालका घरपालुवा, कृषि उपयोगी तथा वन्य/स्थानीय प्रजातिसम्बन्धी सामान्य परिचय।</p>
+    <!-- 7. DETAILED AGRICULTURAL & COOPERATIVE LAWS (कृषि संघ सम्बन्धी ऐनहरू थप) -->
+    <section id="laws" class="container">
+        <div class="section-header">
+            <span class="section-tag">नीतिगत तथा कानुनी आधार</span>
+            <h2 class="section-title">नेपालका कृषि संघ, सहकारी तथा नीतिगत ऐनहरू</h2>
+            <p class="section-subtitle">नेपालको संविधान, संघीय कृषि ऐनहरू र लुम्बिनी प्रदेशका विशेष कानुनी व्यवस्थाहरू</p>
         </div>
-        <div class="grid grid-4">
-          <article class="card"><div class="icon">🐘</div><h3>हात्ती</h3><p>नेपालको जैविक तथा वन्यजन्तु सम्पदाको महत्वपूर्ण प्रजाति।</p></article>
-          <article class="card"><div class="icon">🦚</div><h3>डाँफे / पक्षी</h3><p>नेपालका सुन्दर तथा स्थानीय पक्षी प्रजातिको परिचय।</p></article>
-          <article class="card"><div class="icon">🐕</div><h3>कुकुर</h3><p>पाल्तु जनावर, जिम्मेवार पालन र रेबिज रोकथाम।</p></article>
-          <article class="card"><div class="icon">🐈</div><h3>बिरालो</h3><p>पाल्तु जनावरको पोषण, स्वास्थ्य र जिम्मेवार हेरचाह।</p></article>
-          <article class="card"><div class="icon">🦌</div><h3>वन्यजन्तु</h3><p>नेपालको वन्यजन्तु विविधता र संरक्षणको महत्व।</p></article>
-          <article class="card"><div class="icon">🐟</div><h3>माछा</h3><p>नदी, ताल तथा व्यावसायिक मत्स्यपालनका प्रजाति।</p></article>
-          <article class="card"><div class="icon">🐎</div><h3>घोडा / खच्चड</h3><p>पहाडी तथा हिमाली क्षेत्रमा उपयोगी पशु र स्वास्थ्य व्यवस्थापन।</p></article>
-          <article class="card"><div class="icon">🐓</div><h3>स्थानीय कुखुरा</h3><p>स्थानीय genetic diversity, पालन र जैविक सुरक्षा।</p></article>
+
+        <div class="law-grid">
+
+            <!-- Act 1 -->
+            <div class="law-card">
+                <div class="law-card-top">
+                    <div class="law-header-flex">
+                        <h3>१. नेपालको संविधान २०७२</h3>
+                        <span class="law-badge">संवैधानिक प्रत्याभूति</span>
+                    </div>
+                    <p class="law-desc">कृषि तथा खाद्य सुरक्षालाई मौलिक हकको रूपमा सुनिश्चित गरिएको व्यवस्था:</p>
+                    <ul class="law-keypoints">
+                        <li><strong>धारा ३६:</strong> प्रत्येक नागरिकलाई खाद्य सम्बन्धी हक हुनेछ। खाद्य वस्तुको अभावमा जीवन जोखिममा नपर्ने र खाद्य सम्प्रभुताको संवैधानिक प्रत्याभूति।</li>
+                        <li><strong>धारा ५१ (कृषि नीति):</strong> भूमिको उत्पादकत्व वृद्धि, किसानलाई कृषि सामग्री, सिँचाइ, मल, बीउबिजन तथा बजार व्यवस्थापनको जिम्मेवारी।</li>
+                        <li><strong>अनुसूची अधिकार:</strong> संघ, प्रदेश र स्थानीय तहको साझा अधिकार क्षेत्रभित्र कृषि तथा पशु विकास समावेश।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Act 2 -->
+            <div class="law-card">
+                <div class="law-card-top">
+                    <div class="law-header-flex">
+                        <h3>२. सहकारी ऐन, २०७४ (कृषि संघ/सहकारी)</h3>
+                        <span class="law-badge">संघीय ऐन</span>
+                    </div>
+                    <p class="law-desc">कृषकहरू संगठित भएर उत्पादन, भण्डारण र बजारीकरण गर्ने मुख्य कानुनी आधार:</p>
+                    <ul class="law-keypoints">
+                        <li><strong>कृषि सहकारी संघ गठन:</strong> कम्तीमा २५ जना कृषक वा प्रारम्भिक संस्थाहरू मिलेर जिल्ला, प्रदेश वा केन्द्रीय स्तरको कृषि सहकारी संघ खोल्न सक्ने।</li>
+                        <li><strong>सहुलियत तथा कर छुट:</strong> कृषि यन्त्र, मल, बीउ, र शीतभण्डार (Cold Store) निर्माणमा राज्यबाट अनुदान तथा कर छुट।</li>
+                        <li><strong>सामूहिक खेती:</strong> बाँझो जमिन एकीकरण गरी चक्लाबन्दी र सामूहिक कृषि व्यवसाय सञ्चालन गर्न पाउने विशेष व्यवस्था।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Act 3 -->
+            <div class="law-card">
+                <div class="law-card-top">
+                    <div class="law-header-flex">
+                        <h3>३. खाद्य अधिकार तथा खाद्य सम्प्रभुता ऐन, २०७५</h3>
+                        <span class="law-badge">संघीय ऐन</span>
+                    </div>
+                    <p class="law-desc">कृषकको पहिचान, संरक्षण तथा नागरिकको खाद्य अधिकार सम्बन्धी ऐन:</p>
+                    <ul class="law-keypoints">
+                        <li><strong>किसानको अधिकार:</strong> खेतीयोग्य जमिन, पानी, बीउबिजन र जैविक स्रोतमा किसानको पहुँच सुनिश्चित गर्ने व्यवस्था।</li>
+                        <li><strong>किसान परिचयपत्र:</strong> साना, सीमान्तकृत र व्यावसायिक कृषकलाई वर्गीकरण गरी परिचयपत्र र सहुलियत दिने आधार।</li>
+                        <li><strong>न्यूनतम समर्थन मूल्य:</strong> उत्पादन लागतको आधारमा प्रमुख कृषि उपजहरूको समर्थन मूल्य तोक्ने बाध्यात्मक व्यवस्था।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Act 4 -->
+            <div class="law-card">
+                <div class="law-card-top">
+                    <div class="law-header-flex">
+                        <h3>४. बीउबिजन ऐन, २०४५ (दोस्रो संशोधन २०७९)</h3>
+                        <span class="law-badge">गुणस्तर तथा संरक्षण</span>
+                    </div>
+                    <p class="law-desc">गुणस्तरीय बीउ उत्पादन, प्रमाणीकरण र रैथाने जातको संरक्षण ऐन:</p>
+                    <ul class="law-keypoints">
+                        <li><strong>बीउ प्रमाणीकरण:</strong> उत्पादन गरिएका बीउको अंकुरण क्षमता र शुद्धता परीक्षण गरी अनुमति प्राप्त बीउ मात्र बिक्री गर्न पाइने।</li>
+                        <li><strong>रैथाने जातको दर्ता:</strong> किसानले पुस्तौंदेखि संरक्षण गरेका स्थानीय जातका बीउहरूको सूचीकरण र अधिकार संरक्षण।</li>
+                        <li><strong>क्षतिपूर्ति व्यवस्था:</strong> नक्कली वा कमसल बीउका कारण उत्पादन नभएमा बीउ उत्पादक/बिक्रेताबाट किसानलाई क्षतिपूर्ति भराउने कडा व्यवस्था।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Act 5 -->
+            <div class="law-card">
+                <div class="law-card-top">
+                    <div class="law-header-flex">
+                        <h3>५. जीवनाशक विषादी व्यवस्थापन ऐन, २०७६</h3>
+                        <span class="law-badge">पर्यावरण तथा स्वास्थ्य</span>
+                    </div>
+                    <p class="law-desc">मानव स्वास्थ्य, पशु र वातावरण जोगाउन विषादी नियमन सम्बन्धी कानुन:</p>
+                    <ul class="law-keypoints">
+                        <li><strong>विषादीको नियमन:</strong> प्रतिबन्धित घातक रासायनिक विषादीको आयात, बिक्री र प्रयोगमा पूर्ण रोक।</li>
+                        <li><strong>प्रशिक्षित बिक्रेता:</strong> अनुमतिपत्र (License) प्राप्त र तालिम लिएका व्यक्तिले मात्र कृषि औषधि तथा विषादी बिक्री गर्न सक्ने।</li>
+                        <li><strong>जैविक विषादी प्रवर्द्धन:</strong> वनस्पतीय तथा जैविक विषादीलाई प्राथमिकता दिने कानुनी प्रावधान।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Act 6 -->
+            <div class="law-card">
+                <div class="law-card-top">
+                    <div class="law-header-flex">
+                        <h3>६. पशु स्वास्थ्य तथा पशु सेवा ऐन, २०५५</h3>
+                        <span class="law-badge">रोग नियन्त्रण ऐन</span>
+                    </div>
+                    <p class="law-desc">पशु उपचार, खोप व्यवस्था र संक्रामक रोग रोकथामको कानुनी प्रावधान:</p>
+                    <ul class="law-keypoints">
+                        <li><strong>महामारी नियन्त्रण:</strong> खोरेत, लम्पी स्किन, स्वाइन फिभर जस्ता महामारी फैलिएमा निश्चित क्षेत्रलाई सङ्क्रमित क्षेत्र घोषणा गर्न सकिने।</li>
+                        <li><strong>क्वारेन्टाइन मापदण्ड:</strong> सीमा नाकामा पशु तथा पशुजन्य पदार्थको अनिवार्य स्वास्थ्य जाँच र क्वारेन्टाइन प्रमाणपत्र।</li>
+                        <li><strong>औषधि गुणस्तर:</strong> पशु उपचारमा प्रयोग हुने औषधिको दर्ता र प्राविधिक सुपरीवेक्षण।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Act 7 -->
+            <div class="law-card">
+                <div class="law-card-top">
+                    <div class="law-header-flex">
+                        <h3>७. लुम्बिनी प्रदेश कृषि विकास तथा पशु ऐन</h3>
+                        <span class="law-badge">प्रदेश कानुन (पाल्पा विशेष)</span>
+                    </div>
+                    <p class="law-desc">लुम्बिनी प्रदेश सरकारद्वारा जारी गरिएको एकीकृत कृषि तथा पशु विकास नीति:</p>
+                    <ul class="law-keypoints">
+                        <li><strong>उत्पादनमा आधारित अनुदान:</strong> दूध (प्रति लिटर), खसी-बोका मासु र मह उत्पादनमा सिधै किसानको खातामा जाने अनुदान।</li>
+                        <li><strong>कृषि तथा पशु बीमा:</strong> प्रिमियममा प्रदेश सरकारको थप सहुलियत, क्षति हुँदा तत्काल दाबी भुक्तानी।</li>
+                        <li><strong>बाली संरक्षण तथा शीतभण्डार:</strong> प्रदेशभित्र संकलन केन्द्र, साना कोल्ड स्टोर र बीउ प्रशोधन प्लान्ट स्थापनामा सह-लगानी।</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Act 8 -->
+            <div class="law-card">
+                <div class="law-card-top">
+                    <div class="law-header-flex">
+                        <h3>८. राष्ट्रिय चिया तथा कफी विकास बोर्ड ऐन, २०४९</h3>
+                        <span class="law-badge">विशेष बाली ऐन</span>
+                    </div>
+                    <p class="law-desc">पाल्पाको प्रख्यात कफी खेती प्रवर्द्धन तथा निकासी सम्बन्धी ऐन:</p>
+                    <ul class="law-keypoints">
+                        <li><strong>कफी खेती प्रवर्द्धन:</strong> उच्च पहाडी क्षेत्रमा प्राङ्गारिक कफी खेती विस्तार, नर्सरी व्यवस्थापन र प्राविधिक टेवा।</li>
+                        <li><strong>अन्तर्राष्ट्रिय बजार:</strong> पाल्पाली कफीको ब्रान्डिङ, गुणस्तर मापदण्ड र निर्यात सहजीकरण।</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-      </div>
     </section>
 
-    <section class="section" id="nature" style="background:#fff">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-mountain-sun"></i> नेपाल दर्शन</span>
-          <h2 class="section-title">हिमालदेखि तराईसम्म</h2>
-          <p class="section-lead">नेपालको प्राकृतिक सौन्दर्य, कृषि भू-दृश्य र क्षेत्रगत उत्पादनलाई एउटै दृश्यमा प्रस्तुत गर्ने भाग।</p>
+    <!-- 8. LIVESTOCK HEALTH & DISEASES -->
+    <section id="livestock" class="container" style="background: var(--sky-100); border-radius: 16px;">
+        <div class="section-header">
+            <span class="section-tag">पशु-पंक्षी उपचार तथा सचेतना</span>
+            <h2 class="section-title">पशु तथा पंक्षीमा लाग्ने मुख्य रोगहरू</h2>
+            <p class="section-subtitle">गाईभैंसी, कुखुरा र बंगुरमा देखिने प्रमुख लक्षण, घरेलु सावधानी र रोकथाम</p>
         </div>
 
-        <div class="gallery">
-          <div class="gallery-item big"><div class="scene">🏔️</div><div class="gallery-label">सगरमाथा / हिमाली क्षेत्र</div></div>
-          <div class="gallery-item"><div class="scene">🌾</div><div class="gallery-label">हरियाली तराईका खेत</div></div>
-          <div class="gallery-item"><div class="scene">🍊</div><div class="gallery-label">पहाडका सुन्तला बगैँचा</div></div>
-          <div class="gallery-item"><div class="scene">🍎</div><div class="gallery-label">हिमाली/उच्च पहाडी स्याउ</div></div>
-          <div class="gallery-item"><div class="scene">🌲</div><div class="gallery-label">पहाड र वन</div></div>
+        <div class="grid-3">
+            <!-- Cattle Card -->
+            <div class="card">
+                <span class="card-category-badge">गाई / भैंसी / बाख्रा</span>
+                <h3>पशुका मुख्य रोगहरू</h3>
+                
+                <div class="disease-item">
+                    <div class="disease-name">१. खोरेत (Foot and Mouth Disease)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> गिँजा र खुरको कापमा पानीका फोका, र्‍याल चुहिने र हिंड्न नसक्ने।<br><strong>रोकथाम:</strong> वर्षको २ पटक नियमित खोप लगाउने।</div>
+                </div>
+
+                <div class="disease-item">
+                    <div class="disease-name">२. लम्पी स्किन (Lumpy Skin Disease)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> कडा ज्वरो, शरीरभरि गाँठागुँठी देखिने र खुट्टा सुन्निने।<br><strong>रोकथाम:</strong> गोटपक्स भ्याक्सिन लगाउने, लामखुट्टे नियन्त्रण गर्ने।</div>
+                </div>
+
+                <div class="disease-item">
+                    <div class="disease-name">३. भ्यागुते रोग (Haemorrhagic Septicaemia)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> घाँटी सुन्निने, घुरघुर आवाज निकालेर सास फेर्ने।<br><strong>रोकथाम:</strong> बर्खा सुरु हुनुअघि नै भ्यागुते खोप लगाउने।</div>
+                </div>
+            </div>
+
+            <!-- Poultry Card -->
+            <div class="card">
+                <span class="card-category-badge">कुखुरा (Poultry)</span>
+                <h3>कुखुराका मुख्य रोगहरू</h3>
+                
+                <div class="disease-item">
+                    <div class="disease-name">१. रानीखेत (Newcastle Disease)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> हरियो छेर्ने, घाँटी बटार्ने, सास फेर्न गाह्रो हुने।<br><strong>रोकथाम:</strong> F1 र LaSota खोप नियमित तालिका अनुसार अनिवार्य दिने।</div>
+                </div>
+
+                <div class="disease-item">
+                    <div class="disease-name">२. गम्बोरो (IBD)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> सेतो पानीजस्तो दिशा गर्ने, कुखुरा झोक्राउने।<br><strong>रोकथाम:</strong> कडा जैविक सुरक्षा (Biosecurity) र IBD खोप।</div>
+                </div>
+
+                <div class="disease-item">
+                    <div class="disease-name">३. कक्सिडिओसिस (रगत छेर्ने)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> दिसामा रगत देखिने, तौल घट्ने र झोक्राउने।<br><strong>रोकथाम:</strong> खोरको सोत्तर सधैं सुक्खा राख्ने र एम्पोलियम चलाउने।</div>
+                </div>
+            </div>
+
+            <!-- Swine Card -->
+            <div class="card">
+                <span class="card-category-badge">बंगुर (Swine)</span>
+                <h3>बंगुरका मुख्य रोगहरू</h3>
+                
+                <div class="disease-item">
+                    <div class="disease-name">१. अफ्रिकन स्वाइन फिभर (ASF)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> कडा ज्वरो, कान र पेटको छालामा नीलो/रातो डाम, मृत्युदर १००% सम्म।<br><strong>रोकथाम:</strong> होटलको फोहोर दाना नउमाली नखुवाउने।</div>
+                </div>
+
+                <div class="disease-item">
+                    <div class="disease-name">२. स्वाइन फिभर (Classical Swine Fever)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> आँखामा चिप्रा, कडा पखाला र शरीर काम्ने।<br><strong>रोकथाम:</strong> ६-६ महिनामा स्वाइन फिभरको खोप लगाउने।</div>
+                </div>
+
+                <div class="disease-item">
+                    <div class="disease-name">३. आन्तरिक परजीवी तथा जुका</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> पेट फुल्ने, दाना खाए पनि तौल नबढ्ने।<br><strong>रोकथाम:</strong> ३ महिनाको फरकमा जुकाको औषधि दिने।</div>
+                </div>
+            </div>
         </div>
-        <p class="note">तस्बिर थप्न GitHub मा <b>images/</b> folder बनाएर आफ्ना मौलिक/अनुमति प्राप्त फोटोहरू राख्न सक्नुहुन्छ।</p>
-      </div>
     </section>
 
-    <section class="section" id="gov">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-building-columns"></i> सरकारी स्रोत</span>
-          <h2 class="section-title">नेपाल सरकारका उपयोगी वेबसाइटहरू</h2>
-          <p class="section-lead">आधिकारिक सूचना, तथ्याङ्क, कानून र पशु स्वास्थ्यसम्बन्धी नयाँ जानकारीका लागि मूल स्रोत प्रयोग गर्नुहोस्।</p>
+    <!-- 9. VEGETABLE PRICE LIST -->
+    <section id="prices" class="container">
+        <div class="section-header">
+            <span class="section-tag">बजार दरभाउ</span>
+            <h2 class="section-title">दैनिक तरकारीको थोक तथा खुद्रा मूल्यसूची</h2>
+            <p class="section-subtitle">कालीमाटी फलफूल तथा तरकारी बजार विकास समिति तथा स्थानीय बजारमा आधारित सन्दर्भ दर</p>
         </div>
-        <div class="grid grid-2">
-          <div class="gov"><div class="icon"><i class="fa-solid fa-chart-column"></i></div><div><h3>राष्ट्रिय तथ्याङ्क कार्यालय</h3><a href="https://nsonepal.gov.np/" target="_blank" rel="noopener">nsonepal.gov.np</a><p class="note">जनगणना तथा राष्ट्रिय तथ्याङ्क।</p></div></div>
-          <div class="gov"><div class="icon"><i class="fa-solid fa-cow"></i></div><div><h3>पशु सेवा विभाग</h3><a href="https://dls.gov.np/" target="_blank" rel="noopener">dls.gov.np</a><p class="note">पशु स्वास्थ्य, रोग सूचना, सेवा तथा तथ्याङ्क।</p></div></div>
-          <div class="gov"><div class="icon"><i class="fa-solid fa-scale-balanced"></i></div><div><h3>नेपाल कानून आयोग</h3><a href="https://lawcommission.gov.np/" target="_blank" rel="noopener">lawcommission.gov.np</a><p class="note">ऐन, नियम तथा कानुनी सामग्री।</p></div></div>
-          <div class="gov"><div class="icon"><i class="fa-solid fa-database"></i></div><div><h3>NSO Microdata</h3><a href="https://microdata.nsonepal.gov.np/" target="_blank" rel="noopener">microdata.nsonepal.gov.np</a><p class="note">गणना तथा सर्वेक्षणका dataset/catalog।</p></div></div>
-          <div class="gov"><div class="icon"><i class="fa-solid fa-seedling"></i></div><div><h3>कृषि तथा सम्बन्धित सरकारी स्रोत</h3><a href="https://www.moald.gov.np/" target="_blank" rel="noopener">moald.gov.np</a><p class="note">कृषि नीति, कार्यक्रम तथा मन्त्रालयसम्बन्धी सूचना।</p></div></div>
-          <div class="gov"><div class="icon"><i class="fa-solid fa-globe"></i></div><div><h3>NAHIS / पशु रोग सूचना</h3><a href="https://nahis.gov.np/" target="_blank" rel="noopener">nahis.gov.np</a><p class="note">पशु स्वास्थ्य तथा रोग निगरानीसम्बन्धी सूचना उपलब्ध हुने आधिकारिक प्रणाली।</p></div></div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>तरकारीको नाम</th>
+                        <th>एकाइ</th>
+                        <th>न्यूनतम मूल्य (रु)</th>
+                        <th>अधिकतम मूल्य (रु)</th>
+                        <th>औसत मूल्य (रु)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>गोलभेंडा ठूलो (नेपाली)</strong></td>
+                        <td>के.जी.</td>
+                        <td>रु. ४०</td>
+                        <td>रु. ५०</td>
+                        <td>रु. ४५</td>
+                    </tr>
+                    <tr>
+                        <td><strong>आलु रातो</strong></td>
+                        <td>के.जी.</td>
+                        <td>रु. ५०</td>
+                        <td>रु. ५५</td>
+                        <td>रु. ५२</td>
+                    </tr>
+                    <tr>
+                        <td><strong>प्याज सुकेको (भारतीय)</strong></td>
+                        <td>के.जी.</td>
+                        <td>रु. ७०</td>
+                        <td>रु. ७५</td>
+                        <td>रु. ७२</td>
+                    </tr>
+                    <tr>
+                        <td><strong>काउली स्थानीय</strong></td>
+                        <td>के.जी.</td>
+                        <td>रु. ६०</td>
+                        <td>रु. ७०</td>
+                        <td>रु. ६५</td>
+                    </tr>
+                    <tr>
+                        <td><strong>बन्दा स्थानीय</strong></td>
+                        <td>के.जी.</td>
+                        <td>रु. ३०</td>
+                        <td>रु. ३५</td>
+                        <td>रु. ३२</td>
+                    </tr>
+                    <tr>
+                        <td><strong>सिमी (घिउ)</strong></td>
+                        <td>के.जी.</td>
+                        <td>रु. ७०</td>
+                        <td>रु. ८०</td>
+                        <td>रु. ७५</td>
+                    </tr>
+                    <tr>
+                        <td><strong>च्याउ (कन्य)</strong></td>
+                        <td>के.जी.</td>
+                        <td>रु. १४०</td>
+                        <td>रु. १६०</td>
+                        <td>रु. १५०</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-      </div>
     </section>
 
-    <section class="section about" id="about">
-      <div class="container about-grid">
-        <div>
-          <span class="eyebrow" style="color:#a7f3d0"><i class="fa-solid fa-user"></i> मेरो परिचय</span>
-          <h2 class="section-title">झविन्द्र पोखरेल</h2>
-          <p class="section-lead">
-            Veterinary Technician का रूपमा पशु स्वास्थ्य, कृषि तथा ग्रामीण जीवनसँग जोडिएका
-            ज्ञान र उपयोगी स्रोतलाई डिजिटल रूपमा प्रस्तुत गर्ने उद्देश्यले यो वेबसाइट तयार गरिएको हो।
-          </p>
-          <div class="contact-list">
-            <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span>Palpa, Nepal</span></div>
-            <div class="contact-item"><i class="fa-solid fa-briefcase"></i><span>Veterinary Technician</span></div>
-          </div>
+    <!-- 10. GOVERNMENT WEBSITES -->
+    <section id="govt" class="container" style="background: #ffffff; border-radius: 16px; border: 1px solid var(--border-light);">
+        <div class="section-header">
+            <span class="section-tag">आधिकारिक स्रोत</span>
+            <h2 class="section-title">नेपालका मुख्य सरकारी वेबसाइटहरू</h2>
+            <p class="section-subtitle">कृषि, पशु सेवा, कानुन तथा मौसम सम्बन्धी आधिकारिक पोर्टलहरू</p>
         </div>
-        <div class="about-card">
-          <h3>वेबसाइटको उद्देश्य</h3>
-          <p style="margin-top:10px">
-            किसान, पशुपालक, विद्यार्थी तथा कृषि/पशु क्षेत्रसँग रुचि राख्ने व्यक्तिले
-            नेपालका कृषि, पशुपन्छी, रोग, तथ्याङ्क र कानुनी स्रोतलाई एउटै ठाउँबाट बुझ्न सकून्।
-          </p>
-          <div class="socials">
-            <!-- आफ्ना वास्तविक social links यहाँ राख्नुहोस् -->
-            <a href="#" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="X" title="X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" aria-label="TikTok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-          </div>
+
+        <div class="govt-grid">
+            <a href="https://nepal.gov.np" target="_blank" class="govt-card">
+                <span>नेपाल सरकार राष्ट्रिय पोर्टल</span> ↗
+            </a>
+            <a href="https://moald.gov.np" target="_blank" class="govt-card">
+                <span>कृषि तथा पशुपन्छी विकास मन्त्रालय</span> ↗
+            </a>
+            <a href="https://dls.gov.np" target="_blank" class="govt-card">
+                <span>पशु सेवा विभाग (DLS)</span> ↗
+            </a>
+            <a href="https://doanepal.gov.np" target="_blank" class="govt-card">
+                <span>कृषि विभाग (DoA)</span> ↗
+            </a>
+            <a href="https://molmac.lumbini.gov.np" target="_blank" class="govt-card">
+                <span>कृषि मन्त्रालय, लुम्बिनी प्रदेश</span> ↗
+            </a>
+            <a href="https://kalimatimarket.gov.np" target="_blank" class="govt-card">
+                <span>कालीमाटी तरकारी बजार समिति</span> ↗
+            </a>
+            <a href="https://lawcommission.gov.np" target="_blank" class="govt-card">
+                <span>नेपाल कानुन आयोग</span> ↗
+            </a>
+            <a href="https://mfd.gov.np" target="_blank" class="govt-card">
+                <span>मौसम पूर्वानुमान महाशाखा</span> ↗
+            </a>
         </div>
-      </div>
     </section>
 
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-paper-plane"></i> सम्पर्क</span>
-          <h2 class="section-title">सम्पर्क गर्नुहोस्</h2>
-          <p class="section-lead">व्यक्तिगत तथा व्यावसायिक सम्पर्कका लागि तलका माध्यम प्रयोग गर्नुहोस्।</p>
+    <!-- 11. FOOTER -->
+    <footer>
+        <h3>झबिन्द्र पोखरेल (Jhabindra Pokharel) पोर्टल</h3>
+        <p>स्काई ब्लु (Sky Blue 🔵) आधुनिक थिम - कृषि संघ ऐन, पाल्पा पहिचान, पशु स्वास्थ्य तथा बौद्ध दर्शन</p>
+        <div class="copyright">
+            &copy; 2026 झबिन्द्र पोखरेल। सर्वाधिकार सुरक्षित।
         </div>
-        <div class="grid grid-3">
-          <a class="card" href="tel:9857028756"><div class="icon"><i class="fa-solid fa-phone"></i></div><h3>फोन</h3><p>9857028756</p></a>
-          <a class="card" href="mailto:jpsharmac@gmail.com"><div class="icon"><i class="fa-solid fa-envelope"></i></div><h3>इमेल</h3><p>jpsharmac@gmail.com</p></a>
-          <a class="card" href="https://jhabindrapokharel.com.np/" target="_blank" rel="noopener"><div class="icon"><i class="fa-solid fa-globe"></i></div><h3>वेबसाइट</h3><p>jhabindrapokharel.com.np</p></a>
-        </div>
-      </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer>
-    <div class="container footer-inner">
-      <div><strong>झविन्द्र पोखरेल</strong><br><span class="tiny">Veterinary • Agriculture • Nepal Knowledge Portal</span></div>
-      <div class="tiny">© <span id="year"></span> All rights reserved.</div>
-    </div>
-  </footer>
+    <!-- REALTIME NEPAL CLOCK SCRIPT -->
+    <script>
+        function updateNepalTime() {
+            const now = new Date();
+            // Nepal Standard Time is UTC + 5:45
+            const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
+            const nepalTime = new Date(utcTime + (3600000 * 5.75));
+            
+            const hours = String(nepalTime.getHours()).padStart(2, '0');
+            const minutes = String(nepalTime.getMinutes()).padStart(2, '0');
+            const seconds = String(nepalTime.getSeconds()).padStart(2, '0');
+            
+            const timeString = `${hours}:${minutes}:${seconds} NPT`;
+            const clockElement = document.getElementById('nepal-live-clock');
+            if (clockElement) {
+                clockElement.innerText = timeString;
+            }
+        }
+        setInterval(updateNepalTime, 1000);
+        updateNepalTime();
 
-
-  <button class="admin-btn" id="adminOpen" title="Admin Panel" aria-label="Admin Panel"><i class="fa-solid fa-lock"></i></button>
-  <div class="modal" id="adminModal" aria-hidden="true">
-    <div class="modal-box">
-      <div class="modal-head"><div><h2>🔐 Admin Panel</h2><p class="note">समाचार व्यवस्थापन — यस static version मा data यही browser को localStorage मा सुरक्षित हुन्छ।</p></div><button class="close-btn" id="adminClose"><i class="fa-solid fa-xmark"></i></button></div>
-      <div id="loginView">
-        <form class="admin-form" id="loginForm"><label>Admin Password</label><input id="adminPassword" type="password" placeholder="Password" required><button class="btn btn-primary" type="submit"><i class="fa-solid fa-right-to-bracket"></i> Login</button><p class="note">Demo password: <b>admin123</b> — वास्तविक सुरक्षित login का लागि backend/Firebase/Supabase जोड्नुहोस्।</p></form>
-      </div>
-      <div id="dashboardView" class="hidden">
-        <form class="admin-form" id="newsForm">
-          <input id="editId" type="hidden">
-          <label>शीर्षक</label><input id="newsTitle" required placeholder="समाचारको शीर्षक">
-          <label>Category</label><select id="newsCategory"><option>समाचार</option><option>कृषि</option><option>पशुपन्छी</option><option>स्वास्थ्य</option><option>नेपाल</option><option>सूचना</option></select>
-          <label>फोटो URL (optional)</label><input id="newsImage" placeholder="https://...">
-          <label>समाचार विवरण</label><textarea id="newsText" required placeholder="समाचारको विवरण लेख्नुहोस्..."></textarea>
-          <label><input id="newsPublished" type="checkbox" checked> Publish गर्ने</label>
-          <div class="admin-actions"><button class="btn btn-primary" type="submit"><i class="fa-solid fa-plus"></i> <span id="saveLabel">समाचार थप्नुहोस्</span></button><button class="btn btn-light" type="button" id="cancelEdit">Cancel</button><button class="btn btn-light" type="button" id="logoutBtn">Logout</button></div>
-        </form>
-        <div class="admin-list" id="adminList"></div>
-      </div>
-    </div>
-  </div>
-
-  <button class="top" id="topBtn" aria-label="माथि जानुहोस्"><i class="fa-solid fa-arrow-up"></i></button>
-
-  <script>
-    // Mobile menu
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("open");
-      menuBtn.innerHTML = mobileMenu.classList.contains("open")
-        ? '<i class="fa-solid fa-xmark"></i>'
-        : '<i class="fa-solid fa-bars"></i>';
-    });
-    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-      mobileMenu.classList.remove("open");
-      menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    }));
-
-    // Daily quote
-    const quotes = [
-      "ज्ञान, मेहनत र सेवाले समाजलाई अगाडि बढाउँछ।",
-      "स्वस्थ पशु, समृद्ध किसान र सुरक्षित खाद्य प्रणाली — समृद्ध नेपालको आधार।",
-      "कृषिमा प्रविधि जोडौँ, उत्पादन र आम्दानी बढाऔँ।",
-      "आजको सानो सुधारले भोलिको ठूलो परिणाम दिन सक्छ।",
-      "प्रकृति जोगाउँदै उत्पादन बढाउनु नै दिगो विकासको बाटो हो।",
-      "किसानको ज्ञान र अनुभवलाई विज्ञान तथा प्रविधिसँग जोडौँ।",
-      "स्वास्थ्यमा रोकथाम उपचारभन्दा प्रभावकारी हुन्छ।",
-      "पशु कल्याण, मानव स्वास्थ्य र वातावरण एकअर्कासँग जोडिएका छन्।",
-      "स्थानीय उत्पादनलाई आधुनिक बजारसँग जोड्नु आवश्यक छ।",
-      "सिक्दै, सिकाउँदै र सेवा गर्दै अघि बढौँ।"
-    ];
-    const now = new Date();
-    const start = new Date(now.getFullYear(),0,0);
-    const day = Math.floor((now - start) / 86400000);
-    document.getElementById("dailyQuote").textContent = quotes[day % quotes.length];
-    document.getElementById("quoteDate").textContent =
-      new Intl.DateTimeFormat("ne-NP", {year:"numeric", month:"long", day:"numeric"}).format(now);
-
-    // Disease search
-    const diseaseSearch = document.getElementById("diseaseSearch");
-    const diseaseCards = [...document.querySelectorAll("#diseaseGrid .disease")];
-    diseaseSearch.addEventListener("input", e => {
-      const q = e.target.value.trim().toLowerCase();
-      diseaseCards.forEach(card => {
-        card.style.display = card.dataset.name.includes(q) ? "" : "none";
-      });
-    });
-
-
-    // ===== News + Admin Management (static browser version) =====
-    const NEWS_KEY = "jhabindra_news_v1";
-    const ADMIN_LOGGED = "jhabindra_admin_logged";
-    const adminOpen = document.getElementById("adminOpen"), adminModal = document.getElementById("adminModal");
-    const adminClose = document.getElementById("adminClose");
-    const loginView = document.getElementById("loginView"), dashboardView = document.getElementById("dashboardView");
-    const newsGrid = document.getElementById("newsGrid"), noNews = document.getElementById("noNews");
-    const newsForm = document.getElementById("newsForm"), adminList = document.getElementById("adminList");
-    const esc = v => String(v ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-    const getNews = () => { try{return JSON.parse(localStorage.getItem(NEWS_KEY)||"[]")}catch{return []} };
-    const saveNews = a => localStorage.setItem(NEWS_KEY, JSON.stringify(a));
-    function renderNews(){
-      const q=(document.getElementById("newsSearch").value||"").trim().toLowerCase();
-      const items=getNews().filter(n=>n.published && (!q || (n.title+" "+n.text+" "+n.category).toLowerCase().includes(q))).sort((a,b)=>b.date-a.date);
-      newsGrid.innerHTML=items.map(n=>`<article class="news-card">${n.image?`<img src="${esc(n.image)}" alt="${esc(n.title)}" onerror="this.style.display='none'">`:``}<div class="news-body"><div class="news-meta">${esc(n.category)} • ${new Date(n.date).toLocaleDateString("ne-NP")}</div><h3>${esc(n.title)}</h3><p>${esc(n.text)}</p></div></article>`).join("");
-      noNews.classList.toggle("hidden",items.length>0);
-    }
-    function renderAdmin(){
-      adminList.innerHTML=getNews().sort((a,b)=>b.date-a.date).map(n=>`<div class="admin-item"><div><b>${esc(n.title)}</b><br><small>${esc(n.category)} • ${n.published?"Published":"Unpublished"}</small></div><div class="admin-actions"><button class="btn btn-light" onclick="editNews('${n.id}')">Edit</button><button class="btn btn-light" onclick="toggleNews('${n.id}')">${n.published?"Unpublish":"Publish"}</button><button class="btn btn-light" onclick="deleteNews('${n.id}')">Delete</button></div></div>`).join("");
-    }
-    function openAdmin(){adminModal.classList.add("open"); if(localStorage.getItem(ADMIN_LOGGED)==="1"){loginView.classList.add("hidden");dashboardView.classList.remove("hidden");renderAdmin()}else{loginView.classList.remove("hidden");dashboardView.classList.add("hidden")}}
-    adminOpen.addEventListener("click",openAdmin); adminClose.addEventListener("click",()=>adminModal.classList.remove("open"));
-    adminModal.addEventListener("click",e=>{if(e.target===adminModal)adminModal.classList.remove("open")});
-    document.getElementById("loginForm").addEventListener("submit",e=>{e.preventDefault();if(document.getElementById("adminPassword").value==="admin123"){localStorage.setItem(ADMIN_LOGGED,"1");openAdmin()}else alert("गलत password");});
-    newsForm.addEventListener("submit",e=>{e.preventDefault();let a=getNews(), id=document.getElementById("editId").value;let n={id:id||Date.now().toString(),title:document.getElementById("newsTitle").value.trim(),category:document.getElementById("newsCategory").value,image:document.getElementById("newsImage").value.trim(),text:document.getElementById("newsText").value.trim(),published:document.getElementById("newsPublished").checked,date:id?(a.find(x=>x.id===id)?.date||Date.now()):Date.now()};a=id?a.map(x=>x.id===id?n:x):[n,...a];saveNews(a);newsForm.reset();document.getElementById("editId").value="";document.getElementById("newsPublished").checked=true;document.getElementById("saveLabel").textContent="समाचार थप्नुहोस्";renderAdmin();renderNews();alert("समाचार सुरक्षित भयो।")});
-    document.getElementById("cancelEdit").addEventListener("click",()=>{newsForm.reset();document.getElementById("editId").value="";document.getElementById("saveLabel").textContent="समाचार थप्नुहोस्";document.getElementById("newsPublished").checked=true});
-    document.getElementById("logoutBtn").addEventListener("click",()=>{localStorage.removeItem(ADMIN_LOGGED);openAdmin()});
-    window.editNews=id=>{const n=getNews().find(x=>x.id===id);if(!n)return;document.getElementById("editId").value=n.id;document.getElementById("newsTitle").value=n.title;document.getElementById("newsCategory").value=n.category;document.getElementById("newsImage").value=n.image||"";document.getElementById("newsText").value=n.text;document.getElementById("newsPublished").checked=n.published;document.getElementById("saveLabel").textContent="समाचार Update गर्नुहोस्"};
-    window.toggleNews=id=>{let a=getNews();a=a.map(n=>n.id===id?{...n,published:!n.published}:n);saveNews(a);renderAdmin();renderNews()};
-    window.deleteNews=id=>{if(confirm("यो समाचार Delete गर्ने?")){saveNews(getNews().filter(n=>n.id!==id));renderAdmin();renderNews()}};
-    document.getElementById("newsSearch").addEventListener("input",renderNews);
-    renderNews();
-
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Back to top
-    document.getElementById("topBtn").addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
-  </script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const open = navLinks.classList.toggle('open');
+                mobileMenuBtn.setAttribute('aria-expanded', String(open));
+            });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
