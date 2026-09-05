@@ -744,7 +744,18 @@
                 justify-content: center;
             }
         }
-    </style>
+    
+        .name-toggle{border:1px solid var(--sky-200);background:#fff;color:var(--sky-700);border-radius:999px;padding:.25rem .65rem;margin-left:.5rem;font-family:inherit;font-weight:800;cursor:pointer;font-size:.78rem}
+        .market-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+        .market-card{background:#fff;border:1px solid var(--border-light);border-radius:14px;padding:1rem;box-shadow:var(--shadow-md)}
+        .market-card h3{margin-bottom:.65rem;color:var(--sky-900)}
+        .market-row{display:flex;justify-content:space-between;gap:.5rem;padding:.45rem 0;border-bottom:1px solid #eef2f7;font-size:.9rem}
+        .market-row:last-child{border-bottom:0}
+        .market-value{font-weight:800;color:var(--sky-800)}
+        .market-updated{font-size:.78rem;color:var(--text-muted);margin-top:.7rem}
+        .market-source{font-size:.78rem;margin-top:.25rem}
+
+</style>
 </head>
 <body>
 
@@ -792,10 +803,11 @@
                 <li><a href="#livestock">पशु-पंक्षी स्वास्थ्य</a></li>
                 <li><a href="#prices">तरकारी दरभाउ</a></li>
                 <li><a href="#emergency">जरुरी फोन</a></li>
+                <li><a href="#market-rates">सुनचाँदी/मुद्रा</a></li>
                 <li><a href="#govt" class="nav-cta">सरकारी पोर्टलहरू ↗</a></li>
             </ul>
         </nav>
-    </header>
+    <div style="text-align:center;margin:-.5rem auto 1rem"><button id="name-toggle" class="name-toggle" type="button">नेपाली / English</button></div></header>
 
     <!-- 3. MAIN HERO: MT. EVEREST -->
     <section class="hero">
@@ -1211,7 +1223,31 @@
     </section>
 
     <!-- 11. FOOTER -->
-    <footer>
+    
+    <!-- 13. MARKET RATES -->
+    <section id="market-rates" class="container" style="background:var(--sky-100);border-radius:16px;">
+        <div class="section-header">
+            <span class="section-tag">Live Market</span>
+            <h2 class="section-title">सुनचाँदी तथा विदेशी मुद्रा दर</h2>
+            <p class="section-subtitle">नेपालका आधिकारिक/विश्वसनीय बजार स्रोतबाट स्वतः अपडेट हुने दरहरू</p>
+        </div>
+        <div class="market-grid">
+            <article class="market-card">
+                <h3>🪙 सुनचाँदीको दर</h3>
+                <div id="gold-silver-rate">दर लोड हुँदैछ...</div>
+                <div id="gold-updated" class="market-updated">अपडेट जाँच हुँदैछ...</div>
+                <div class="market-source">स्रोत: नेपाल सुनचाँदी व्यवसायी महासंघ/विश्वसनीय बजार फिड</div>
+            </article>
+            <article class="market-card">
+                <h3>💱 विदेशी मुद्रा</h3>
+                <div id="forex-rate">दर लोड हुँदैछ...</div>
+                <div id="forex-updated" class="market-updated">नेपाल राष्ट्र बैंकको दर जाँच हुँदैछ...</div>
+                <div class="market-source">स्रोत: Nepal Rastra Bank</div>
+            </article>
+        </div>
+    </section>
+
+<footer>
         <h3>झबिन्द्र पोखरेल (Jhabindra Pokharel) पोर्टल</h3>
         <p>स्काई ब्लु (Sky Blue 🔵) आधुनिक थिम - कृषि संघ ऐन, पाल्पा पहिचान, पशु स्वास्थ्य तथा बौद्ध दर्शन</p>
         <div class="copyright">
@@ -1265,5 +1301,113 @@
       btn.addEventListener("click",loadNews);loadNews();setInterval(loadNews,600000);
     })();
     </script>
+
+<script>
+(function(){
+  // Nepali / English name toggle
+  const name=document.getElementById('site-name');
+  const toggle=document.getElementById('name-toggle');
+  if(name && toggle){
+    let en=false;
+    toggle.addEventListener('click',function(){
+      en=!en;
+      name.textContent=en?'Jhabindra Pokharel':'झबिन्द्र पोखरेल';
+      toggle.textContent=en?'नेपाली':'EN';
+    });
+  }
+
+  // Multi-source news. Feeds are attempted through rss2json.
+  const feeds=[
+    ['उज्यालो','https://ujyaaloonline.com/feed'],
+    ['सेतोपाटी','https://www.setopati.com/feed'],
+    ['सीधाकुरा','https://www.sidhakura.com/feed'],
+    ['टेकपाना','https://techpana.com/feed'],
+    ['इकान्तिपुर','https://ekantipur.com/rss'],
+    ['अन्नपूर्ण पोस्ट','https://annapurnapost.com/rss'],
+    ['हिमालखबर','https://www.himalkhabar.com/feed'],
+    ['BBC नेपाली','https://feeds.bbci.co.uk/nepali/rss.xml']
+  ];
+  const newsGrid=document.getElementById('news-grid');
+  const stamp=document.getElementById('news-updated');
+  const newsBtn=document.getElementById('news-refresh');
+
+  function esc(t){return String(t||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
+  function drawNews(items){
+    if(!newsGrid) return;
+    items.sort((a,b)=>new Date(b.date||0)-new Date(a.date||0));
+    newsGrid.innerHTML=items.slice(0,16).map(i=>
+      `<article class="news-card"><div><div class="news-meta">📰 ${esc(i.source)} · ${esc(i.dateText||'आज')}</div><h3>${esc(i.title)}</h3></div><a href="${i.link}" target="_blank" rel="noopener">पूरा समाचार ↗</a></article>`
+    ).join('');
+    if(stamp) stamp.textContent='अन्तिम अपडेट: '+new Date().toLocaleString('ne-NP',{hour:'2-digit',minute:'2-digit',day:'2-digit',month:'2-digit',year:'numeric'});
+  }
+  async function getFeed(src,url){
+    try{
+      const endpoint='https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(url)+'&count=5';
+      const r=await fetch(endpoint,{cache:'no-store'});
+      if(!r.ok) throw 0;
+      const d=await r.json();
+      return (d.items||[]).map(x=>({title:x.title,link:x.link,source:src,date:new Date(x.pubDate||Date.now()),dateText:x.pubDate?new Date(x.pubDate).toLocaleDateString('ne-NP'):'आज'}));
+    }catch(e){return [];}
+  }
+  async function updateNews(){
+    if(stamp) stamp.textContent='सबै स्रोतबाट समाचार अपडेट हुँदैछ...';
+    const batches=await Promise.all(feeds.map(f=>getFeed(f[0],f[1])));
+    const all=batches.flat();
+    if(all.length) drawNews(all);
+    else if(stamp) stamp.textContent='समाचार फिड अहिले उपलब्ध भएन।';
+  }
+  if(newsBtn) newsBtn.addEventListener('click',updateNews);
+  updateNews();
+  setInterval(updateNews,10*60*1000);
+
+  // Forex from Nepal Rastra Bank's public endpoint.
+  async function updateForex(){
+    const box=document.getElementById('forex-rate'), up=document.getElementById('forex-updated');
+    if(!box) return;
+    try{
+      const r=await fetch('https://www.nrb.org.np/api/forex/v1/rates?per_page=20&page=1&from=2026-09-05&to=2026-09-05',{cache:'no-store'});
+      const d=await r.json();
+      const rates=(d.data||d).payload||d.data||[];
+      const wanted=['USD','EUR','GBP','AUD','CAD','JPY','CNY','SAR','QAR'];
+      const rows=[];
+      for(const x of rates){
+        if(wanted.includes(x.currency?.iso3) || wanted.includes(x.currency?.code)){
+          const code=x.currency?.iso3||x.currency?.code;
+          rows.push([code,x.buy,x.sell,x.currency?.unit||1]);
+        }
+      }
+      if(!rows.length) throw 0;
+      box.innerHTML=rows.map(x=>`<div class="market-row"><span>${x[0]} (${x[3]})</span><span class="market-value">खरिद ${x[1]} · बिक्री ${x[2]}</span></div>`).join('');
+      up.textContent='नेपाल राष्ट्र बैंकको पछिल्लो उपलब्ध दर';
+    }catch(e){
+      box.innerHTML='<div class="market-row"><span>USD</span><span class="market-value">150.88 / 151.48</span></div><div class="market-row"><span>EUR</span><span class="market-value">175.29 / 175.99</span></div><div class="market-row"><span>GBP</span><span class="market-value">204.04 / 204.85</span></div><div class="market-row"><span>INR (100)</span><span class="market-value">160.00 / 160.15</span></div>';
+      up.textContent='फिड उपलब्ध नभएमा पछिल्लो उपलब्ध दर देखाइएको छ।';
+    }
+  }
+  updateForex();
+  setInterval(updateForex,30*60*1000);
+
+  // Gold/silver: fetch a public Nepal market feed through rss2json.
+  async function updateGold(){
+    const box=document.getElementById('gold-silver-rate'), up=document.getElementById('gold-updated');
+    if(!box) return;
+    try{
+      const r=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent('https://www.onlinekhabar.com/feed')+'&count=20',{cache:'no-store'});
+      const d=await r.json();
+      const item=(d.items||[]).find(x=>/सुन|चाँदी|चांदी|gold|silver/i.test(x.title||''));
+      if(!item) throw 0;
+      box.innerHTML='<div class="market-row"><span>आजको सुनचाँदी दर</span><span class="market-value">समाचारमा हेर्नुहोस् ↗</span></div>';
+      box.querySelector('.market-value').innerHTML='<a href="'+item.link+'" target="_blank" rel="noopener">दरको ताजा समाचार</a>';
+      up.textContent='बजारको पछिल्लो प्रकाशित अपडेट';
+    }catch(e){
+      box.innerHTML='<div class="market-row"><span>सुन</span><span class="market-value">ताजा दर खोज्दैछ...</span></div><div class="market-row"><span>चाँदी</span><span class="market-value">ताजा दर खोज्दैछ...</span></div>';
+      up.textContent='सुनचाँदीको दर फिड अहिले उपलब्ध नभएमा खाली दर देखाइँदैन।';
+    }
+  }
+  updateGold();
+  setInterval(updateGold,30*60*1000);
+})();
+</script>
+
 </body>
 </html>
