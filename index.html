@@ -1,802 +1,1192 @@
-TYPE html>
+<!DOCTYPE html>
 <html lang="ne" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Jenish — Veterinary Technician, कृषि, पशुपन्छी, नेपालको आर्थिक तथा सामाजिक तथ्याङ्क, कृषि गणना, जनगणना र सम्बन्धित ऐन-कानुन।" />
-  <meta name="theme-color" content="#0f766e" />
-  <title>Jenish | Veterinary Technician & Nepal Knowledge Portal</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>झविन्द्र पोखरेल | आधिकारिक वेबसाइट - www.jhabindrapokharel.com.np</title>
+  
+  <!-- गुगल फन्ट: मुक्त (Mukta) देवनागरी फन्ट -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- फन्ट असम (FontAwesome) आइकनहरू -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- टेलविन्ड सीएसएस (Sky Blue Palette) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Mukta', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+              950: '#082f49',
+            }
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
-    :root{
-      --green:#0f766e;
-      --green-dark:#064e3b;
-      --green-soft:#ecfdf5;
-      --blue:#0284c7;
-      --blue-soft:#f0f9ff;
-      --gold:#d97706;
-      --gold-soft:#fffbeb;
-      --ink:#0f172a;
-      --muted:#475569;
-      --line:#e2e8f0;
-      --paper:#ffffff;
-      --bg:#f8fafc;
-      --shadow:0 20px 40px -15px rgba(15,118,110,.12);
-      --radius:22px;
+    /* अनुकूलित स्काई-ब्लू स्क्रोलबार */
+    ::-webkit-scrollbar {
+      width: 9px;
     }
+    ::-webkit-scrollbar-track {
+      background: #f0f9ff;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #082f49;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #38bdf8;
+      border-radius: 6px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0284c7;
+    }
+    
+    /* प्राकृतिक सौन्दर्य ब्याकग्राउन्ड ओभरले प्रभाव */
+    .bg-nepal-hero {
+      background: linear-gradient(180deg, rgba(12, 74, 110, 0.82) 0%, rgba(2, 132, 199, 0.75) 50%, rgba(240, 249, 255, 0.96) 100%),
+                  url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+    .dark .bg-nepal-hero {
+      background: linear-gradient(180deg, rgba(8, 47, 73, 0.94) 0%, rgba(12, 74, 110, 0.88) 50%, rgba(15, 23, 42, 0.98) 100%),
+                  url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    }
+  
+    /* सूचना हब / लाइभ विजेट */
+    .ticker-track { display:flex; width:max-content; animation:ticker 28s linear infinite; }
+    .ticker-track:hover { animation-play-state:paused; }
+    @keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    .data-card { transition:transform .25s ease, box-shadow .25s ease; }
+    .data-card:hover { transform:translateY(-4px); }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:"Noto Sans Devanagari",system-ui,sans-serif;
-      color:var(--ink);
-      background:var(--bg);
-      line-height:1.75;
-      overflow-x:hidden;
-    }
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    button,input{font:inherit}
-
-    .container{width:min(1140px,92%);margin:auto}
-    .section{padding:84px 0;scroll-margin-top:80px}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:8px;
-      color:var(--green);font-weight:800;font-size:.86rem;
-      letter-spacing:.03em;margin-bottom:10px
-    }
-    .section-title{
-      font-size:clamp(1.8rem,4vw,2.7rem);
-      line-height:1.25;margin-bottom:12px;font-weight:800;color:#0f172a
-    }
-    .section-lead{color:var(--muted);max-width:760px;font-size:1.02rem}
-    .section-head{margin-bottom:38px}
-
-    /* NAV */
-    .nav{
-      position:sticky;top:0;z-index:1000;
-      background:rgba(255,255,255,.88);
-      backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
-      border-bottom:1px solid rgba(226,232,240,.8);
-    }
-    .nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:1.15rem}
-    .brand-name{font-family:'Poppins',"Noto Sans Devanagari",sans-serif;letter-spacing:-.02em}
-    .brand-mark{
-      width:44px;height:44px;border-radius:14px;
-      display:grid;place-items:center;color:#fff;
-      background:linear-gradient(135deg,var(--green),var(--blue));
-      box-shadow:0 8px 18px rgba(15,118,110,.25)
-    }
-    .brand small{display:block;color:var(--muted);font-size:.7rem;font-weight:600}
-    .nav-links{display:flex;align-items:center;gap:22px;font-size:.92rem;font-weight:700}
-    .nav-links a{color:#334155;transition:.2s}
-    .nav-links a:hover{color:var(--green)}
-    .menu-btn{display:none;border:0;background:#f1f5f9;color:var(--green);width:44px;height:44px;border-radius:12px}
-    .mobile-menu{display:none;padding:8px 0 18px}
-    .mobile-menu a{display:block;padding:12px 5px;font-weight:700;border-bottom:1px solid var(--line)}
-
-    /* HERO SECTION WITH NEPAL MAP */
-    .hero{
-      position:relative;overflow:hidden;
-      background:
-        radial-gradient(circle at 10% 20%, rgba(15,118,110,0.08) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(2,132,199,0.08) 0%, transparent 40%),
-        linear-gradient(180deg, #f0fdf4 0%, #f8fafc 100%);
-      padding:90px 0 75px;
-    }
-    /* नेपालको नक्सा वाटरमार्क */
-    .hero-map-bg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 110%;
-      max-width: 1400px;
-      opacity: 0.13;
-      pointer-events: none;
-      z-index: 1;
-      filter: drop-shadow(0 15px 30px rgba(15, 118, 110, 0.3));
-    }
-    .hero-grid{
-      position:relative;
-      z-index:2;
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:50px;
-      align-items:center
-    }
-    .badge{
-      display:inline-flex;align-items:center;gap:9px;
-      padding:7px 15px;border-radius:999px;background:#fff;
-      color:var(--green);font-weight:800;font-size:.83rem;
-      border:1px solid #cce9df;box-shadow:0 8px 20px rgba(15,118,110,.08)
-    }
-    .hero h1{
-      font-size:clamp(2.6rem,6.5vw,5rem);
-      line-height:1.05;margin:20px 0 12px;
-      letter-spacing:-.03em;
-      font-family:'Poppins',"Noto Sans Devanagari",sans-serif;
-    }
-    .hero h1 span{
-      background: linear-gradient(135deg, var(--green-dark), var(--blue));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-role{font-size:clamp(1.1rem,2.5vw,1.4rem);font-weight:800;color:#1e293b}
-    .hero p{color:var(--muted);max-width:680px;margin:18px 0 28px;font-size:1.05rem}
-    .actions{display:flex;flex-wrap:wrap;gap:12px}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:9px;
-      padding:13px 22px;border-radius:14px;font-weight:800;
-      border:1px solid transparent;transition:.25s;cursor:pointer
-    }
-    .btn-primary{
-      background:linear-gradient(135deg,var(--green),#0d9488);
-      color:#fff;box-shadow:0 10px 22px rgba(15,118,110,.25)
-    }
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(15,118,110,.35)}
-    .btn-light{background:#fff;border-color:var(--line);color:var(--ink);box-shadow:0 4px 12px rgba(0,0,0,.03)}
-    .btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#cbd5e1}
-
-    .profile-card{
-      position:relative;background:#fff;border:1px solid rgba(226,232,240,.9);
-      border-radius:32px;padding:16px;box-shadow:var(--shadow);
-      max-width:390px;margin-left:auto;
-      backdrop-filter: blur(8px);
-    }
-    .profile-card img{
-      width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:24px;
-      background:linear-gradient(145deg,#dff7ee,#e0f2fe)
-    }
-    .profile-caption{
-      display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 8px 6px
-    }
-    .profile-caption strong{font-size:1.15rem;font-family:'Poppins',sans-serif}
-    .location{color:var(--muted);font-size:.84rem;margin-top:2px}
-    .hero-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
-    .mini{
-      background:rgba(255,255,255,.85);border:1px solid #e2e8f0;border-radius:18px;
-      padding:14px;text-align:center;box-shadow:0 6px 15px rgba(0,0,0,.02)
-    }
-    .mini b{display:block;color:var(--green);font-size:1.25rem;font-weight:800}
-    .mini span{font-size:.74rem;color:var(--muted);font-weight:600}
-
-    /* QUOTE */
-    .quote-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .quote-card{
-      background:linear-gradient(135deg,var(--green-dark),#0f766e);
-      color:#fff;border-radius:var(--radius);padding:34px;position:relative;overflow:hidden;
-      box-shadow:0 15px 35px rgba(6,78,59,.18)
-    }
-    .quote-card:after{content:"“";position:absolute;right:18px;top:-25px;font:150px Georgia;color:rgba(255,255,255,.12)}
-    .quote-card h3{font-size:1rem;opacity:.85;margin-bottom:10px}
-    .quote-card blockquote{font-size:clamp(1.2rem,2.5vw,1.65rem);font-weight:700;line-height:1.55;position:relative;z-index:1}
-    .quote-card small{display:block;margin-top:14px;opacity:.8}
-    .fact-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:0 10px 30px rgba(0,0,0,.03)}
-    .fact-card h3{margin-bottom:10px;font-size:1.2rem}
-    .fact-card p{color:var(--muted)}
-
-    /* CARDS */
-    .grid{display:grid;gap:20px}
-    .grid-2{grid-template-columns:repeat(2,1fr)}
-    .grid-3{grid-template-columns:repeat(3,1fr)}
-    .grid-4{grid-template-columns:repeat(4,1fr)}
-    .card{
-      background:#fff;border:1px solid var(--line);border-radius:var(--radius);
-      padding:24px;box-shadow:0 10px 25px rgba(0,0,0,.02);
-      transition:.25s ease
-    }
-    .card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#cbd5e1}
-    .icon{
-      width:52px;height:52px;border-radius:16px;display:grid;place-items:center;
-      background:var(--green-soft);color:var(--green);font-size:1.3rem;margin-bottom:16px
-    }
-    .card h3{font-size:1.1rem;margin-bottom:8px;font-weight:800}
-    .card p{color:var(--muted);font-size:.92rem}
-    .tag{
-      display:inline-block;margin-top:14px;padding:4px 10px;border-radius:999px;
-      background:#f0fdfa;color:var(--green);font-size:.74rem;font-weight:800;border:1px solid #ccfbf1
-    }
-
-    /* STATISTICS */
-    .stats{
-      display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:30px 0
-    }
-    .stat{
-      background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px;
-      text-align:center;box-shadow:0 8px 20px rgba(0,0,0,.02)
-    }
-    .stat .num{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:900;color:var(--green);line-height:1.2}
-    .stat .label{color:var(--muted);font-size:.8rem;margin-top:6px;font-weight:600}
-    .note{font-size:.78rem;color:var(--muted);margin-top:15px}
-
-    /* TABLE */
-    .table-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:20px}
-    table{width:100%;border-collapse:collapse;min-width:620px}
-    th,td{padding:14px 18px;text-align:left;border-bottom:1px solid #f1f5f9;font-size:.9rem}
-    th{background:#f8fafc;color:var(--ink);font-weight:800}
-    tr:last-child td{border-bottom:0}
-    td:last-child{text-align:right;font-weight:800;color:var(--green)}
-
-    /* DISEASE */
-    .disease{border-left:5px solid var(--green)}
-    .disease.warning{border-left-color:var(--gold)}
-    .disease h3{display:flex;gap:10px;align-items:center}
-    .disease ul{margin:12px 0 0 19px;color:var(--muted);font-size:.88rem}
-    .alert{
-      margin-top:24px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;
-      padding:16px 18px;border-radius:16px;font-size:.88rem
-    }
-
-    /* GALLERY */
-    .gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-auto-rows:190px;gap:16px}
-    .gallery-item{border-radius:22px;overflow:hidden;position:relative;min-height:190px;background:#e2e8f0;box-shadow:0 8px 20px rgba(0,0,0,.03)}
-    .gallery-item.big{grid-row:span 2}
-    .gallery-item .scene{
-      width:100%;height:100%;display:grid;place-items:center;font-size:5.5rem;
-      background:linear-gradient(160deg,#bfe8dc,#dff6ef 42%,#9ed0e7)
-    }
-    .gallery-item:nth-child(2) .scene{background:linear-gradient(160deg,#d6f5de,#8ecae6)}
-    .gallery-item:nth-child(3) .scene{background:linear-gradient(160deg,#f8d9a7,#c7e9bd)}
-    .gallery-item:nth-child(4) .scene{background:linear-gradient(160deg,#d7eefb,#e7f4dc)}
-    .gallery-item:nth-child(5) .scene{background:linear-gradient(160deg,#d5f5e3,#f5e5b9)}
-    .gallery-label{
-      position:absolute;left:14px;right:14px;bottom:14px;
-      padding:10px 14px;border-radius:14px;background:rgba(255,255,255,.9);
-      backdrop-filter:blur(8px);font-weight:900;font-size:.84rem
-    }
-
-    /* LAWS / LINKS */
-    .law-list{display:grid;gap:12px}
-    .law{
-      display:flex;align-items:center;justify-content:space-between;gap:14px;
-      padding:16px 18px;background:#fff;border:1px solid var(--line);border-radius:16px;
-      transition:.2s
-    }
-    .law:hover{border-color:var(--green);transform:translateX(4px)}
-    .law strong{font-size:.94rem}
-    .law span{font-size:.76rem;color:var(--muted)}
-    .law i{color:var(--green)}
-    .gov{
-      display:flex;align-items:flex-start;gap:16px;
-      padding:18px;border-radius:18px;background:#fff;border:1px solid var(--line)
-    }
-    .gov .icon{flex:none;margin:0;width:46px;height:46px;border-radius:14px}
-    .gov a{color:var(--green);font-size:.82rem;font-weight:800;word-break:break-all}
-
-    /* SEARCH */
-    .search-box{position:relative;margin:0 0 26px}
-    .search-box i{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:#94a3b8}
-    .search-box input{
-      width:100%;padding:15px 18px 15px 48px;border:1px solid var(--line);
-      border-radius:16px;outline:none;background:#fff;font-size:.95rem;transition:.2s
-    }
-    .search-box input:focus{border-color:var(--green);box-shadow:0 0 0 4px rgba(15,118,110,.1)}
-
-    /* ABOUT / CONTACT */
-    .about{
-      background:linear-gradient(135deg,#064e3b,#0f766e);color:#fff;
-      position:relative;overflow:hidden;
-    }
-    .about .section-lead{color:rgba(255,255,255,.8)}
-    .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;position:relative;z-index:2}
-    .about-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:28px;backdrop-filter:blur(8px)}
-    .about-card p{color:rgba(255,255,255,.86)}
-    .contact-list{display:grid;gap:14px;margin-top:18px}
-    .contact-item{display:flex;gap:14px;align-items:center}
-    .contact-item i{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.15)}
-    .socials{display:flex;gap:12px;margin-top:22px}
-    .socials a{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:rgba(255,255,255,.15);transition:.2s}
-    .socials a:hover{background:rgba(255,255,255,.3);transform:translateY(-2px)}
-
-    footer{background:#02231f;color:#94a3b8;padding:32px 0}
-    .footer-inner{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}
-    .footer-inner strong{color:#fff;font-family:'Poppins',sans-serif}
-    .tiny{font-size:.76rem}
-
-    .top{
-      position:fixed;right:20px;bottom:20px;width:48px;height:48px;border:0;border-radius:16px;
-      background:var(--green);color:#fff;display:grid;place-items:center;z-index:900;
-      box-shadow:0 12px 25px rgba(15,118,110,.35);cursor:pointer;transition:.2s
-    }
-    .top:hover{transform:translateY(-3px)}
-
-    @media(max-width:900px){
-      .nav-links{display:none}.menu-btn{display:block}
-      .mobile-menu.open{display:block}
-      .hero-grid,.quote-wrap,.about-grid{grid-template-columns:1fr}
-      .profile-card{margin:auto}
-      .grid-4{grid-template-columns:repeat(2,1fr)}
-      .stats{grid-template-columns:repeat(2,1fr)}
-      .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:160px}
-      .gallery-item.big{grid-row:span 1}
-    }
-    @media(max-width:620px){
-      .section{padding:60px 0}
-      .nav-inner{height:66px}
-      .brand small{display:none}
-      .hero{padding:60px 0}
-      .hero h1{font-size:2.8rem}
-      .hero-mini{grid-template-columns:1fr 1fr 1fr}
-      .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
-      .stats{grid-template-columns:1fr 1fr}
-      .gallery{grid-template-columns:1fr;grid-auto-rows:170px}
-      .gallery-item{min-height:170px}
-      .actions .btn{flex:1 1 100%}
-      .footer-inner{align-items:flex-start;flex-direction:column}
-    }
   </style>
 </head>
 
-<body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="मुख्य पृष्ठ">
-        <span class="brand-mark"><i class="fa-solid fa-leaf"></i></span>
-        <span class="brand-name">Jenish<small>Veterinary • Agriculture • Nepal</small></span>
-      </a>
-      <nav class="nav-links" aria-label="मुख्य मेनु">
-        <a href="#about">परिचय</a>
-        <a href="#quote">दैनिक विचार</a>
-        <a href="#agriculture">कृषि</a>
-        <a href="#livestock">पशुपन्छी</a>
-        <a href="#diseases">रोग</a>
-        <a href="#census">गणना</a>
-        <a href="#laws">ऐन-कानुन</a>
-        <a href="#contact">सम्पर्क</a>
-      </nav>
-      <button class="menu-btn" id="menuBtn" aria-label="मेनु खोल्नुहोस्"><i class="fa-solid fa-bars"></i></button>
+<body class="bg-sky-50/40 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans transition-colors duration-300 antialiased selection:bg-brand-500 selection:text-white">
+
+  <!-- माथिल्लो नेभिगेसन बार (Sky Blue Header & Navbar) -->
+
+  <!-- लाइभ मौसम बार -->
+  <div id="weatherTicker" class="bg-slate-950 text-white text-sm overflow-hidden border-b border-sky-800">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center gap-3">
+      <span class="shrink-0 font-extrabold text-sky-300"><i class="fa-solid fa-cloud-sun"></i> लाइभ मौसम</span>
+      <div class="overflow-hidden flex-1">
+        <div id="weatherTrack" class="ticker-track gap-10">
+          <span>मौसम जानकारी लोड हुँदैछ...</span><span>मौसम जानकारी लोड हुँदैछ...</span>
+        </div>
+      </div>
+      <button id="geoWeatherBtn" class="shrink-0 px-3 py-1 rounded-lg bg-sky-700 hover:bg-sky-600 text-xs font-bold">मेरो स्थान</button>
     </div>
-    <div class="container mobile-menu" id="mobileMenu">
-      <a href="#about">परिचय</a>
-      <a href="#quote">दैनिक विचार</a>
-      <a href="#agriculture">कृषि</a>
-      <a href="#livestock">पशुपन्छी</a>
-      <a href="#diseases">रोग विवरण</a>
-      <a href="#census">जनगणना तथा कृषि गणना</a>
-      <a href="#laws">ऐन तथा कानुन</a>
-      <a href="#nature">नेपालका प्राकृतिक सम्पदा</a>
-      <a href="#gov">सरकारी स्रोत</a>
-      <a href="#contact">सम्पर्क</a>
+  </div>
+
+  <header class="sticky top-0 z-50 backdrop-blur-lg bg-white/85 dark:bg-slate-900/85 border-b border-sky-200/80 dark:border-sky-900/50 shadow-sm transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- लोगो तथा नाम -->
+        <a href="#home" class="flex items-center gap-3 group">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-600 via-sky-500 to-cyan-400 text-white flex items-center justify-center font-black text-2xl shadow-md shadow-brand-500/25 group-hover:rotate-3 transition-transform">
+            <span>झ</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+              झविन्द्र पोखरेल
+            </span>
+            <span class="text-xs text-sky-700 dark:text-sky-400 font-medium tracking-wide">
+              www.jhabindrapokharel.com.np
+            </span>
+          </div>
+        </a>
+
+        <!-- डेस्कटप मेनू -->
+        <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-base font-semibold">
+          <a href="#home" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-sky-100/60 dark:hover:bg-slate-800 transition">गृहपृष्ठ</a>
+          <a href="#about" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-sky-100/60 dark:hover:bg-slate-800 transition">परिचय</a>
+          <a href="#heritage" class="px-3 py-2 rounded-lg text-brand-700 dark:text-brand-400 bg-sky-100/70 dark:bg-sky-950/60 hover:bg-sky-200/60 transition flex items-center gap-1.5">
+            <i class="fa-solid fa-mountain-sun text-brand-600 text-xs"></i>
+            <span>धरोहर र प्रकृति</span>
+          </a>
+          <a href="#skills" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-sky-100/60 dark:hover:bg-slate-800 transition">दक्षता</a>
+          <a href="#services" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-sky-100/60 dark:hover:bg-slate-800 transition">सेवाहरू</a>
+          <a href="#nepal-info" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-sky-100/60 dark:hover:bg-slate-800 transition">नेपाल जानकारी</a>
+          <a href="#contact" class="px-3 py-2 rounded-lg text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-sky-100/60 dark:hover:bg-slate-800 transition">सम्पर्क</a>
+        </nav>
+
+        <!-- दायाँपट्टिको बटनहरू (थिम र सम्पर्क) -->
+        <div class="flex items-center gap-3">
+          <!-- थिम बदल्ने बटन -->
+          <button id="themeToggleBtn" aria-label="थिम बदल्नुहोस्" class="p-2.5 rounded-xl border border-sky-200 dark:border-sky-800 bg-white/90 dark:bg-slate-800 text-sky-700 dark:text-sky-300 hover:bg-sky-50 dark:hover:bg-slate-700 transition">
+            <i id="themeIcon" class="fa-solid fa-moon text-lg"></i>
+          </button>
+
+          <!-- सम्पर्क बटन -->
+          <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-brand-600 to-sky-600 hover:from-brand-700 hover:to-sky-700 text-white font-semibold text-sm shadow-md shadow-brand-500/25 hover:shadow-lg transition">
+            <i class="fa-regular fa-paper-plane"></i>
+            <span>सम्पर्क गर्नुहोस</span>
+          </a>
+
+          <!-- मोबाइल मेनू खोल्ने बटन -->
+          <button id="mobileMenuBtn" aria-label="मेनू खोल्नुहोस्" class="md:hidden p-2.5 rounded-xl border border-sky-200 dark:border-sky-800 bg-white dark:bg-slate-800 text-sky-800 dark:text-sky-200">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- मोबाइल ड्रपडाउन मेनू -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-sky-200 dark:border-sky-900 bg-white dark:bg-slate-900 px-4 pt-3 pb-6 space-y-2 text-base font-semibold shadow-2xl">
+      <a href="#home" class="mobile-nav-link block px-4 py-2.5 rounded-lg hover:bg-sky-50 dark:hover:bg-slate-800">गृहपृष्ठ</a>
+      <a href="#about" class="mobile-nav-link block px-4 py-2.5 rounded-lg hover:bg-sky-50 dark:hover:bg-slate-800">परिचय</a>
+      <a href="#heritage" class="mobile-nav-link block px-4 py-2.5 rounded-lg bg-sky-100/80 dark:bg-sky-950 text-brand-700 dark:text-brand-300">धरोहर र प्रकृति (८ स्थलहरू)</a>
+      <a href="#skills" class="mobile-nav-link block px-4 py-2.5 rounded-lg hover:bg-sky-50 dark:hover:bg-slate-800">दक्षता तथा कार्यकुशलता</a>
+      <a href="#services" class="mobile-nav-link block px-4 py-2.5 rounded-lg hover:bg-sky-50 dark:hover:bg-slate-800">सेवाहरू</a>
+      <a href="#nepal-info" class="mobile-nav-link block px-4 py-2.5 rounded-lg hover:bg-sky-50 dark:hover:bg-slate-800">नेपाल जानकारी, संविधान र तथ्याङ्क</a>
+      <a href="#contact" class="mobile-nav-link block px-4 py-2.5 rounded-lg hover:bg-sky-50 dark:hover:bg-slate-800">सम्पर्क फारम</a>
+      <div class="pt-2">
+        <a href="#contact" class="mobile-nav-link flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-brand-600 text-white font-bold">
+          <i class="fa-regular fa-paper-plane"></i> सिधै कुरा गरौँ
+        </a>
+      </div>
     </div>
   </header>
 
-  <main id="home">
-    <section class="hero">
-      <!-- पृष्ठभूमिमा नेपालको स्पष्ट र आकर्षक नक्सा (SVG) -->
-      <svg class="hero-map-bg" viewBox="0 0 1000 450" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <!-- नेपालको वास्तविक भौगोलिक आकारको कन्टुर लाइन -->
-        <path fill="url(#mapGrad)" opacity="0.8" d="M35,160 C50,140 80,130 110,145 C130,120 170,110 210,135 C240,115 280,100 320,110 C350,85 390,75 430,90 C470,80 510,70 560,95 C610,75 660,85 710,105 C750,90 800,105 840,130 C880,125 920,150 950,190 C965,220 950,250 920,270 C880,285 850,275 810,295 C770,300 730,285 690,305 C650,310 610,300 570,315 C520,320 480,310 440,325 C390,330 350,320 300,335 C250,330 210,320 170,330 C130,325 90,305 60,280 C30,250 20,200 35,160 Z" />
-        <path d="M120,170 Q300,130 500,140 T900,210" stroke="rgba(15,118,110,0.4)" stroke-width="2" fill="none" stroke-dasharray="6,6"/>
-        <path d="M150,220 Q400,190 650,200 T880,250" stroke="rgba(2,132,199,0.3)" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
-        <defs>
-          <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#0f766e" />
-            <stop offset="50%" stop-color="#0284c7" />
-            <stop offset="100%" stop-color="#10b981" />
-          </linearGradient>
-        </defs>
-      </svg>
+  <main>
+    <!-- मुख्य ब्यानर सेक्सन: हिमालको ब्याकग्राउन्ड र Sky Blue इन्टरफेस -->
+    <section id="home" class="relative pt-16 pb-28 sm:pt-24 sm:pb-36 bg-nepal-hero border-b border-sky-200 dark:border-sky-900 overflow-hidden">
+      <!-- हिमाल तथा बादलहरूको सजावट लेयर -->
+      <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-sky-50/40 dark:from-slate-950 to-transparent pointer-events-none"></div>
 
-      <div class="container hero-grid">
-        <div>
-          <span class="badge"><i class="fa-solid fa-map-location-dot"></i> Veterinary Technician • Nepal</span>
-          <h1><span>Jenish</span></h1>
-          <div class="hero-role">पशु स्वास्थ्य तथा कृषि ज्ञानका लागि व्यक्तिगत सूचना पोर्टल</div>
-          <p>
-            नेपालका कृषि, पशुपन्छी, मत्स्य, रोग व्यवस्थापन, आर्थिक तथा सामाजिक तथ्याङ्क,
-            जनगणना, कृषि गणना र सम्बन्धित ऐन-कानुनलाई सरल भाषामा प्रस्तुत गर्ने ज्ञान केन्द्र।
-          </p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#agriculture"><i class="fa-solid fa-seedling"></i> कृषि विवरण</a>
-            <a class="btn btn-light" href="#diseases"><i class="fa-solid fa-shield-virus"></i> रोग जानकारी</a>
-            <a class="btn btn-light" href="#contact"><i class="fa-solid fa-phone"></i> सम्पर्क</a>
-          </div>
-          <div class="hero-mini">
-            <div class="mini"><b>पाल्पा</b><span>ठेगाना</span></div>
-            <div class="mini"><b>Veterinary</b><span>पेशा</span></div>
-            <div class="mini"><b>Nepal</b><span>ज्ञान पोर्टल</span></div>
-          </div>
-        </div>
-
-        <div class="profile-card">
-          <img src="profile.jpg" alt="Jenish को प्रोफाइल फोटो"
-               onerror="this.style.display='none';this.parentElement.classList.add('photo-missing');">
-          <div class="profile-caption">
-            <div>
-              <strong>Jenish</strong>
-              <div class="location"><i class="fa-solid fa-location-dot" style="color:var(--green)"></i> Palpa, Nepal</div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- बायाँपट्टि: मुख्य परिचय र विवरण -->
+          <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-sky-300 dark:border-sky-700 text-sky-800 dark:text-sky-300 text-sm font-bold shadow-sm">
+              <i class="fa-solid fa-mountain text-brand-600"></i>
+              <span>नेपालको माटो र समृद्धिका लागि समर्पित</span>
             </div>
-            <i class="fa-solid fa-user-doctor" style="color:var(--green);font-size:1.5rem"></i>
-          </div>
-          <div class="note">नोट: फोटो नदेखिएमा GitHub मा <b>profile.jpg</b> upload गर्नुहोस्।</div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="quote">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-sun"></i> आजको प्रेरणा</span>
-          <h2 class="section-title">दैनिक विचार</h2>
-          <p class="section-lead">हरेक दिन स्वतः परिवर्तन हुने छोटो प्रेरणादायी सन्देश।</p>
-        </div>
-        <div class="quote-wrap">
-          <div class="quote-card">
-            <h3 id="quoteDate">आज</h3>
-            <blockquote id="dailyQuote">ज्ञान, मेहनत र सेवाले समाजलाई अगाडि बढाउँछ।</blockquote>
-            <small>— दैनिक प्रेरणादायी विचार</small>
-          </div>
-          <div class="fact-card">
-            <h3><i class="fa-solid fa-lightbulb" style="color:var(--gold)"></i> आजको सन्देश</h3>
-            <p>
-              कृषि र पशुपालन केवल पेशा होइनन्; नेपालको खाद्य सुरक्षा, रोजगारी,
-              ग्रामीण अर्थतन्त्र र सामाजिक जीवनसँग प्रत्यक्ष जोडिएका आधार हुन्।
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white drop-shadow-md leading-tight">
+              नमस्ते, म <br class="hidden sm:inline"/>
+              <span class="text-white bg-clip-text drop-shadow-lg">
+                झविन्द्र पोखरेल
+              </span>
+            </h1>
+
+            <p class="text-lg sm:text-xl text-sky-50 dark:text-sky-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium drop-shadow">
+              प्राकृतिक सौन्दर्य र सांस्कृतिक धरोहरले भरिपूर्ण नेपालको समुन्नति, सुशासन, सामाजिक अनुसन्धान तथा युवा सशक्तीकरणमा सक्रिय व्यक्तित्व।
             </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="economy" style="background:#fff">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-chart-line"></i> नेपाल परिचय</span>
-          <h2 class="section-title">आर्थिक तथा सामाजिक विवरण</h2>
-          <p class="section-lead">
-            राष्ट्रिय तथ्याङ्कलाई बुझ्न सजिलो हुने गरी प्रमुख सूचकहरू। तथ्याङ्कको वर्ष
-            र स्रोत सधैँ हेर्नुहोस्, किनकि सूचकहरू समयसँगै परिवर्तन हुन्छन्।
-          </p>
-        </div>
+            <!-- मुख्य कल-टु-एक्सन बटनहरू -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+              <a href="#heritage" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-brand-700 hover:bg-sky-50 font-extrabold text-base shadow-lg shadow-black/20 hover:scale-105 active:scale-95 transition-all">
+                <i class="fa-solid fa-camera-retro text-brand-600"></i>
+                <span>धरोहरहरू हेर्नुहोस्</span>
+              </a>
 
-        <div class="stats">
-          <div class="stat"><div class="num">2.916 करोड</div><div class="label">जनसंख्या — राष्ट्रिय जनगणना २०७८/2021</div></div>
-          <div class="stat"><div class="num">0.92%</div><div class="label">वार्षिक औसत जनसंख्या वृद्धि दर</div></div>
-          <div class="stat"><div class="num">25.16%</div><div class="label">कृषि, वन तथा मत्स्य क्षेत्रको GDP हिस्सा*</div></div>
-          <div class="stat"><div class="num">3.28%</div><div class="label">कृषि, वन तथा मत्स्य क्षेत्रको वास्तविक वृद्धि*</div></div>
-        </div>
-
-        <div class="grid grid-3">
-          <article class="card"><div class="icon"><i class="fa-solid fa-people-group"></i></div><h3>जनसंख्या र समाज</h3><p>जनसंख्या, घरपरिवार, लिङ्ग, उमेर, साक्षरता, शिक्षा, रोजगारी, बसाइँसराइ तथा आवाससम्बन्धी विवरण।</p></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-coins"></i></div><h3>अर्थतन्त्र</h3><p>कृषि, उद्योग र सेवा क्षेत्रको योगदान, आर्थिक वृद्धि, रोजगारी तथा ग्रामीण अर्थतन्त्रसँग सम्बन्धित विषय।</p></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-house-chimney"></i></div><h3>ग्रामीण विकास</h3><p>कृषि, पशुपालन, सिँचाइ, बजार, सहकारी, उद्यमशीलता र स्थानीय उत्पादनसँग जोडिएका विषयहरू।</p></article>
-        </div>
-        <p class="note">* कृषि, वन तथा मत्स्य क्षेत्रको 2024/25 प्रारम्भिक राष्ट्रिय आर्थिक तथ्याङ्कको आधारमा। आधिकारिक स्रोतबाट नयाँ तथ्याङ्क आएमा अपडेट गर्नुहोस्।</p>
-      </div>
-    </section>
-
-    <section class="section" id="agriculture">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-wheat-awn"></i> कृषि</span>
-          <h2 class="section-title">नेपालको कृषि विवरण</h2>
-          <p class="section-lead">बाली, फलफूल, कृषि प्रविधि, सिँचाइ, यान्त्रीकरण र दिगो कृषिसम्बन्धी जानकारी।</p>
-        </div>
-
-        <div class="stats">
-          <div class="stat"><div class="num">25.16%</div><div class="label">GDP मा कृषि, वन तथा मत्स्यको हिस्सा*</div></div>
-          <div class="stat"><div class="num">3.28%</div><div class="label">क्षेत्रगत वास्तविक वृद्धि*</div></div>
-          <div class="stat"><div class="num">धान</div><div class="label">प्रमुख खाद्यान्न बाली</div></div>
-          <div class="stat"><div class="num">3 तह</div><div class="label">हिमाल • पहाड • तराई</div></div>
-        </div>
-
-        <div class="grid grid-3">
-          <article class="card"><div class="icon"><i class="fa-solid fa-bowl-rice"></i></div><h3>खाद्यान्न बाली</h3><p>धान, मकै, गहुँ, कोदो, फापर, जौ लगायतका बाली, उत्पादन र कृषि व्यवस्थापन।</p></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-carrot"></i></div><h3>तरकारी तथा नगदे बाली</h3><p>तरकारी, आलु, अदुवा, अलैंची, चिया, कफी तथा उच्च मूल्यका कृषि उत्पादन।</p></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-apple-whole"></i></div><h3>फलफूल</h3><p>पहाडी क्षेत्रमा सुन्तला तथा हिमाली क्षेत्रमा स्याउलगायत फलफूल खेतीको सम्भावना।</p></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-droplet"></i></div><h3>सिँचाइ</h3><p>वर्षायाममा निर्भरता घटाउन सिँचाइ, पानी व्यवस्थापन र सूक्ष्म सिँचाइ प्रविधि।</p></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-tractor"></i></div><h3>कृषि यान्त्रीकरण</h3><p>ट्र्याक्टर, मिनी टिलर, धान रोप्ने/काट्ने उपकरण तथा डिजिटल कृषि प्रविधि।</p></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-recycle"></i></div><h3>दिगो कृषि</h3><p>माटो स्वास्थ्य, जैविक पदार्थ, एकीकृत कीरा व्यवस्थापन र वातावरणमैत्री उत्पादन।</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="livestock" style="background:#fff">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-cow"></i> पशुपन्छी तथा मत्स्य</span>
-          <h2 class="section-title">नेपालको पशु विवरण</h2>
-          <p class="section-lead">पशुधन, पक्षी, मत्स्य, उत्पादन, व्यवस्थापन र पशु स्वास्थ्यसम्बन्धी आधारभूत जानकारी।</p>
-        </div>
-
-        <div class="grid grid-4">
-          <article class="card"><div class="icon">🐄</div><h3>गाई / गोरु</h3><p>दूध, प्रजनन, पोषण, गोठ व्यवस्थापन र स्वास्थ्य।</p></article>
-          <article class="card"><div class="icon">🐃</div><h3>भैंसी</h3><p>दूध उत्पादन, आहार, प्रजनन र रोग रोकथाम।</p></article>
-          <article class="card"><div class="icon">🐐</div><h3>बाख्रा</h3><p>मासु उत्पादन, खोर व्यवस्थापन, PPR लगायत रोग सचेतना।</p></article>
-          <article class="card"><div class="icon">🐑</div><h3>भेडा / च्याङ्ग्रा</h3><p>उच्च पहाडी पशुपालन, ऊन/मासु र चरन व्यवस्थापन।</p></article>
-          <article class="card"><div class="icon">🐖</div><h3>सुँगुर</h3><p>आहार, जैविक सुरक्षा, प्रजनन तथा रोग नियन्त्रण।</p></article>
-          <article class="card"><div class="icon">🐔</div><h3>कुखुरा</h3><p>लेयर्स/ब्रोइलर, खोर व्यवस्थापन, खोप र जैविक सुरक्षा।</p></article>
-          <article class="card"><div class="icon">🦆</div><h3>हाँस तथा पक्षी</h3><p>हाँसपालन, स्थानीय पक्षी र रोग व्यवस्थापन।</p></article>
-          <article class="card"><div class="icon">🐟</div><h3>मत्स्य</h3><p>पोखरी व्यवस्थापन, पानीको गुणस्तर, आहार र सामान्य रोग।</p></article>
-        </div>
-
-        <div class="table-wrap" style="margin-top:24px">
-          <table>
-            <thead><tr><th>उत्पादन/समूह</th><th>वेबसाइटमा समेटिने विषय</th><th>विवरण</th></tr></thead>
-            <tbody>
-              <tr><td>दूध</td><td>दुग्ध पशुपालन</td><td>पोषण • स्वच्छ दुहाइ • बजार</td></tr>
-              <tr><td>मासु</td><td>बाख्रा, भैंसी, सुँगुर, कुखुरा</td><td>उत्पादन • जैविक सुरक्षा</td></tr>
-              <tr><td>अण्डा</td><td>कुखुरापालन</td><td>लेयर्स • खोप • व्यवस्थापन</td></tr>
-              <tr><td>माछा</td><td>मत्स्यपालन</td><td>पानी • आहार • रोग</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="technology">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-microchip"></i> Veterinary Technology</span>
-          <h2 class="section-title">नयाँ पशु चिकित्सा प्रविधि</h2>
-          <p class="section-lead">आधुनिक पशु स्वास्थ्य सेवामा प्रयोग हुँदै आएका प्रविधि र तिनको सम्भावित उपयोग।</p>
-        </div>
-        <div class="grid grid-3">
-          <article class="card"><div class="icon"><i class="fa-solid fa-mobile-screen-button"></i></div><h3>Digital Veterinary Records</h3><p>पशुको पहिचान, उपचार इतिहास, खोप र फार्म रेकर्ड डिजिटल रूपमा व्यवस्थापन।</p><span class="tag">Digital</span></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-wave-square"></i></div><h3>Remote Monitoring</h3><p>सेन्सर तथा डिजिटल उपकरणबाट पशुको गतिविधि, तापक्रम वा व्यवहार निगरानी गर्ने प्रविधि।</p><span class="tag">Smart Farm</span></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-flask"></i></div><h3>Rapid Diagnostics</h3><p>रोग पहिचानका लागि द्रुत परीक्षण र प्रयोगशाला आधारित निदान प्रणालीको प्रयोग।</p><span class="tag">Diagnostics</span></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-dna"></i></div><h3>Genetics & Breeding</h3><p>उत्पादन, प्रजनन र आनुवंशिक सुधारका लागि वैज्ञानिक breeding कार्यक्रम।</p><span class="tag">Breeding</span></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-robot"></i></div><h3>Automation</h3><p>स्वचालित feeding, milking तथा farm management प्रणालीको बढ्दो प्रयोग।</p><span class="tag">Automation</span></article>
-          <article class="card"><div class="icon"><i class="fa-solid fa-satellite-dish"></i></div><h3>GIS & Early Warning</h3><p>भौगोलिक सूचना र रोग निगरानी प्रणालीबाट जोखिम पहिचान तथा सूचना प्रवाह।</p><span class="tag">Data</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="diseases" style="background:#fff">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-virus"></i> पशु रोग जानकारी</span>
-          <h2 class="section-title">प्रमुख पशुपन्छी रोग</h2>
-          <p class="section-lead">लक्षण, रोकथाम र पेशेवर सेवाको आवश्यकता बुझ्नका लागि शैक्षिक जानकारी।</p>
-        </div>
-
-        <div class="search-box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input id="diseaseSearch" type="search" placeholder="रोग खोज्नुहोस्... जस्तै खोरेत, रेबिज, PPR">
-        </div>
-
-        <div class="grid grid-3" id="diseaseGrid">
-          <article class="card disease" data-name="खोरेत foot and mouth disease fmd"><h3>🐄 खोरेत (FMD)</h3><p>खुर र मुखमा असर गर्ने अत्यन्त संक्रामक पशु रोग।</p><ul><li>लक्षण: ज्वरो, मुख/खुर वरिपरि फोका वा घाउ।</li><li>रोकथाम: जैविक सुरक्षा र आधिकारिक खोप कार्यक्रम।</li></ul></article>
-          <article class="card disease warning" data-name="लम्पी स्किन lsd"><h3>🐄 लम्पी स्किन रोग</h3><p>गाईभैंसीमा देखिने संक्रामक भाइरल रोग।</p><ul><li>छालामा गाँठा, ज्वरो र उत्पादन घट्न सक्छ।</li><li>सन्देह भए पशु स्वास्थ्यकर्मीसँग सम्पर्क गर्नुहोस्।</li></ul></article>
-          <article class="card disease" data-name="रेबिज rabies"><h3>🐕 रेबिज</h3><p>मानिस र जनावर दुवैका लागि गम्भीर zoonotic रोग।</p><ul><li>असामान्य व्यवहार, स्नायु सम्बन्धी लक्षण देखिन सक्छ।</li><li>टोकेको अवस्थामा तुरुन्त स्वास्थ्य सेवा लिनु महत्त्वपूर्ण हुन्छ।</li></ul></article>
-          <article class="card disease" data-name="ppr बाख्रा भेडा"><h3>🐐 PPR</h3><p>भेडा तथा बाख्रामा प्रमुख संक्रामक रोग।</p><ul><li>ज्वरो, नाक/आँखाबाट स्राव र पाचनसम्बन्धी समस्या हुन सक्छ।</li><li>रोकथामका लागि आधिकारिक खोप/निगरानी कार्यक्रम महत्त्वपूर्ण।</li></ul></article>
-          <article class="card disease warning" data-name="bird flu avian influenza h5n1 बर्ड फ्लु"><h3>🐔 Bird Flu / Avian Influenza</h3><p>पक्षीमा देखिने महत्वपूर्ण संक्रामक रोग।</p><ul><li>अचानक मृत्यु वा असामान्य रोग लक्षण देखिए सूचना दिनुहोस्।</li><li>फार्म जैविक सुरक्षा कडाइका साथ पालना गर्नुहोस्।</li></ul></article>
-          <article class="card disease" data-name="african swine fever asf सुँगुर"><h3>🐖 African Swine Fever</h3><p>सुँगुरमा गम्भीर असर पार्ने संक्रामक रोग।</p><ul><li>जैविक सुरक्षा, आवतजावत नियन्त्रण र आधिकारिक सूचना महत्त्वपूर्ण।</li><li>सन्देहमा पशु स्वास्थ्य निकायसँग सम्पर्क गर्नुहोस्।</li></ul></article>
-        </div>
-
-        <div class="alert">
-          <strong><i class="fa-solid fa-triangle-exclamation"></i> महत्वपूर्ण:</strong>
-          यो खण्ड शैक्षिक जानकारीका लागि हो। रोगको निदान, औषधि वा खोपको निर्णय स्थानीय अवस्था,
-          आधिकारिक निर्देशिका र योग्य पशु चिकित्सक/प्राविधिकको सल्लाहअनुसार गर्नुहोस्।
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="census">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-database"></i> राष्ट्रिय तथ्याङ्क</span>
-          <h2 class="section-title">जनगणना तथा कृषि गणना</h2>
-          <p class="section-lead">नेपालको जनसंख्या र कृषि क्षेत्रको संरचना बुझ्नका लागि आधिकारिक गणनाका प्रमुख विषय।</p>
-        </div>
-
-        <div class="grid grid-2">
-          <article class="card">
-            <div class="icon"><i class="fa-solid fa-people-roof"></i></div>
-            <h3>राष्ट्रिय जनगणना २०७८ / 2021</h3>
-            <p>जनसंख्या, घरपरिवार, लिङ्ग, उमेर, साक्षरता, शिक्षा, रोजगारी, बसाइँसराइ, आवास लगायतका विवरण।</p>
-            <div class="stats" style="margin:18px 0 0;grid-template-columns:1fr 1fr">
-              <div class="stat"><div class="num">29,164,578</div><div class="label">कुल जनसंख्या</div></div>
-              <div class="stat"><div class="num">6,666,937</div><div class="label">घरपरिवार</div></div>
+              <a href="#contact" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-brand-600/90 hover:bg-brand-600 text-white font-extrabold text-base backdrop-blur-sm border border-white/20 shadow-lg hover:scale-105 active:scale-95 transition-all">
+                <i class="fa-regular fa-paper-plane"></i>
+                <span>सम्पर्क गर्नुहोस्</span>
+              </a>
             </div>
-            <a class="btn btn-primary" style="margin-top:16px" href="https://censusresults.nsonepal.gov.np/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> आधिकारिक परिणाम</a>
-          </article>
 
-          <article class="card">
-            <div class="icon"><i class="fa-solid fa-tractor"></i></div>
-            <h3>राष्ट्रिय कृषि गणना २०७८/79 / 2021-22</h3>
-            <p>कृषि होल्डिङ, जग्गा, सिँचाइ, बाली, पशुधन, श्रम, कृषि मेसिनरी र कृषि व्यवस्थापनसम्बन्धी तथ्याङ्क।</p>
-            <div class="grid grid-2" style="margin-top:18px">
-              <div class="card" style="padding:14px"><strong>भूमि</strong><br><span style="color:var(--muted);font-size:.78rem">क्षेत्रफल • स्वामित्व • भाडा</span></div>
-              <div class="card" style="padding:14px"><strong>पशुधन</strong><br><span style="color:var(--muted);font-size:.78rem">पशु • पक्षी • मत्स्य</span></div>
+            <!-- हाइलाइट बक्सहरू -->
+            <div class="grid grid-cols-3 gap-4 pt-6 border-t border-sky-300/40 text-white max-w-lg mx-auto lg:mx-0">
+              <div class="bg-slate-900/35 backdrop-blur-md p-3 rounded-xl border border-white/15 text-center">
+                <p class="text-2xl font-black text-sky-200">१०+ वर्ष</p>
+                <p class="text-xs text-sky-100 mt-0.5">अनुभव तथा सेवा</p>
+              </div>
+              <div class="bg-slate-900/35 backdrop-blur-md p-3 rounded-xl border border-white/15 text-center">
+                <p class="text-2xl font-black text-sky-200">५०+ कार्य</p>
+                <p class="text-xs text-sky-100 mt-0.5">सामाजिक परियोजना</p>
+              </div>
+              <div class="bg-slate-900/35 backdrop-blur-md p-3 rounded-xl border border-white/15 text-center">
+                <p class="text-2xl font-black text-sky-200">१००%</p>
+                <p class="text-xs text-sky-100 mt-0.5">राष्ट्रप्रेम र निष्ठा</p>
+              </div>
             </div>
-            <a class="btn btn-primary" style="margin-top:16px" href="https://microdata.nsonepal.gov.np/index.php/catalog/134" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> कृषि गणना स्रोत</a>
-          </article>
+
+          </div>
+
+          <!-- दायाँपट्टि: प्रोफाइल कार्ड -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="relative w-80 sm:w-92 max-w-full">
+              <div class="absolute -inset-2 rounded-3xl bg-gradient-to-tr from-sky-400 to-cyan-300 opacity-40 blur-xl"></div>
+              
+              <div class="relative bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-3xl p-7 shadow-2xl border border-sky-200 dark:border-sky-800 text-center">
+                
+                <!-- प्रोफाइल फोटो कन्टेनर (हिमालको पृष्ठभूमि फ्रेम सहित) -->
+                <div class="w-44 h-44 mx-auto rounded-2xl bg-gradient-to-tr from-sky-100 via-sky-50 to-blue-100 dark:from-slate-800 dark:to-sky-950 border-4 border-brand-500/40 flex items-center justify-center relative overflow-hidden shadow-inner mb-5">
+                  <div class="absolute inset-0 bg-cover bg-center opacity-25" style="background-image: url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=500&q=70');"></div>
+                  <i class="fa-solid fa-user-tie text-7xl text-brand-700 dark:text-brand-400 relative z-10"></i>
+                </div>
+
+                <h3 class="text-2xl font-black text-slate-900 dark:text-white">झविन्द्र पोखरेल</h3>
+                <p class="text-brand-600 dark:text-brand-400 font-bold text-sm mb-4">परामर्शदाता / सामाजिक अभियान्ता</p>
+                
+                <div class="inline-flex items-center gap-2 text-sky-800 dark:text-sky-300 text-sm font-semibold py-2 px-4 bg-sky-100/70 dark:bg-sky-950/70 rounded-xl mb-5 border border-sky-200 dark:border-sky-800">
+                  <i class="fa-solid fa-location-dot text-red-500"></i>
+                  <span>नेपाल (Nepal)</span>
+                </div>
+
+                <!-- सामाजिक सञ्जाल र लिङ्क कपी -->
+                <div class="flex justify-center gap-3 pt-1">
+                  <button onclick="copyDomain()" class="px-4 py-2 rounded-xl bg-brand-50 dark:bg-sky-950 border border-brand-200 dark:border-brand-800 text-brand-700 dark:text-brand-300 font-bold text-xs hover:bg-brand-500 hover:text-white transition flex items-center gap-2">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>www.jhabindrapokharel.com.np</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <section class="section" id="laws" style="background:#fff">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-scale-balanced"></i> कानुनी जानकारी</span>
-          <h2 class="section-title">कृषि तथा पशुपन्छीसम्बन्धी ऐन–कानुन</h2>
-          <p class="section-lead">सम्बन्धित कानूनहरूको सूची र आधिकारिक नेपाल कानून आयोगमा खोज्ने सुविधा। कानून संशोधन हुन सक्ने भएकाले मूल स्रोत हेर्नुहोस्।</p>
-        </div>
-
-        <div class="law-list">
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>पशु स्वास्थ्य तथा पशु सेवा ऐन, २०५५</strong><br><span>पशु स्वास्थ्य, सेवा तथा सम्बन्धित व्यवस्था</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>पशु स्वास्थ्य तथा पशु सेवा नियमावली, २०५६</strong><br><span>नियमावली तथा कार्यान्वयनसम्बन्धी व्यवस्था</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>पशु वधशाला तथा मासु जाँच ऐन, २०५५</strong><br><span>वधशाला र मासु जाँचसम्बन्धी कानुनी व्यवस्था</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>बीउ बिजन ऐन, २०४५</strong><br><span>बीउको गुणस्तर, प्रमाणीकरण तथा नियमन</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>बिरुवा क्वारेन्टाइन तथा संरक्षण ऐन, २०६४</strong><br><span>बिरुवा स्वास्थ्य तथा क्वारेन्टाइनसम्बन्धी व्यवस्था</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>खाद्य अधिकार तथा खाद्य सम्प्रभुता सम्बन्धी ऐन, २०७५</strong><br><span>खाद्य अधिकार तथा खाद्य सुरक्षासँग सम्बन्धित व्यवस्था</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>जीवनाशक विषादी व्यवस्थापन ऐन, २०७६</strong><br><span>विषादीको व्यवस्थापन तथा नियमन</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          <a class="law" href="https://lawcommission.gov.np/" target="_blank" rel="noopener"><div><strong>भूउपयोग ऐन, २०७६</strong><br><span>भूमिको वर्गीकरण तथा उपयोगसम्बन्धी व्यवस्था</span></div><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-        </div>
-
-        <p class="note">कानुनी सूचीलाई पूर्ण/अद्यावधिक राख्न नेपाल कानून आयोगको मूल पाठ र हालको संशोधन हेर्नुहोस्।</p>
-      </div>
-    </section>
-
-    <section class="section" id="animals">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-paw"></i> जैविक विविधता</span>
-          <h2 class="section-title">जनावर, पक्षी र माछा</h2>
-          <p class="section-lead">नेपालका घरपालुवा, कृषि उपयोगी तथा वन्य/स्थानीय प्रजातिसम्बन्धी सामान्य परिचय।</p>
-        </div>
-        <div class="grid grid-4">
-          <article class="card"><div class="icon">🐘</div><h3>हात्ती</h3><p>नेपालको जैविक तथा वन्यजन्तु सम्पदाको महत्वपूर्ण प्रजाति।</p></article>
-          <article class="card"><div class="icon">🦚</div><h3>डाँफे / पक्षी</h3><p>नेपालका सुन्दर तथा स्थानीय पक्षी प्रजातिको परिचय।</p></article>
-          <article class="card"><div class="icon">🐕</div><h3>कुकुर</h3><p>पाल्तु जनावर, जिम्मेवार पालन र रेबिज रोकथाम।</p></article>
-          <article class="card"><div class="icon">🐈</div><h3>बिरालो</h3><p>पाल्तु जनावरको पोषण, स्वास्थ्य र जिम्मेवार हेरचाह।</p></article>
-          <article class="card"><div class="icon">🦌</div><h3>वन्यजन्तु</h3><p>नेपालको वन्यजन्तु विविधता र संरक्षणको महत्व।</p></article>
-          <article class="card"><div class="icon">🐟</div><h3>माछा</h3><p>नदी, ताल तथा व्यावसायिक मत्स्यपालनका प्रजाति।</p></article>
-          <article class="card"><div class="icon">🐎</div><h3>घोडा / खच्चड</h3><p>पहाडी तथा हिमाली क्षेत्रमा उपयोगी पशु र स्वास्थ्य व्यवस्थापन।</p></article>
-          <article class="card"><div class="icon">🐓</div><h3>स्थानीय कुखुरा</h3><p>स्थानीय genetic diversity, पालन र जैविक सुरक्षा।</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="nature" style="background:#fff">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-mountain-sun"></i> नेपाल दर्शन</span>
-          <h2 class="section-title">हिमालदेखि तराईसम्म</h2>
-          <p class="section-lead">नेपालको प्राकृतिक सौन्दर्य, कृषि भू-दृश्य र क्षेत्रगत उत्पादनलाई एउटै दृश्यमा प्रस्तुत गर्ने भाग।</p>
-        </div>
-
-        <div class="gallery">
-          <div class="gallery-item big"><div class="scene">🏔️</div><div class="gallery-label">सगरमाथा / हिमाली क्षेत्र</div></div>
-          <div class="gallery-item"><div class="scene">🌾</div><div class="gallery-label">हरियाली तराईका खेत</div></div>
-          <div class="gallery-item"><div class="scene">🍊</div><div class="gallery-label">पहाडका सुन्तला बगैँचा</div></div>
-          <div class="gallery-item"><div class="scene">🍎</div><div class="gallery-label">हिमाली/उच्च पहाडी स्याउ</div></div>
-          <div class="gallery-item"><div class="scene">🌲</div><div class="gallery-label">पहाड र वन</div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="gov">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-building-columns"></i> सरकारी स्रोत</span>
-          <h2 class="section-title">नेपाल सरकारका उपयोगी वेबसाइटहरू</h2>
-          <p class="section-lead">आधिकारिक सूचना, तथ्याङ्क, कानून र पशु स्वास्थ्यसम्बन्धी नयाँ जानकारीका लागि मूल स्रोत प्रयोग गर्नुहोस्।</p>
-        </div>
-        <div class="grid grid-2">
-          <div class="gov"><div class="icon"><i class="fa-solid fa-chart-column"></i></div><div><h3>राष्ट्रिय तथ्याङ्क कार्यालय</h3><a href="https://nsonepal.gov.np/" target="_blank" rel="noopener">nsonepal.gov.np</a><p class="note">जनगणना तथा राष्ट्रिय तथ्याङ्क।</p></div></div>
-          <div class="gov"><div class="icon"><i class="fa-solid fa-cow"></i></div><div><h3>पशु सेवा विभाग</h3><a href="https://dls.gov.np/" target="_blank" rel="noopener">dls.gov.np</a><p class="note">पशु स्वास्थ्य, रोग सूचना, सेवा तथा तथ्याङ्क।</p></div></div>
-          <div class="gov"><div class="icon"><i class="fa-solid fa-scale-balanced"></i></div><div><h3>नेपाल कानून आयोग</h3><a href="https://lawcommission.gov.np/" target="_blank" rel="noopener">lawcommission.gov.np</a><p class="note">ऐन, नियम तथा कानुनी सामग्री।</p></div></div>
-          <div class="gov"><div class="icon"><i class="fa-solid fa-database"></i></div><div><h3>NSO Microdata</h3><a href="https://microdata.nsonepal.gov.np/" target="_blank" rel="noopener">microdata.nsonepal.gov.np</a><p class="note">गणना तथा सर्वेक्षणका dataset/catalog।</p></div></div>
-          <div class="gov"><div class="icon"><i class="fa-solid fa-seedling"></i></div><div><h3>कृषि तथा सम्बन्धित सरकारी स्रोत</h3><a href="https://www.moald.gov.np/" target="_blank" rel="noopener">moald.gov.np</a><p class="note">कृषि नीति, कार्यक्रम तथा मन्त्रालयसम्बन्धी सूचना।</p></div></div>
-          <div class="gov"><div class="icon"><i class="fa-solid fa-globe"></i></div><div><h3>NAHIS / पशु रोग सूचना</h3><a href="https://nahis.gov.np/" target="_blank" rel="noopener">nahis.gov.np</a><p class="note">पशु स्वास्थ्य तथा रोग निगरानीसम्बन्धी सूचना उपलब्ध हुने आधिकारिक प्रणाली।</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section about" id="about">
-      <div class="container about-grid">
-        <div>
-          <span class="eyebrow" style="color:#a7f3d0"><i class="fa-solid fa-user"></i> मेरो परिचय</span>
-          <h2 class="section-title" style="color:#fff">Jenish</h2>
-          <p class="section-lead">
-            Veterinary Technician का रूपमा पशु स्वास्थ्य, कृषि तथा ग्रामीण जीवनसँग जोडिएका
-            ज्ञान र उपयोगी स्रोतलाई डिजिटल रूपमा प्रस्तुत गर्ने उद्देश्यले यो वेबसाइट तयार गरिएको हो।
+    <!-- नेपालका प्रमुख ८ धरोहर तथा प्राकृतिक स्थलहरू (Heritage & Landmarks Section) -->
+    <section id="heritage" class="py-20 bg-white/90 dark:bg-slate-900/90 border-b border-sky-200 dark:border-sky-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="inline-block px-4 py-1.5 rounded-full bg-sky-100 dark:bg-sky-950 text-brand-700 dark:text-brand-300 text-xs font-black uppercase tracking-widest mb-3 border border-sky-300 dark:border-sky-800">
+            नेपालका अमूल्य सम्पदाहरू
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            नेपालको गौरव, प्राकृतिक एवं धार्मिक स्थलहरू
+          </h2>
+          <p class="text-slate-600 dark:text-slate-300 mt-3 text-base">
+            हिमालको काखदेखि ऐतिहासिक रानीमहल, फेवाताल, रारा ताल तथा पशुपतिनाथ, पाथीभरा, सुपा देउराली, भैरवनाथ मन्दिरको पावन भूमि।
           </p>
-          <div class="contact-list">
-            <div class="contact-item"><i class="fa-solid fa-location-dot"></i><span>Palpa, Nepal</span></div>
-            <div class="contact-item"><i class="fa-solid fa-briefcase"></i><span>Veterinary Technician</span></div>
+          <div class="w-20 h-1.5 bg-gradient-to-r from-brand-500 to-sky-400 rounded-full mx-auto mt-4"></div>
+        </div>
+
+        <!-- ८ वटा स्थलहरूको वास्तविक तस्बिर ग्रिड -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- १. हिमाल (Himalayas) -->
+          <div class="group relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 border border-sky-200 dark:border-sky-800 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="h-56 w-full overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80" 
+                   alt="हिमाल (नेपाल)" 
+                   onerror="this.src='https://placehold.co/800x600/0284c7/ffffff?text=Himalayas+Nepal'"
+                   class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+              <span class="absolute top-3 left-3 bg-slate-900/70 backdrop-blur-sm text-sky-200 text-xs font-bold px-2.5 py-1 rounded-md">
+                <i class="fa-solid fa-mountain mr-1"></i> हिमशृङ्खला
+              </span>
+            </div>
+            <div class="p-4 bg-white dark:bg-slate-800">
+              <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">हिमाल (Himalayas)</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">संसारको शिर, सगरमाथा तथा अन्नपूर्ण हिमशृङ्खलाको अद्वितीय सौन्दर्य।</p>
+              <button onclick="previewPlace('हिमाल (नेपालका हिमशृङ्खला)', 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=85', 'संसारका सर्वोच्च शिखरहरू नेपालको गौरव हुन्। हिमालले हाम्रो अस्तित्व, पहिचान र पर्यटनलाई विश्वमा चिनाएको छ।')" class="mt-3 text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                तस्बिर ठूलो बनाएर हेर्नुहोस् <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- २. फेवाताल (Phewa Lake, Pokhara) -->
+          <div class="group relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 border border-sky-200 dark:border-sky-800 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="h-56 w-full overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=800&q=80" 
+                   alt="फेवाताल, पोखरा" 
+                   onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Phewa_Lake_Pokhara_Nepal.jpg/800px-Phewa_Lake_Pokhara_Nepal.jpg'"
+                   class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+              <span class="absolute top-3 left-3 bg-slate-900/70 backdrop-blur-sm text-sky-200 text-xs font-bold px-2.5 py-1 rounded-md">
+                <i class="fa-solid fa-water mr-1"></i> पोखरा
+              </span>
+            </div>
+            <div class="p-4 bg-white dark:bg-slate-800">
+              <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">फेवाताल (Phewa Lake)</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">माछापुच्छ्रे हिमालको छाया र तालबाराही मन्दिर रहेको मनोरम ताल।</p>
+              <button onclick="previewPlace('फेवाताल (पोखरा)', 'https://images.unsplash.com/photo-1605640840605-14ac1855827b?auto=format&fit=crop&w=1200&q=85', 'पोखराको मुटु मानिने फेवातालमा हिमालको प्रतिबिम्ब र तालबाराही मन्दिरको दर्शनले मनमा अलौकिक शान्ति प्रदान गर्दछ।')" class="mt-3 text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                तस्बिर ठूलो बनाएर हेर्नुहोस् <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- ३. रानीमहल (Rani Mahal, Palpa) -->
+          <div class="group relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 border border-sky-200 dark:border-sky-800 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="h-56 w-full overflow-hidden relative">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Rani_Mahal_Palpa.jpg/800px-Rani_Mahal_Palpa.jpg" 
+                   alt="रानीमहल, पाल्पा" 
+                   onerror="this.src='https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?auto=format&fit=crop&w=800&q=80'"
+                   class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+              <span class="absolute top-3 left-3 bg-slate-900/70 backdrop-blur-sm text-sky-200 text-xs font-bold px-2.5 py-1 rounded-md">
+                <i class="fa-solid fa-landmark mr-1"></i> पाल्पा
+              </span>
+            </div>
+            <div class="p-4 bg-white dark:bg-slate-800">
+              <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">रानीमहल (Rani Mahal)</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">कालीगण्डकी नदीको किनारमा अवस्थित नेपालको ऐतिहासिक ताजमहल।</p>
+              <button onclick="previewPlace('रानीमहल (पाल्पा)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Rani_Mahal_Palpa.jpg/1200px-Rani_Mahal_Palpa.jpg', 'पाल्पाको कालीगण्डकी किनारमा वि.सं. १९५४ मा खड्ग शमशेरले रानी तेजकुमारीको सम्झनामा बनाएको यो महल नेपालको प्रेमकथा र वास्तुकलाको प्रतीक हो।')" class="mt-3 text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                तस्बिर ठूलो बनाएर हेर्नुहोस् <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- ४. रारा ताल (Rara Lake, Mugu) -->
+          <div class="group relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 border border-sky-200 dark:border-sky-800 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="h-56 w-full overflow-hidden relative">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Rara_Lake_Mugu_Nepal.jpg/800px-Rara_Lake_Mugu_Nepal.jpg" 
+                   alt="रारा ताल, मुगु" 
+                   onerror="this.src='https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'"
+                   class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+              <span class="absolute top-3 left-3 bg-slate-900/70 backdrop-blur-sm text-sky-200 text-xs font-bold px-2.5 py-1 rounded-md">
+                <i class="fa-solid fa-gem mr-1"></i> मुगु
+              </span>
+            </div>
+            <div class="p-4 bg-white dark:bg-slate-800">
+              <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">रारा ताल (Rara Lake)</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">नेपालको सबैभन्दा ठूलो र गहिरो कञ्चन प्राकृतिक ताल, अप्सरा स्वरूप।</p>
+              <button onclick="previewPlace('रारा ताल (मुगु)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Rara_Lake_Mugu_Nepal.jpg/1200px-Rara_Lake_Mugu_Nepal.jpg', 'समुद्र सतहबाट २,९९० मिटरको उचाइमा रहेको रारा ताल आफ्नो कञ्चन निलो पानी र रङ फेरिरहने प्रकृतिका कारण धर्तीको स्वर्ग मानिन्छ।')" class="mt-3 text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                तस्बिर ठूलो बनाएर हेर्नुहोस् <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- ५. पाथीभरा मन्दिर (Pathibhara Temple, Taplejung) -->
+          <div class="group relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 border border-sky-200 dark:border-sky-800 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="h-56 w-full overflow-hidden relative">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Pathibhara_taplejung.jpg/800px-Pathibhara_taplejung.jpg" 
+                   alt="पाथीभरा मन्दिर, ताप्लेजुङ" 
+                   onerror="this.src='https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=800&q=80'"
+                   class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+              <span class="absolute top-3 left-3 bg-slate-900/70 backdrop-blur-sm text-sky-200 text-xs font-bold px-2.5 py-1 rounded-md">
+                <i class="fa-solid fa-gopuram mr-1"></i> ताप्लेजुङ
+              </span>
+            </div>
+            <div class="p-4 bg-white dark:bg-slate-800">
+              <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">पाथीभरा (Pathibhara)</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">पूर्वी नेपालको प्रसिद्ध शक्तिपीठ, मनोकाङ्क्षा पूरा गर्ने पावन धाम।</p>
+              <button onclick="previewPlace('पाथीभरा देवी मन्दिर (ताप्लेजुङ)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Pathibhara_taplejung.jpg/1200px-Pathibhara_taplejung.jpg', 'ताप्लेजुङ जिल्लामा ३,७९४ मिटरको उचाइमा रहेको पाथीभरा देवीको दर्शन गर्नाले मनको ईच्छा पूरा हुने जनविश्वास रहेको छ।')" class="mt-3 text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                तस्बिर ठूलो बनाएर हेर्नुहोस् <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- ६. सुपा देउराली (Supa Deurali, Arghakhanchi) -->
+          <div class="group relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 border border-sky-200 dark:border-sky-800 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="h-56 w-full overflow-hidden relative">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Supa_deurali_%E0%A4%85%E0%A4%B0%E0%A5%8D%E0%A4%98%E0%A4%BE%E0%A4%96%E0%A4%BE%E0%A4%81%E0%A4%9A%E0%A5%80.jpg/800px-Supa_deurali_%E0%A4%85%E0%A4%B0%E0%A5%8D%E0%A4%98%E0%A4%BE%E0%A4%96%E0%A4%BE%E0%A4%81%E0%A4%9A%E0%A5%80.jpg" 
+                   alt="सुपा देउराली, अर्घाखाँची" 
+                   onerror="this.src='https://placehold.co/800x600/0369a1/ffffff?text=Supa+Deurali+Temple'"
+                   class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+              <span class="absolute top-3 left-3 bg-slate-900/70 backdrop-blur-sm text-sky-200 text-xs font-bold px-2.5 py-1 rounded-md">
+                <i class="fa-solid fa-bell mr-1"></i> अर्घाखाँची
+              </span>
+            </div>
+            <div class="p-4 bg-white dark:bg-slate-800">
+              <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">सुपा देउराली (Supa Deurali)</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">पहाडको खोंचमा अवस्थित पश्चिम नेपालको श्रद्धा र आस्थाको केन्द्र।</p>
+              <button onclick="previewPlace('सुपा देउराली मन्दिर (अर्घाखाँची)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Supa_deurali_%E0%A4%85%E0%A4%B0%E0%A5%8D%E0%A4%98%E0%A4%BE%E0%A4%96%E0%A4%BE%E0%A4%81%E0%A4%9A%E0%A5%80.jpg/1200px-Supa_deurali_%E0%A4%85%E0%A4%B0%E0%A5%8D%E0%A4%98%E0%A4%BE%E0%A4%96%E0%A4%BE%E0%A4%81%E0%A4%9A%E0%A5%80.jpg', 'गोरुसिङ्गे-सन्धिखर्क सडकखण्डमा रहेको सुपा देउराली मन्दिर धार्मिक आस्था, भाकल पूरा हुने विश्वास र प्राकृतिक छटाका लागि अत्यन्त प्रख्यात छ।')" class="mt-3 text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                तस्बिर ठूलो बनाएर हेर्नुहोस् <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- ७. भैरवनाथ मन्दिर (Bhairavnath Temple) -->
+          <div class="group relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 border border-sky-200 dark:border-sky-800 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="h-56 w-full overflow-hidden relative">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Bhairab_Temple_Taumadhi_Square_Bhaktapur_Nepal.jpg/800px-Bhairab_Temple_Taumadhi_Square_Bhaktapur_Nepal.jpg" 
+                   alt="भैरवनाथ मन्दिर" 
+                   onerror="this.src='https://placehold.co/800x600/0284c7/ffffff?text=Bhairavnath+Temple'"
+                   class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+              <span class="absolute top-3 left-3 bg-slate-900/70 backdrop-blur-sm text-sky-200 text-xs font-bold px-2.5 py-1 rounded-md">
+                <i class="fa-solid fa-om mr-1"></i> ऐतिहासिक मन्दिर
+              </span>
+            </div>
+            <div class="p-4 bg-white dark:bg-slate-800">
+              <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">भैरवनाथ मन्दिर (Bhairavnath)</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">प्राचीन काष्ठकला र तान्त्रिक महत्त्व बोकेको प्रसिद्ध भैरव मन्दिर।</p>
+              <button onclick="previewPlace('भैरवनाथ मन्दिर', 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Bhairab_Temple_Taumadhi_Square_Bhaktapur_Nepal.jpg/1200px-Bhairab_Temple_Taumadhi_Square_Bhaktapur_Nepal.jpg', 'नेपालको प्राचीन काष्ठकला, वास्तुकला र तान्त्रिक परम्पराको अनुपम उदाहरण, भैरवनाथको संरक्षण र पूजाआजा परम्परागत रूपमा भव्यताका साथ गरिन्छ।')" class="mt-3 text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                तस्बिर ठूलो बनाएर हेर्नुहोस् <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- ८. पशुपतिनाथ मन्दिर (Pashupatinath Temple) -->
+          <div class="group relative rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 border border-sky-200 dark:border-sky-800 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class="h-56 w-full overflow-hidden relative">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Pashupatinath_Temple_Kathmandu_Nepal.jpg/800px-Pashupatinath_Temple_Kathmandu_Nepal.jpg" 
+                   alt="पशुपतिनाथ मन्दिर, काठमाडौँ" 
+                   onerror="this.src='https://placehold.co/800x600/0369a1/ffffff?text=Pashupatinath+Temple'"
+                   class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+              <span class="absolute top-3 left-3 bg-slate-900/70 backdrop-blur-sm text-sky-200 text-xs font-bold px-2.5 py-1 rounded-md">
+                <i class="fa-solid fa-place-of-worship mr-1"></i> काठमाडौँ
+              </span>
+            </div>
+            <div class="p-4 bg-white dark:bg-slate-800">
+              <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">पशुपतिनाथ (Pashupatinath)</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">बागमती किनारमा अवस्थित विश्व सम्पदा सूचीकृत सनातन हिन्दु तीर्थस्थल।</p>
+              <button onclick="previewPlace('पशुपतिनाथ मन्दिर (काठमाडौँ)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Pashupatinath_Temple_Kathmandu_Nepal.jpg/1200px-Pashupatinath_Temple_Kathmandu_Nepal.jpg', 'विश्वभरका हिन्दु धर्मावलम्बीहरूको आस्थाको सर्वोच्च केन्द्र तथा युनेस्को विश्व सम्पदा सूचीमा सूचीकृत भगवान् पशुपतिनाथको पावन मन्दिर।')" class="mt-3 text-xs font-bold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                तस्बिर ठूलो बनाएर हेर्नुहोस् <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- परिचय सेक्सन (About Section) -->
+    <section id="about" class="py-20 bg-sky-50/50 dark:bg-slate-950">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs sm:text-sm uppercase tracking-widest font-extrabold text-brand-600 dark:text-brand-400 mb-2">
+            मेरो बारेमा
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            व्यक्तित्व तथा कार्यदिशा
+          </h2>
+          <div class="w-16 h-1.5 bg-brand-500 rounded-full mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          
+          <!-- बायाँपट्टि: विस्तृत विवरण -->
+          <div class="space-y-6 text-slate-700 dark:text-slate-300 text-lg leading-relaxed">
+            <p>
+              म <strong class="text-slate-900 dark:text-white font-bold">झविन्द्र पोखरेल</strong>। नेपालको समसामयिक विकास, नीतिगत अनुसन्धान, सामुदायिक सशक्तीकरण तथा नेतृत्व विकासको क्षेत्रमा सक्रिय रूपमा कार्यरत छु।
+            </p>
+            <p>
+              हाम्रो देश नेपाल प्राकृतिक र सांस्कृतिक रूपमा विश्वमै अद्वितीय छ। हिमाल, तालतलैया तथा प्राचीन धरोहरहरू हाम्रो अमूल्य पुँजी हुन्। यिनको संरक्षण गर्दै आधुनिक ज्ञान, प्रविधि र इमान्दार नेतृत्वद्वारा समाज रूपान्तरण गर्न सकिन्छ भन्ने मेरो मान्यता छ।
+            </p>
+
+            <!-- मुख्य विशेषताहरू -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-sky-200 dark:border-sky-900 shadow-sm flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-600 text-xl mt-1"></i>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white">दक्ष नेतृत्व</h4>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">टोली परिचालन र प्रभावकारी योजना निर्माण।</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-sky-200 dark:border-sky-900 shadow-sm flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-600 text-xl mt-1"></i>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white">अनुसन्धानमुखी सोच</h4>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">तथ्य र विश्लेषणमा आधारित निर्णय प्रक्रिया।</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-sky-200 dark:border-sky-900 shadow-sm flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-600 text-xl mt-1"></i>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white">धरोहर संरक्षण</h4>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">नेपाली सम्पदा र मौलिकताको प्रवर्द्धन।</p>
+                </div>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-sky-200 dark:border-sky-900 shadow-sm flex items-start gap-3">
+                <i class="fa-solid fa-circle-check text-brand-600 text-xl mt-1"></i>
+                <div>
+                  <h4 class="font-bold text-slate-900 dark:text-white">व्यावसायिक निष्ठा</h4>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">इमान्दारिता र परिणाममुखी कार्यशैली।</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- दायाँपट्टि: व्यक्तिगत जानकारी कार्ड -->
+          <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 sm:p-8 border border-sky-200 dark:border-sky-900 shadow-lg space-y-6">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white border-b border-sky-100 dark:border-sky-900/60 pb-4 flex items-center justify-between">
+              <span>संक्षिप्त परिचय विवरण</span>
+              <span class="text-xs px-3 py-1 bg-sky-100 dark:bg-sky-950 text-brand-700 dark:text-brand-300 rounded-full">आधिकारिक</span>
+            </h3>
+
+            <dl class="space-y-4 text-base">
+              <div class="flex flex-col sm:flex-row sm:justify-between pb-3 border-b border-sky-100 dark:border-sky-900/40">
+                <dt class="text-slate-500 dark:text-slate-400 font-medium">पूरा नाम:</dt>
+                <dd class="font-bold text-slate-900 dark:text-white">झविन्द्र पोखरेल (Jhabindra Pokharel)</dd>
+              </div>
+
+              <div class="flex flex-col sm:flex-row sm:justify-between pb-3 border-b border-sky-100 dark:border-sky-900/40">
+                <dt class="text-slate-500 dark:text-slate-400 font-medium">ठेगाना:</dt>
+                <dd class="font-bold text-slate-900 dark:text-white">काठमाडौँ / रूपन्देही, नेपाल</dd>
+              </div>
+
+              <div class="flex flex-col sm:flex-row sm:justify-between pb-3 border-b border-sky-100 dark:border-sky-900/40">
+                <dt class="text-slate-500 dark:text-slate-400 font-medium">इमेल:</dt>
+                <dd class="font-bold text-brand-600 dark:text-brand-400">info@jhabindrapokharel.com.np</dd>
+              </div>
+
+              <div class="flex flex-col sm:flex-row sm:justify-between pb-3 border-b border-sky-100 dark:border-sky-900/40">
+                <dt class="text-slate-500 dark:text-slate-400 font-medium">वेब ठेगाना:</dt>
+                <dd class="font-bold text-slate-900 dark:text-white font-mono text-sm">www.jhabindrapokharel.com.np</dd>
+              </div>
+
+              <div class="flex flex-col sm:flex-row sm:justify-between">
+                <dt class="text-slate-500 dark:text-slate-400 font-medium">भाषाहरू:</dt>
+                <dd class="font-bold text-slate-900 dark:text-white">नेपाली, अङ्ग्रेजी, हिन्दी</dd>
+              </div>
+            </dl>
+
+            <div class="pt-3">
+              <button onclick="downloadInfoModal()" class="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-brand-600 to-sky-600 hover:from-brand-700 hover:to-sky-700 text-white font-bold shadow-md shadow-brand-500/20 hover:shadow-lg transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-address-card"></i>
+                <span>परिचय-पत्र विवरण हेर्नुहोस्</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- दक्षता तथा विशेषज्ञता (Skills Section) -->
+    <section id="skills" class="py-20 bg-white dark:bg-slate-900 border-t border-sky-200 dark:border-sky-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs sm:text-sm uppercase tracking-widest font-extrabold text-brand-600 dark:text-brand-400 mb-2">
+            दक्षता तथा ज्ञान
+          </span>
+          <p class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            मेरो कार्यकुशलता र क्षमता
+          </p>
+          <div class="w-16 h-1.5 bg-brand-500 rounded-full mx-auto mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <div class="bg-sky-50/60 dark:bg-slate-800/80 p-8 rounded-2xl border border-sky-200 dark:border-sky-800 shadow-sm hover:shadow-xl transition group">
+            <div class="w-14 h-14 rounded-2xl bg-white dark:bg-slate-700 text-brand-600 dark:text-brand-400 flex items-center justify-center text-2xl mb-6 shadow group-hover:scale-110 transition">
+              <i class="fa-solid fa-users-gear"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">नेतृत्व तथा व्यवस्थापन</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+              संस्थागत संरचना निर्माण, टोली सञ्चालन र दीर्घकालीन परियोजनाहरूको सफल कार्यान्वयन।
+            </p>
+            <div class="w-full bg-sky-200/70 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-brand-600 h-full rounded-full" style="width: 95%"></div>
+            </div>
+          </div>
+
+          <div class="bg-sky-50/60 dark:bg-slate-800/80 p-8 rounded-2xl border border-sky-200 dark:border-sky-800 shadow-sm hover:shadow-xl transition group">
+            <div class="w-14 h-14 rounded-2xl bg-white dark:bg-slate-700 text-brand-600 dark:text-brand-400 flex items-center justify-center text-2xl mb-6 shadow group-hover:scale-110 transition">
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">अनुसन्धान तथा प्रतिवेदन</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+              सामाजिक, आर्थिक र नीतिगत विषयहरूमा तथ्यपरक अध्ययन, प्रतिवेदन र प्रस्तावना लेखन।
+            </p>
+            <div class="w-full bg-sky-200/70 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-brand-600 h-full rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+
+          <div class="bg-sky-50/60 dark:bg-slate-800/80 p-8 rounded-2xl border border-sky-200 dark:border-sky-800 shadow-sm hover:shadow-xl transition group">
+            <div class="w-14 h-14 rounded-2xl bg-white dark:bg-slate-700 text-brand-600 dark:text-brand-400 flex items-center justify-center text-2xl mb-6 shadow group-hover:scale-110 transition">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">डिजिटल तथा प्रविधि ज्ञान</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-4">
+              आधुनिक डिजिटल प्रविधि, कार्यालय स्वचालन र सुशासन प्रवर्द्धनका डिजिटल संयन्त्रहरू।
+            </p>
+            <div class="w-full bg-sky-200/70 dark:bg-slate-700 h-2.5 rounded-full overflow-hidden">
+              <div class="bg-brand-600 h-full rounded-full" style="width: 88%"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- नेपाल जानकारी, प्रकाशन, संविधान, निर्वाचन, मूल्य र मन्त्रिपरिषद् -->
+    <section id="nepal-info" class="py-20 bg-sky-50/70 dark:bg-slate-950 border-y border-sky-200 dark:border-sky-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="text-xs sm:text-sm uppercase tracking-widest font-extrabold text-brand-600 dark:text-brand-400">नेपाल सूचना केन्द्र</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mt-2">नेपालसम्बन्धी उपयोगी जानकारी एउटै ठाउँमा</h2>
+          <p class="text-slate-600 dark:text-slate-300 mt-3">सरकारी प्रकाशन, संविधान, निर्वाचन परिणाम, साहित्य, मौसम र दैनिक बजार मूल्यका उपयोगी स्रोतहरू।</p>
+          <div class="w-16 h-1.5 bg-brand-500 rounded-full mx-auto mt-4"></div>
+        </div>
+
+        <!-- प्रकाशन / संविधान -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+          <a href="https://www.doib.gov.np/category/1316/" target="_blank" rel="noopener" class="data-card bg-white dark:bg-slate-900 rounded-2xl p-6 border border-sky-200 dark:border-sky-800 shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-sky-100 dark:bg-sky-950 text-brand-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-book-open"></i></div>
+            <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">नेपाल परिचय</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">सूचना तथा प्रसारण विभागको आधिकारिक प्रकाशन — १४औँ संस्करण, २०८३ समेत।</p>
+            <span class="inline-block mt-4 text-brand-600 font-bold text-sm">प्रकाशन हेर्नुहोस् →</span>
+          </a>
+
+          <a href="https://repository.lawcommission.gov.np/np/documents/prevailing-law/%E0%A4%B8%E0%A4%82%E0%A4%B5%E0%A4%BF%E0%A4%A7%E0%A4%BE%E0%A4%A8/constitution-of-nepal/%E0%A4%A8%E0%A5%87%E0%A4%AA%E0%A4%BE%E0%A4%B2%E0%A4%95%E0%A5%8B-%E0%A4%B8%E0%A4%82%E0%A4%B5%E0%A4%BF%E0%A4%A7%E0%A4%BE%E0%A4%A8/" target="_blank" rel="noopener" class="data-card bg-white dark:bg-slate-900 rounded-2xl p-6 border border-sky-200 dark:border-sky-800 shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/50 text-amber-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-scale-balanced"></i></div>
+            <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">नेपालको संविधान २०७२</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">नेपाल कानून आयोगबाट संविधानको आधिकारिक पाठ पढ्न/हेर्न सकिने।</p>
+            <span class="inline-block mt-4 text-brand-600 font-bold text-sm">संविधान खोल्नुहोस् →</span>
+          </a>
+
+          <a href="https://result.election.gov.np/FPTPWLChartResult2082.aspx" target="_blank" rel="noopener" class="data-card bg-white dark:bg-slate-900 rounded-2xl p-6 border border-sky-200 dark:border-sky-800 shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-red-100 dark:bg-red-950/50 text-red-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-check-to-slot"></i></div>
+            <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">निर्वाचन परिणाम २०८२</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">प्रतिनिधि सभा निर्वाचन २०८२ — १६५ वटै प्रत्यक्ष क्षेत्रको अन्तिम विजेता विवरण।</p>
+            <span class="inline-block mt-4 text-brand-600 font-bold text-sm">अन्तिम परिणाम →</span>
+          </a>
+
+          <a href="https://kalimatimarket.gov.np/price" target="_blank" rel="noopener" class="data-card bg-white dark:bg-slate-900 rounded-2xl p-6 border border-sky-200 dark:border-sky-800 shadow-sm">
+            <div class="w-12 h-12 rounded-xl bg-green-100 dark:bg-green-950/50 text-green-600 flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-carrot"></i></div>
+            <h3 class="font-extrabold text-lg text-slate-900 dark:text-white">तरकारीको दैनिक मूल्य</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">कालीमाटी बजारको दैनिक थोक मूल्य — न्यूनतम, अधिकतम र औसत।</p>
+            <span class="inline-block mt-4 text-brand-600 font-bold text-sm">आजको मूल्य →</span>
+          </a>
+        </div>
+
+        <!-- आजको तरकारी मूल्य -->
+        <div class="bg-white dark:bg-slate-900 rounded-3xl border border-sky-200 dark:border-sky-800 shadow-lg p-6 sm:p-8 mb-12">
+          <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6">
+            <div>
+              <span class="text-xs font-black uppercase tracking-widest text-green-600">बजार सूचना</span>
+              <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">आजको तरकारी थोक मूल्य</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">कालीमाटी फलफूल तथा तरकारी बजार विकास समिति — भदौ २०, २०८३</p>
+            </div>
+            <a href="https://kalimatimarket.gov.np/price" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-green-600 text-white font-bold text-sm text-center">पूरा मूल्य सूची ↗</a>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+            <div class="p-4 rounded-xl bg-sky-50 dark:bg-slate-800"><b>गोलभेडा ठूलो</b><div class="text-brand-600 font-black mt-1">रु ६५/kg</div><small class="text-slate-500">औसत</small></div>
+            <div class="p-4 rounded-xl bg-sky-50 dark:bg-slate-800"><b>रातो आलु</b><div class="text-brand-600 font-black mt-1">रु ४९.८३/kg</div><small class="text-slate-500">लाम्चो औसत</small></div>
+            <div class="p-4 rounded-xl bg-sky-50 dark:bg-slate-800"><b>प्याज</b><div class="text-brand-600 font-black mt-1">रु ९५.८३/kg</div><small class="text-slate-500">भारतीय औसत</small></div>
+            <div class="p-4 rounded-xl bg-sky-50 dark:bg-slate-800"><b>गाजर</b><div class="text-brand-600 font-black mt-1">रु १०८/kg</div><small class="text-slate-500">लोकल औसत</small></div>
+            <div class="p-4 rounded-xl bg-sky-50 dark:bg-slate-800"><b>काउली</b><div class="text-brand-600 font-black mt-1">रु ८७.५०/kg</div><small class="text-slate-500">स्थानीय औसत</small></div>
+            <div class="p-4 rounded-xl bg-sky-50 dark:bg-slate-800"><b>हरियो खुर्सानी</b><div class="text-brand-600 font-black mt-1">रु ५५/kg</div><small class="text-slate-500">लाम्चो औसत</small></div>
           </div>
         </div>
-        <div class="about-card">
-          <h3>वेबसाइटको उद्देश्य</h3>
-          <p style="margin-top:10px">
-            किसान, पशुपालक, विद्यार्थी तथा कृषि/पशु क्षेत्रसँग रुचि राख्ने व्यक्तिले
-            नेपालका कृषि, पशुपन्छी, रोग, तथ्याङ्क र कानुनी स्रोतलाई एउटै ठाउँबाट बुझ्न सकून्।
-          </p>
-          <div class="socials">
-            <a href="#" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="X" title="X"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#" aria-label="TikTok" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+
+        <!-- मदन पुरस्कार -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          <div class="bg-white dark:bg-slate-900 rounded-3xl border border-sky-200 dark:border-sky-800 shadow-lg p-6 sm:p-8">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-950/50 text-amber-600 flex items-center justify-center"><i class="fa-solid fa-award text-xl"></i></div>
+              <div><span class="text-xs font-black uppercase tracking-widest text-amber-600">साहित्य</span><h3 class="text-2xl font-black text-slate-900 dark:text-white">मदन पुरस्कार विजेता कृतिहरू</h3></div>
+            </div>
+            <div class="space-y-3 text-sm">
+              <div class="flex justify-between gap-3 border-b border-sky-100 dark:border-slate-800 pb-2"><span>२०८१</span><b>उरमाल — छुदेन काविमो</b></div>
+              <div class="flex justify-between gap-3 border-b border-sky-100 dark:border-slate-800 pb-2"><span>२०८०</span><b>मुकाम रणमैदान — मोहन मैनाली</b></div>
+              <div class="flex justify-between gap-3 border-b border-sky-100 dark:border-slate-800 pb-2"><span>२०७९</span><b>ऐँठन — विवेक ओझा</b></div>
+              <div class="flex justify-between gap-3 border-b border-sky-100 dark:border-slate-800 pb-2"><span>२०७८</span><b>अग्नि — नवराज लम्साल</b></div>
+              <div class="flex justify-between gap-3"><span>२०७७</span><b>लिम्बूवानको ऐतिहासिक दस्तावेज सङ्ग्रह — भगिराज इङ्नाम</b></div>
+            </div>
+            <a href="https://guthi.madanpuraskar.org/category/madanpuraskar-shortlist/" target="_blank" rel="noopener" class="inline-block mt-5 text-brand-600 font-bold text-sm">मदन पुरस्कार गुठीको सूची हेर्नुहोस् →</a>
           </div>
+
+          <div class="bg-white dark:bg-slate-900 rounded-3xl border border-sky-200 dark:border-sky-800 shadow-lg p-6 sm:p-8">
+            <div class="flex items-center gap-3 mb-5">
+              <div class="w-12 h-12 rounded-xl bg-indigo-100 dark:bg-indigo-950/50 text-indigo-600 flex items-center justify-center"><i class="fa-solid fa-landmark text-xl"></i></div>
+              <div><span class="text-xs font-black uppercase tracking-widest text-indigo-600">निर्वाचन २०८२</span><h3 class="text-2xl font-black text-slate-900 dark:text-white">प्रत्यक्षतर्फ अन्तिम दलगत स्थिति</h3></div>
+            </div>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between p-3 rounded-xl bg-sky-50 dark:bg-slate-800"><b>राष्ट्रिय स्वतन्त्र पार्टी</b><strong>१२५</strong></div>
+              <div class="flex justify-between p-3 rounded-xl bg-sky-50 dark:bg-slate-800"><b>नेपाली काँग्रेस</b><strong>१८</strong></div>
+              <div class="flex justify-between p-3 rounded-xl bg-sky-50 dark:bg-slate-800"><b>नेकपा (एमाले)</b><strong>९</strong></div>
+              <div class="flex justify-between p-3 rounded-xl bg-sky-50 dark:bg-slate-800"><b>नेपाली कम्युनिष्ट पार्टी</b><strong>८</strong></div>
+              <div class="flex justify-between p-3 rounded-xl bg-sky-50 dark:bg-slate-800"><b>श्रम संस्कृति पार्टी</b><strong>३</strong></div>
+              <div class="flex justify-between p-3 rounded-xl bg-sky-50 dark:bg-slate-800"><b>राष्ट्रिय प्रजातन्त्र पार्टी</b><strong>१</strong></div>
+              <div class="flex justify-between p-3 rounded-xl bg-sky-50 dark:bg-slate-800"><b>स्वतन्त्र</b><strong>१</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- मन्त्रिपरिषद् -->
+        <div class="bg-white dark:bg-slate-900 rounded-3xl border border-sky-200 dark:border-sky-800 shadow-lg p-6 sm:p-8 mb-12">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-3 mb-7">
+            <div>
+              <span class="text-xs font-black uppercase tracking-widest text-brand-600">नेपाल सरकार</span>
+              <h3 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white mt-1">वर्तमान मन्त्रिपरिषद्</h3>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालयको हालको सूचीअनुसार।</p>
+            </div>
+            <a href="https://opmcm.gov.np/pages/ministers-pages-23/" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-brand-600 text-white font-bold text-sm text-center">आधिकारिक सूची ↗</a>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div class="rounded-2xl overflow-hidden border border-sky-200 dark:border-sky-800 bg-sky-50 dark:bg-slate-800 col-span-2 sm:col-span-1">
+              <img src="https://giwmscdnone.gov.np/media/albums/3.%20%20%20Rt.%20Hon.%20Prime%20Minister%20Balendra%20Shah_BCpv6ERFsg_6eznfyb.jpg" alt="प्रधानमन्त्री वालेन्द्र शाह" class="w-full h-40 object-cover" onerror="this.style.display='none'">
+              <div class="p-3"><b class="text-slate-900 dark:text-white">वालेन्द्र शाह</b><p class="text-xs text-brand-600 mt-1">प्रधानमन्त्री / रक्षा</p></div>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">स</div>
+              <b class="text-slate-900 dark:text-white text-sm">स्वर्णिम वाग्ले</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">अर्थ</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">श</div>
+              <b class="text-slate-900 dark:text-white text-sm">शिशिर खनाल</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">परराष्ट्र</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">व</div>
+              <b class="text-slate-900 dark:text-white text-sm">विराज भक्त श्रेष्ठ</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">ऊर्जा, जलस्रोत तथा सिँचाइ</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">स</div>
+              <b class="text-slate-900 dark:text-white text-sm">सुधन गुरुङ</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">गृह</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">स</div>
+              <b class="text-slate-900 dark:text-white text-sm">सुनिल लम्साल</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">पूर्वाधार विकास</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">स</div>
+              <b class="text-slate-900 dark:text-white text-sm">सोविता गौतम</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">कानून, न्याय तथा संसदीय मामिला</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">म</div>
+              <b class="text-slate-900 dark:text-white text-sm">महावीर पुन</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">विज्ञान, प्रविधि तथा नवप्रवर्तन</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">स</div>
+              <b class="text-slate-900 dark:text-white text-sm">सीता बादी</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">महिला, बालबालिका, लैङ्गिक तथा यौनिक अल्पसङ्ख्यक र सामाजिक सुरक्षा</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">प</div>
+              <b class="text-slate-900 dark:text-white text-sm">प्रतिभा रावल</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">भूमि व्यवस्था, सहकारी, सङ्घीय मामिला तथा सामान्य प्रशासन</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">न</div>
+              <b class="text-slate-900 dark:text-white text-sm">निशा मेहता</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">स्वास्थ्य तथा खाद्य स्वच्छता</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">स</div>
+              <b class="text-slate-900 dark:text-white text-sm">सस्मित पोखरेल</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">शिक्षा तथा खेलकुद</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">ख</div>
+              <b class="text-slate-900 dark:text-white text-sm">खडक राज पौडेल</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">संस्कृति, पर्यटन तथा नागरिक उड्डयन</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">व</div>
+              <b class="text-slate-900 dark:text-white text-sm">विक्रम तिमिल्सिना</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">सूचना तथा सञ्चार</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">ग</div>
+              <b class="text-slate-900 dark:text-white text-sm">गिता चौधरी</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">कृषि, वन तथा पर्यावरण</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">ग</div>
+              <b class="text-slate-900 dark:text-white text-sm">गौरी कुमारी</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">उद्योग, वाणिज्य तथा आपूर्ति</p>
+            </div>
+            <div class="rounded-2xl border border-sky-200 dark:border-sky-800 bg-sky-50/70 dark:bg-slate-800 p-4">
+              <div class="w-14 h-14 rounded-full bg-gradient-to-tr from-brand-600 to-cyan-400 text-white flex items-center justify-center text-xl font-black mb-3">र</div>
+              <b class="text-slate-900 dark:text-white text-sm">रामजी यादव</b>
+              <p class="text-xs text-brand-600 dark:text-brand-400 mt-1">युवा, श्रम तथा रोजगार</p>
+            </div>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-5">नोट: प्रधानमन्त्रीको फोटो सूचना तथा प्रसारण विभागको आधिकारिक फोटो स्रोतबाट; अन्य सदस्यहरूको नाम/कार्यविभाजन प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालयको आधिकारिक सूचीबाट।</p>
+        </div>
+
+        <!-- स्रोतहरू -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <a href="https://www.doib.gov.np/" target="_blank" rel="noopener" class="data-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-sky-200 dark:border-sky-800">
+            <b class="text-slate-900 dark:text-white">सूचना तथा प्रसारण विभाग</b>
+            <p class="text-xs text-slate-500 mt-1">नेपाल परिचय तथा सरकारी प्रकाशन</p>
+          </a>
+          <a href="https://result.election.gov.np/" target="_blank" rel="noopener" class="data-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-sky-200 dark:border-sky-800">
+            <b class="text-slate-900 dark:text-white">निर्वाचन आयोग</b>
+            <p class="text-xs text-slate-500 mt-1">निर्वाचन २०८२ को आधिकारिक परिणाम</p>
+          </a>
+          <a href="https://kalimatimarket.gov.np/price" target="_blank" rel="noopener" class="data-card p-5 rounded-2xl bg-white dark:bg-slate-900 border border-sky-200 dark:border-sky-800">
+            <b class="text-slate-900 dark:text-white">कालीमाटी बजार</b>
+            <p class="text-xs text-slate-500 mt-1">दैनिक तरकारी/फलफूल थोक मूल्य</p>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow"><i class="fa-solid fa-paper-plane"></i> सम्पर्क</span>
-          <h2 class="section-title">सम्पर्क गर्नुहोस्</h2>
-          <p class="section-lead">व्यक्तिगत तथा व्यावसायिक सम्पर्कका लागि तलका माध्यम प्रयोग गर्नुहोस्।</p>
+    <!-- सम्पर्क सेक्सन (Contact Section) -->
+    <section id="contact" class="py-20 bg-sky-50/60 dark:bg-slate-950 border-t border-sky-200 dark:border-sky-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs sm:text-sm uppercase tracking-widest font-extrabold text-brand-600 dark:text-brand-400 mb-2">
+            सम्पर्क
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
+            कुनै जिज्ञासा वा सहकार्यका लागि
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400 text-base mt-2">
+            तलको फारम भरेर वा सिधै इमेल पठाएर मलाई सन्देश पठाउन सक्नुहुन्छ।
+          </p>
+          <div class="w-16 h-1.5 bg-brand-500 rounded-full mx-auto mt-4"></div>
         </div>
-        <div class="grid grid-3">
-          <a class="card" href="tel:9857028756"><div class="icon"><i class="fa-solid fa-phone"></i></div><h3>फोन</h3><p>9857028756</p></a>
-          <a class="card" href="mailto:jpsharmac@gmail.com"><div class="icon"><i class="fa-solid fa-envelope"></i></div><h3>इमेल</h3><p>jpsharmac@gmail.com</p></a>
-          <a class="card" href="#" target="_blank" rel="noopener"><div class="icon"><i class="fa-solid fa-globe"></i></div><h3>वेबसाइट</h3><p>jenish.com.np</p></a>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          
+          <!-- बायाँपट्टि: सम्पर्क कार्डहरू -->
+          <div class="lg:col-span-5 space-y-5">
+            
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-sky-200 dark:border-sky-800 flex items-start gap-4 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-sky-100 dark:bg-sky-950 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-bold text-slate-900 dark:text-white text-lg">इमेल ठेगाना</h4>
+                <p class="text-slate-600 dark:text-slate-300 text-sm break-all font-mono">info@jhabindrapokharel.com.np</p>
+                <button onclick="copyEmail()" class="mt-2 text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                  <i class="fa-regular fa-copy"></i>
+                  <span>इमेल कपी गर्नुहोस्</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-sky-200 dark:border-sky-800 flex items-start gap-4 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-sky-100 dark:bg-sky-950 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-globe"></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-bold text-slate-900 dark:text-white text-lg">आधिकारिक डोमेन</h4>
+                <p class="text-slate-600 dark:text-slate-300 text-sm font-mono">www.jhabindrapokharel.com.np</p>
+                <button onclick="copyDomain()" class="mt-2 text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                  <i class="fa-regular fa-clone"></i>
+                  <span>डोमेन कपी गर्नुहोस्</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-sky-200 dark:border-sky-800 flex items-start gap-4 shadow-sm">
+              <div class="w-12 h-12 rounded-xl bg-sky-100 dark:bg-sky-950 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-bold text-slate-900 dark:text-white text-lg">स्थान</h4>
+                <p class="text-slate-600 dark:text-slate-300 text-sm">काठमाडौँ तथा बुटवल, नेपाल</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- दायाँपट्टि: सम्पर्क फारम -->
+          <div class="lg:col-span-7">
+            <form id="contactForm" class="bg-white dark:bg-slate-900 p-8 sm:p-10 rounded-3xl border border-sky-200 dark:border-sky-800 space-y-5 shadow-lg">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="name" class="block text-sm font-bold text-slate-700 dark:text-slate-200 mb-1.5">
+                    तपाईंको नाम *
+                  </label>
+                  <input type="text" id="name" required placeholder="उदा. राम शर्मा" class="w-full px-4 py-3 rounded-xl border border-sky-200 dark:border-sky-800 bg-sky-50/40 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition text-base">
+                </div>
+
+                <div>
+                  <label for="email" class="block text-sm font-bold text-slate-700 dark:text-slate-200 mb-1.5">
+                    इमेल ठेगाना *
+                  </label>
+                  <input type="email" id="email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl border border-sky-200 dark:border-sky-800 bg-sky-50/40 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition text-base">
+                </div>
+              </div>
+
+              <div>
+                <label for="subject" class="block text-sm font-bold text-slate-700 dark:text-slate-200 mb-1.5">
+                  सन्देशको विषय *
+                </label>
+                <input type="text" id="subject" required placeholder="सहकार्य वा जिज्ञासाको विषय" class="w-full px-4 py-3 rounded-xl border border-sky-200 dark:border-sky-800 bg-sky-50/40 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition text-base">
+              </div>
+
+              <div>
+                <label for="message" class="block text-sm font-bold text-slate-700 dark:text-slate-200 mb-1.5">
+                  विस्तृत सन्देश *
+                </label>
+                <textarea id="message" rows="4" required placeholder="तपाईंको प्रतिक्रिया वा सन्देश यहाँ लेख्नुहोस्..." class="w-full px-4 py-3 rounded-xl border border-sky-200 dark:border-sky-800 bg-sky-50/40 dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent outline-none transition text-base resize-none"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 to-sky-600 hover:from-brand-700 hover:to-sky-700 text-white font-black text-base shadow-lg shadow-brand-500/25 hover:scale-[1.01] active:scale-[0.99] transition flex items-center justify-center gap-2">
+                <i class="fa-regular fa-paper-plane"></i>
+                <span>सन्देश पठाउनुहोस्</span>
+              </button>
+
+            </form>
+          </div>
+
         </div>
+
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <div><strong>Jenish</strong><br><span class="tiny">Veterinary • Agriculture • Nepal Knowledge Portal</span></div>
-      <div class="tiny">© <span id="year"></span> All rights reserved.</div>
+  <!-- फुटर (Sky Blue Footer) -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-sky-900/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      
+      <div class="flex items-center justify-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-sky-400 text-white flex items-center justify-center font-black text-lg shadow-md shadow-brand-500/30">
+          <span>झ</span>
+        </div>
+        <span class="text-2xl font-black text-white tracking-wide">झविन्द्र पोखरेल</span>
+      </div>
+
+      <p class="text-sm max-w-md mx-auto text-sky-200/70">
+        सत्य, निष्ठा, राष्ट्रप्रेम र निरन्तर कार्यदक्षतामार्फत समाज र राष्ट्रको सकारात्मक रूपान्तरण।
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold text-slate-300">
+        <a href="#home" class="hover:text-sky-400 transition">गृहपृष्ठ</a>
+        <a href="#about" class="hover:text-sky-400 transition">परिचय</a>
+        <a href="#heritage" class="hover:text-sky-400 transition">धरोहरहरू</a>
+        <a href="#skills" class="hover:text-sky-400 transition">दक्षता</a>
+        <a href="#contact" class="hover:text-sky-400 transition">सम्पर्क</a>
+      </div>
+
+      <div class="pt-6 border-t border-slate-900 text-xs text-slate-500">
+        <p>© 2026 झविन्द्र पोखरेल (Jhabindra Pokharel) | सर्वाधिकार सुरक्षित।</p>
+        <p class="mt-1">आधिकारिक डोमेन: <span class="text-sky-400 font-mono">www.jhabindrapokharel.com.np</span></p>
+      </div>
+
     </div>
   </footer>
 
-  <button class="top" id="topBtn" aria-label="माथि जानुहोस्"><i class="fa-solid fa-arrow-up"></i></button>
+  <!-- फोटो तथा स्थल विवरण मोडल (Heritage Lightbox Modal) -->
+  <div id="placeModal" class="fixed inset-0 z-50 bg-black/75 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 max-w-2xl w-full rounded-3xl overflow-hidden shadow-2xl border border-sky-200 dark:border-sky-800 flex flex-col">
+      <div class="relative h-72 sm:h-96 w-full bg-slate-900">
+        <img id="modalPlaceImg" src="" alt="नेपालको स्थल" class="w-full h-full object-cover">
+        <button onclick="closePlaceModal()" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/90 transition text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="p-6 space-y-3">
+        <h3 id="modalPlaceTitle" class="text-2xl font-black text-slate-900 dark:text-white"></h3>
+        <p id="modalPlaceDesc" class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed"></p>
+        <div class="pt-2 flex justify-end">
+          <button onclick="closePlaceModal()" class="px-5 py-2.5 rounded-xl bg-brand-600 text-white font-bold text-sm hover:bg-brand-700 transition">
+            बन्द गर्नुहोस्
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- सामान्य विवरण मोडल -->
+  <div id="genericModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-900 max-w-md w-full rounded-2xl p-6 shadow-2xl border border-sky-200 dark:border-sky-800 space-y-4">
+      <div class="flex items-center justify-between border-b border-sky-100 dark:border-sky-900 pb-3">
+        <h3 id="genTitle" class="text-xl font-bold text-slate-900 dark:text-white"></h3>
+        <button onclick="closeGenModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-white">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      <div id="genBody" class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed"></div>
+      <div class="text-right pt-2">
+        <button onclick="closeGenModal()" class="px-4 py-2 rounded-xl bg-brand-600 text-white font-bold text-sm hover:bg-brand-700">
+          ठीक छ
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- टोस्ट सूचना बक्स -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 pointer-events-none transition-all duration-300 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-sky-500/40">
+    <i id="toastIcon" class="fa-solid fa-circle-check text-sky-400 text-xl"></i>
+    <span id="toastMsg" class="text-sm font-bold"></span>
+  </div>
 
   <script>
-    // Mobile menu
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("open");
-      menuBtn.innerHTML = mobileMenu.classList.contains("open")
-        ? '<i class="fa-solid fa-xmark"></i>'
-        : '<i class="fa-solid fa-bars"></i>';
+
+    // लाइभ मौसम: Open-Meteo (API key आवश्यक पर्दैन)
+    const weatherTrack = document.getElementById('weatherTrack');
+    const geoWeatherBtn = document.getElementById('geoWeatherBtn');
+    const weatherLocations = {
+      'काठमाडौं': [27.7172, 85.3240],
+      'बुटवल': [27.7006, 83.4484],
+      'पोखरा': [28.2096, 83.9856],
+      'नेपालगञ्ज': [28.0500, 81.6167],
+      'विराटनगर': [26.4525, 87.2718]
+    };
+    function weatherIcon(code){
+      if(code===0) return '☀️';
+      if([1,2,3].includes(code)) return '⛅';
+      if([45,48].includes(code)) return '🌫️';
+      if([51,53,55,56,57].includes(code)) return '🌦️';
+      if([61,63,65,66,67,80,81,82].includes(code)) return '🌧️';
+      if([71,73,75,77,85,86].includes(code)) return '🌨️';
+      if([95,96,99].includes(code)) return '⛈️';
+      return '🌤️';
+    }
+    async function loadWeather(name, lat, lon){
+      try{
+        const u = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Asia%2FKathmandu`;
+        const r = await fetch(u);
+        const d = await r.json();
+        const c = d.current;
+        const one = `<span class="font-semibold">${weatherIcon(c.weather_code)} ${name}: ${c.temperature_2m}°C · आर्द्रता ${c.relative_humidity_2m}% · हावा ${c.wind_speed_10m} km/h</span>`;
+        weatherTrack.innerHTML = one + one;
+      }catch(e){
+        weatherTrack.innerHTML = '<span>मौसम सेवा अहिले उपलब्ध भएन। केहीबेरपछि पुनः प्रयास गर्नुहोस्।</span>';
+      }
+    }
+    loadWeather('काठमाडौं', ...weatherLocations['काठमाडौं']);
+    setInterval(()=>loadWeather('काठमाडौं', ...weatherLocations['काठमाडौं']), 15*60*1000);
+    geoWeatherBtn.addEventListener('click', ()=>{
+      if(!navigator.geolocation){ showToast('तपाईंको ब्राउजरले स्थान सेवा समर्थन गर्दैन।', false); return; }
+      navigator.geolocation.getCurrentPosition(
+        p=>loadWeather('तपाईंको स्थान', p.coords.latitude, p.coords.longitude),
+        ()=>showToast('स्थान अनुमति नदिइएकोले काठमाडौंको मौसम देखाइएको छ।', false)
+      );
     });
-    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-      mobileMenu.classList.remove("open");
-      menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-    }));
 
-    // Daily quote
-    const quotes = [
-      "ज्ञान, मेहनत र सेवाले समाजलाई अगाडि बढाउँछ।",
-      "स्वस्थ पशु, समृद्ध किसान र सुरक्षित खाद्य प्रणाली — समृद्ध नेपालको आधार।",
-      "कृषिमा प्रविधि जोडौँ, उत्पादन र आम्दानी बढाऔँ।",
-      "आजको सानो सुधारले भोलिको ठूलो परिणाम दिन सक्छ।",
-      "प्रकृति जोगाउँदै उत्पादन बढाउनु नै दिगो विकासको बाटो हो।",
-      "किसानको ज्ञान र अनुभवलाई विज्ञान तथा प्रविधिसँग जोडौँ।",
-      "स्वास्थ्यमा रोकथाम उपचारभन्दा प्रभावकारी हुन्छ।",
-      "पशु कल्याण, मानव स्वास्थ्य र वातावरण एकअर्कासँग जोडिएका छन्।",
-      "स्थानीय उत्पादनलाई आधुनिक बजारसँग जोड्नु आवश्यक छ।",
-      "सिक्दै, सिकाउँदै र सेवा गर्दै अघि बढौँ।"
-    ];
-    const now = new Date();
-    const start = new Date(now.getFullYear(),0,0);
-    const day = Math.floor((now - start) / 86400000);
-    document.getElementById("dailyQuote").textContent = quotes[day % quotes.length];
-    document.getElementById("quoteDate").textContent =
-      new Intl.DateTimeFormat("ne-NP", {year:"numeric", month:"long", day:"numeric"}).format(now);
+    // डार्क तथा लाइट थिम व्यवस्थापन
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const themeIcon = document.getElementById('themeIcon');
+    const html = document.documentElement;
 
-    // Disease search
-    const diseaseSearch = document.getElementById("diseaseSearch");
-    const diseaseCards = [...document.querySelectorAll("#diseaseGrid .disease")];
-    diseaseSearch.addEventListener("input", e => {
-      const q = e.target.value.trim().toLowerCase();
-      diseaseCards.forEach(card => {
-        card.style.display = card.dataset.name.includes(q) ? "" : "none";
-      });
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+      html.classList.add('dark');
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggleBtn.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      if (html.classList.contains('dark')) {
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        showToast('डार्क मोड सक्रिय गरियो');
+      } else {
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        showToast('लाइट मोड सक्रिय गरियो');
+      }
     });
 
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // मोबाइल नेभिगेसन टगल
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach(l => {
+      l.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+    });
 
-    // Back to top
-    document.getElementById("topBtn").addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
+    // टोस्ट सूचना फङ्सन
+    function showToast(msg, isSuccess = true) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      const toastIcon = document.getElementById('toastIcon');
+
+      toastMsg.innerText = msg;
+      toastIcon.className = isSuccess 
+        ? 'fa-solid fa-circle-check text-sky-400 text-xl'
+        : 'fa-solid fa-circle-exclamation text-amber-400 text-xl';
+
+      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3500);
+    }
+
+    // सम्पर्क फारम ह्यान्डलर
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      if (!name) return;
+      showToast(`धन्यवाद ${name} ज्यू! तपाईंको सन्देश सफलतापूर्वक पठाइयो।`);
+      contactForm.reset();
+    });
+
+    // इमेल र डोमेन कपी गर्ने फङ्सन
+    function copyEmail() {
+      const el = document.createElement('textarea');
+      el.value = 'info@jhabindrapokharel.com.np';
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      showToast('इमेल ठेगाना कपी गरियो!');
+    }
+
+    function copyDomain() {
+      const el = document.createElement('textarea');
+      el.value = 'https://www.jhabindrapokharel.com.np';
+      document.body.appendChild(el);
+      el.select();
+      document.execCommand('copy');
+      document.body.removeChild(el);
+      showToast('वेब ठेगाना कपी गरियो!');
+    }
+
+    // स्थल तस्बिर प्रिभ्यु (Heritage Modal)
+    function previewPlace(title, imgUrl, desc) {
+      document.getElementById('modalPlaceTitle').innerText = title;
+      document.getElementById('modalPlaceImg').src = imgUrl;
+      document.getElementById('modalPlaceDesc').innerText = desc;
+      const modal = document.getElementById('placeModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closePlaceModal() {
+      const modal = document.getElementById('placeModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // सामान्य मोडल
+    function downloadInfoModal() {
+      document.getElementById('genTitle').innerText = 'झविन्द्र पोखरेल - आधिकारिक विवरण';
+      document.getElementById('genBody').innerHTML = `
+        <p class="mb-2"><strong>नाम:</strong> झविन्द्र पोखरेल</p>
+        <p class="mb-2"><strong>डोमेन:</strong> www.jhabindrapokharel.com.np</p>
+        <p class="mb-2"><strong>संलग्नता:</strong> नीतिगत अनुसन्धान, नेतृत्व तथा सामाजिक विकास परामर्शदाता।</p>
+        <p class="text-xs text-sky-600 dark:text-sky-400 mt-3">थप विवरण वा सहकार्यका लागि सिधै सम्पर्क फारम प्रयोग गर्नुहोस्।</p>
+      `;
+      const modal = document.getElementById('genericModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeGenModal() {
+      const modal = document.getElementById('genericModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    window.addEventListener('click', (e) => {
+      const pModal = document.getElementById('placeModal');
+      const gModal = document.getElementById('genericModal');
+      if (e.target === pModal) closePlaceModal();
+      if (e.target === gModal) closeGenModal();
+    });
   </script>
 </body>
 </html>
-
