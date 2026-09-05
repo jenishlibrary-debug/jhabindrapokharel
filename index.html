@@ -1,4 +1,401 @@
+<!DOCTYPE html>
+<html lang="ne" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="झविन्द्र पोखरेल — Veterinary Technician, कृषि, पशुपन्छी, नेपालको आर्थिक तथा सामाजिक तथ्याङ्क, कृषि गणना, जनगणना र सम्बन्धित ऐन-कानुन।" />
+  <meta name="theme-color" content="#0f766e" />
+  <title>झविन्द्र पोखरेल | Veterinary Technician & Nepal Knowledge Portal</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+    :root{
+      --green:#0f766e;
+      --green-dark:#064e3b;
+      --green-soft:#ecfdf5;
+      --blue:#0369a1;
+      --blue-soft:#eff6ff;
+      --gold:#d97706;
+      --gold-soft:#fffbeb;
+      --ink:#10231f;
+      --muted:#60706b;
+      --line:#dce8e4;
+      --paper:#ffffff;
+      --bg:#f5faf8;
+      --shadow:0 18px 45px rgba(15,118,110,.10);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Noto Sans Devanagari",system-ui,sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.75;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    button,input{font:inherit}
+
+    .container{width:min(1120px,92%);margin:auto}
+    .section{padding:82px 0;scroll-margin-top:80px}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      color:var(--green);font-weight:800;font-size:.86rem;
+      letter-spacing:.02em;margin-bottom:10px
+    }
+    .section-title{
+      font-size:clamp(1.8rem,4vw,2.7rem);
+      line-height:1.2;margin-bottom:12px
+    }
+    .section-lead{color:var(--muted);max-width:760px}
+    .section-head{margin-bottom:34px}
+
+    /* NAV */
+    .nav{
+      position:sticky;top:0;z-index:1000;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(220,232,228,.9);
+    }
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand-mark{
+      width:42px;height:42px;border-radius:14px;
+      display:grid;place-items:center;color:#fff;
+      background:linear-gradient(135deg,var(--green),var(--blue));
+      box-shadow:0 8px 18px rgba(15,118,110,.2)
+    }
+    .brand small{display:block;color:var(--muted);font-size:.7rem;font-weight:600}
+    .nav-links{display:flex;align-items:center;gap:20px;font-size:.9rem;font-weight:700}
+    .nav-links a{color:#40514d}
+    .nav-links a:hover{color:var(--green)}
+    .menu-btn{display:none;border:0;background:#eef7f4;color:var(--green);width:44px;height:44px;border-radius:12px}
+    .mobile-menu{display:none;padding:8px 0 18px}
+    .mobile-menu a{display:block;padding:11px 5px;font-weight:700;border-bottom:1px solid var(--line)}
+
+    /* HERO */
+    .hero{
+      position:relative;overflow:hidden;
+      background:
+        radial-gradient(circle at 90% 15%,rgba(14,165,233,.18),transparent 28%),
+        radial-gradient(circle at 10% 15%,rgba(16,185,129,.17),transparent 30%),
+        linear-gradient(135deg,#f0fdf4,#f8fbff 55%,#ecfeff);
+      padding:78px 0 68px;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+    .badge{
+      display:inline-flex;align-items:center;gap:9px;
+      padding:7px 13px;border-radius:999px;background:#fff;
+      color:var(--green);font-weight:800;font-size:.83rem;
+      border:1px solid #cce9df;box-shadow:0 8px 22px rgba(15,118,110,.07)
+    }
+    .hero h1{
+      font-size:clamp(2.35rem,6vw,4.8rem);
+      line-height:1.06;margin:20px 0 12px;
+      letter-spacing:-.035em
+    }
+    .hero h1 span{color:var(--green)}
+    .hero-role{font-size:clamp(1.05rem,2.5vw,1.35rem);font-weight:800;color:#33534c}
+    .hero p{color:var(--muted);max-width:700px;margin:17px 0 25px}
+    .actions{display:flex;flex-wrap:wrap;gap:11px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      padding:12px 17px;border-radius:13px;font-weight:800;
+      border:1px solid transparent;transition:.2s;cursor:pointer
+    }
+    .btn-primary{background:var(--green);color:#fff;box-shadow:0 9px 20px rgba(15,118,110,.2)}
+    .btn-primary:hover{transform:translateY(-2px);background:var(--green-dark)}
+    .btn-light{background:#fff;border-color:var(--line);color:var(--green)}
+    .btn-light:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+    .profile-card{
+      position:relative;background:#fff;border:1px solid #dcece7;
+      border-radius:30px;padding:15px;box-shadow:var(--shadow);
+      max-width:390px;margin-left:auto
+    }
+    .profile-card img{
+      width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:22px;
+      background:linear-gradient(145deg,#dff7ee,#e0f2fe)
+    }
+    .profile-caption{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;padding:15px 6px 4px
+    }
+    .profile-caption strong{font-size:1.05rem}
+    .location{color:var(--muted);font-size:.82rem}
+    .hero-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}
+    .mini{background:rgba(255,255,255,.8);border:1px solid #d9e9e5;border-radius:16px;padding:13px;text-align:center}
+    .mini b{display:block;color:var(--green);font-size:1.25rem}
+    .mini span{font-size:.72rem;color:var(--muted)}
+
+    /* QUOTE */
+    .quote-wrap{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .quote-card{
+      background:linear-gradient(135deg,var(--green-dark),var(--green));
+      color:#fff;border-radius:var(--radius);padding:30px;position:relative;overflow:hidden
+    }
+    .quote-card:after{content:"“";position:absolute;right:15px;top:-25px;font:140px Georgia;color:rgba(255,255,255,.12)}
+    .quote-card h3{font-size:1rem;opacity:.85;margin-bottom:10px}
+    .quote-card blockquote{font-size:clamp(1.2rem,2.5vw,1.65rem);font-weight:700;line-height:1.55;position:relative;z-index:1}
+    .quote-card small{display:block;margin-top:14px;opacity:.8}
+    .fact-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 10px 30px rgba(0,0,0,.04)}
+    .fact-card h3{margin-bottom:8px}
+    .fact-card p{color:var(--muted)}
+
+    /* CARDS */
+    .grid{display:grid;gap:18px}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-4{grid-template-columns:repeat(4,1fr)}
+    .card{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+      padding:23px;box-shadow:0 10px 28px rgba(15,118,110,.045);
+      transition:.22s
+    }
+    .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .icon{
+      width:48px;height:48px;border-radius:15px;display:grid;place-items:center;
+      background:var(--green-soft);color:var(--green);font-size:1.2rem;margin-bottom:15px
+    }
+    .card h3{font-size:1.08rem;margin-bottom:7px}
+    .card p{color:var(--muted);font-size:.91rem}
+    .tag{
+      display:inline-block;margin-top:12px;padding:4px 9px;border-radius:999px;
+      background:#f0fdfa;color:var(--green);font-size:.72rem;font-weight:800
+    }
+
+    /* STATISTICS */
+    .stats{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:28px 0
+    }
+    .stat{
+      background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;
+      text-align:center
+    }
+    .stat .num{font-size:clamp(1.55rem,4vw,2.3rem);font-weight:900;color:var(--green);line-height:1.2}
+    .stat .label{color:var(--muted);font-size:.78rem;margin-top:5px}
+    .note{font-size:.78rem;color:var(--muted);margin-top:15px}
+
+    /* TABLE */
+    .table-wrap{overflow:auto;background:#fff;border:1px solid var(--line);border-radius:18px}
+    table{width:100%;border-collapse:collapse;min-width:620px}
+    th,td{padding:13px 15px;text-align:left;border-bottom:1px solid #e7efec;font-size:.88rem}
+    th{background:#f1f8f5;color:var(--green-dark);font-weight:900}
+    tr:last-child td{border-bottom:0}
+    td:last-child{text-align:right;font-weight:800}
+
+    /* DISEASE */
+    .disease{border-left:5px solid var(--green)}
+    .disease.warning{border-left-color:var(--gold)}
+    .disease h3{display:flex;gap:10px;align-items:center}
+    .disease ul{margin:10px 0 0 19px;color:var(--muted);font-size:.88rem}
+    .alert{
+      margin-top:20px;background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;
+      padding:14px 16px;border-radius:14px;font-size:.85rem
+    }
+
+    /* GALLERY */
+    .gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-auto-rows:180px;gap:14px}
+    .gallery-item{border-radius:20px;overflow:hidden;position:relative;min-height:180px;background:linear-gradient(135deg,#b7e4d3,#b9dff3)}
+    .gallery-item.big{grid-row:span 2}
+    .gallery-item .scene{
+      width:100%;height:100%;display:grid;place-items:center;font-size:5rem;
+      background:
+        radial-gradient(circle at 25% 25%,rgba(255,255,255,.45),transparent 24%),
+        linear-gradient(160deg,#bfe8dc,#dff6ef 42%,#9ed0e7)
+    }
+    .gallery-item:nth-child(2) .scene{background:linear-gradient(160deg,#d6f5de,#8ecae6)}
+    .gallery-item:nth-child(3) .scene{background:linear-gradient(160deg,#f8d9a7,#c7e9bd)}
+    .gallery-item:nth-child(4) .scene{background:linear-gradient(160deg,#d7eefb,#e7f4dc)}
+    .gallery-item:nth-child(5) .scene{background:linear-gradient(160deg,#d5f5e3,#f5e5b9)}
+    .gallery-label{
+      position:absolute;left:12px;right:12px;bottom:11px;
+      padding:9px 11px;border-radius:12px;background:rgba(255,255,255,.88);
+      font-weight:900;font-size:.82rem
+    }
+
+    /* LAWS / LINKS */
+    .law-list{display:grid;gap:10px}
+    .law{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:15px 16px;background:#fff;border:1px solid var(--line);border-radius:15px
+    }
+    .law strong{font-size:.9rem}
+    .law span{font-size:.74rem;color:var(--muted)}
+    .law i{color:var(--green)}
+    .gov{
+      display:flex;align-items:flex-start;gap:14px;
+      padding:16px;border-radius:16px;background:#fff;border:1px solid var(--line)
+    }
+    .gov .icon{flex:none;margin:0;width:42px;height:42px;border-radius:12px}
+    .gov a{color:var(--green);font-size:.78rem;font-weight:800;word-break:break-all}
+
+    /* SEARCH */
+    .search-box{position:relative;margin:0 0 22px}
+    .search-box i{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#7c918b}
+    .search-box input{
+      width:100%;padding:14px 16px 14px 45px;border:1px solid var(--line);
+      border-radius:15px;outline:none;background:#fff
+    }
+    .search-box input:focus{border-color:#7cc8bb;box-shadow:0 0 0 4px rgba(15,118,110,.08)}
+
+    /* ABOUT / CONTACT */
+    .about{background:linear-gradient(135deg,#064e3b,#0f766e);color:#fff}
+    .about .section-lead{color:rgba(255,255,255,.78)}
+    .about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+    .about-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:26px}
+    .about-card p{color:rgba(255,255,255,.82)}
+    .contact-list{display:grid;gap:12px;margin-top:15px}
+    .contact-item{display:flex;gap:12px;align-items:center}
+    .contact-item i{width:35px;height:35px;border-radius:10px;display:grid;place-items:center;background:rgba(255,255,255,.12)}
+    .socials{display:flex;gap:10px;margin-top:20px}
+    .socials a{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:rgba(255,255,255,.12)}
+    .socials a:hover{background:rgba(255,255,255,.22)}
+
+    footer{background:#042f2a;color:#a9c4bd;padding:28px 0}
+    .footer-inner{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}
+    .footer-inner strong{color:#fff}
+    .tiny{font-size:.75rem}
+
+    .top{
+      position:fixed;right:18px;bottom:18px;width:45px;height:45px;border:0;border-radius:14px;
+      background:var(--green);color:#fff;display:grid;place-items:center;z-index:900;
+      box-shadow:0 12px 25px rgba(15,118,110,.25);cursor:pointer
+    }
+
+    @media(max-width:900px){
+      .nav-links{display:none}.menu-btn{display:block}
+      .mobile-menu.open{display:block}
+      .hero-grid,.quote-wrap,.about-grid{grid-template-columns:1fr}
+      .profile-card{margin:auto}
+      .grid-4{grid-template-columns:repeat(2,1fr)}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:160px}
+      .gallery-item.big{grid-row:span 1}
+    }
+    @media(max-width:620px){
+      .section{padding:62px 0}
+      .nav-inner{height:64px}
+      .brand small{display:none}
+      .hero{padding:55px 0}
+      .hero h1{font-size:2.35rem}
+      .hero-mini{grid-template-columns:1fr 1fr 1fr}
+      .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .gallery{grid-template-columns:1fr;grid-auto-rows:170px}
+      .gallery-item{min-height:170px}
+      .gallery-item.big{grid-row:span 1}
+      .actions .btn{flex:1 1 100%}
+      .footer-inner{align-items:flex-start;flex-direction:column}
+    }
+  </style>
+<!-- Website design version: 2026-09-05 -->
+</head>
+
+<body>
+<style>
+/* Mobile-safe fallback */
+html,body{margin:0;padding:0}
+body{background:#f5faf8;color:#10231f;font-family:system-ui,sans-serif}
+main{display:block}
+.container{max-width:1120px;margin:0 auto;width:92%}
+</style>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="मुख्य पृष्ठ">
+        <span class="brand-mark"><i class="fa-solid fa-leaf"></i></span>
+        <span>झविन्द्र पोखरेल<small>Veterinary • Agriculture • Nepal</small></span>
+      </a>
+      <nav class="nav-links" aria-label="मुख्य मेनु">
+        <a href="#about">परिचय</a>
+        <a href="#quote">दैनिक विचार</a>
+        <a href="#agriculture">कृषि</a>
+        <a href="#livestock">पशुपन्छी</a>
+        <a href="#diseases">रोग</a>
+        <a href="#census">गणना</a>
+        <a href="#laws">ऐन-कानुन</a>
+        <a href="#contact">सम्पर्क</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="मेनु खोल्नुहोस्"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div class="container mobile-menu" id="mobileMenu">
+      <a href="#about">परिचय</a>
+      <a href="#quote">दैनिक विचार</a>
+      <a href="#agriculture">कृषि</a>
+      <a href="#livestock">पशुपन्छी</a>
+      <a href="#diseases">रोग विवरण</a>
+      <a href="#census">जनगणना तथा कृषि गणना</a>
+      <a href="#laws">ऐन तथा कानुन</a>
+      <a href="#nature">नेपालका प्राकृतिक सम्पदा</a>
+      <a href="#gov">सरकारी स्रोत</a>
+      <a href="#contact">सम्पर्क</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge"><i class="fa-solid fa-stethoscope"></i> Veterinary Technician • Palpa, Nepal</span>
+          <h1>झविन्द्र <span>पोखरेल</span></h1>
+          <div class="hero-role">पशु स्वास्थ्य तथा कृषि ज्ञानका लागि व्यक्तिगत सूचना पोर्टल</div>
+          <p>
+            नेपालका कृषि, पशुपन्छी, मत्स्य, रोग व्यवस्थापन, आर्थिक तथा सामाजिक तथ्याङ्क,
+            जनगणना, कृषि गणना र सम्बन्धित ऐन-कानुनलाई सरल भाषामा प्रस्तुत गर्ने ज्ञान केन्द्र।
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#agriculture"><i class="fa-solid fa-seedling"></i> कृषि विवरण</a>
+            <a class="btn btn-light" href="#diseases"><i class="fa-solid fa-shield-virus"></i> रोग जानकारी</a>
+            <a class="btn btn-light" href="#contact"><i class="fa-solid fa-phone"></i> सम्पर्क</a>
+          </div>
+          <div class="hero-mini">
+            <div class="mini"><b>पाल्पा</b><span>ठेगाना</span></div>
+            <div class="mini"><b>Veterinary</b><span>पेशा</span></div>
+            <div class="mini"><b>Nepal</b><span>ज्ञान पोर्टल</span></div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <!-- GitHub repository मा आफ्नो फोटो 'profile.jpg' नाममा राख्नुहोस् -->
+          <img src="profile.jpg" alt="झविन्द्र पोखरेलको प्रोफाइल फोटो"
+               onerror="this.style.display='none';this.parentElement.classList.add('photo-missing');">
+          <div class="profile-caption">
+            <div>
+              <strong>झविन्द्र पोखरेल</strong>
+              <div class="location"><i class="fa-solid fa-location-dot"></i> Palpa, Nepal</div>
+            </div>
+            <i class="fa-solid fa-user-doctor" style="color:var(--green);font-size:1.4rem"></i>
+          </div>
+          <div class="note">नोट: फोटो नदेखिएमा GitHub मा <b>profile.jpg</b> upload गर्नुहोस्।</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="quote">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><i class="fa-solid fa-sun"></i> आजको प्रेरणा</span>
+          <h2 class="section-title">दैनिक विचार</h2>
+          <p class="section-lead">हरेक दिन स्वतः परिवर्तन हुने छोटो प्रेरणादायी सन्देश।</p>
+        </div>
+        <div class="quote-wrap">
+          <div class="quote-card">
+            <h3 id="quoteDate">आज</h3>
+            <blockquote id="dailyQuote">ज्ञान, मेहनत र सेवाले समाजलाई अगाडि बढाउँछ।</blockquote>
+            <small>— दैनिक प्रेरणादायी विचार</small>
+          </div>
+          <div class="fact-card">
+            <h3><i class="fa-solid fa-lightbulb" style="color:var(--gold)"></i> आजको सन्देश</h3>
+            <p>
+              कृषि र पशुपालन केवल पेशा होइनन्; नेपालको खाद्य सुरक्षा, रोजगारी,
+              ग्रामीण अर्थतन्त्र र सामाजिक जीवनसँग प्रत्यक्ष जोडिएका आधार हुन्।
+            </p>
           </div>
         </div>
       </div>
