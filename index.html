@@ -775,6 +775,35 @@
         .price-refresh{border:1px solid var(--sky-200);background:#fff;color:var(--sky-700);border-radius:8px;padding:.35rem .7rem;cursor:pointer;font-family:inherit;font-weight:700}
         @media(max-width:650px){.brand-photo-wrap{width:50px;height:50px;flex-basis:50px}.osho-card{grid-template-columns:1fr;text-align:center}.osho-card img{margin:auto;width:150px;height:150px}}
 </style>
+
+<style id="organized-links-style">
+.govt-groups{display:grid;gap:18px}.govt-group{background:#f8fbff;border:1px solid var(--border-light);border-radius:16px;padding:16px}.govt-group h3{margin:0 0 12px;color:#0f3d66;font-size:1rem}.govt-group .govt-grid{margin:0}.govt-card{min-height:58px;display:flex;align-items:center;justify-content:space-between;gap:10px}.govt-card span{line-height:1.35}@media(max-width:650px){.govt-group{padding:12px}}
+</style>
+
+<style id="premium-ads-style">
+/* Premium rotating sponsor/ad placements */
+.sponsor-strip{max-width:1200px;margin:18px auto;padding:0 14px}
+.sponsor-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.sponsor-ad{position:relative;overflow:hidden;border-radius:18px;min-height:118px;padding:18px 20px;color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:space-between;gap:15px;box-shadow:0 10px 28px rgba(15,23,42,.14);border:1px solid rgba(255,255,255,.25);transition:transform .25s ease,box-shadow .25s ease}
+.sponsor-ad:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(15,23,42,.22)}
+.sponsor-ad::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-70px;top:-85px;background:rgba(255,255,255,.14)}
+.sponsor-ad::after{content:"विज्ञापन";position:absolute;top:8px;right:12px;font-size:.62rem;font-weight:800;letter-spacing:.7px;background:rgba(255,255,255,.18);padding:3px 7px;border-radius:999px}
+.sponsor-brand{font-size:1.45rem;font-weight:900;letter-spacing:-.5px;white-space:nowrap;position:relative;z-index:1}
+.sponsor-copy{position:relative;z-index:1;flex:1}
+.sponsor-copy b{display:block;font-size:1rem;margin-bottom:4px}.sponsor-copy span{display:block;font-size:.78rem;opacity:.9;line-height:1.35}
+.sponsor-btn{position:relative;z-index:1;background:rgba(255,255,255,.95);color:#0f172a;border-radius:999px;padding:8px 13px;font-size:.72rem;font-weight:900;white-space:nowrap}
+.ad-citizen{grid-column:span 6;background:linear-gradient(135deg,#073b8f,#0b63c7)}
+.ad-global{grid-column:span 6;background:linear-gradient(135deg,#073b5c,#0a7893)}
+.ad-nabil{grid-column:span 4;background:linear-gradient(135deg,#0b6b46,#18a05e)}
+.ad-ntc{grid-column:span 4;background:linear-gradient(135deg,#0054a6,#0089d0)}
+.ad-ncell{grid-column:span 4;background:linear-gradient(135deg,#72206b,#b22a8d)}
+.ad-samsung{grid-column:span 6;background:linear-gradient(135deg,#061a63,#1467d8)}
+.ad-redmi{grid-column:span 6;background:linear-gradient(135deg,#9d130d,#ed3b24)}
+.ad-mini{min-height:104px}
+.sponsor-label{font-size:.7rem;color:#64748b;text-align:center;margin-bottom:7px;font-weight:800;letter-spacing:1px}
+@media(max-width:800px){.sponsor-grid{grid-template-columns:1fr}.sponsor-ad,.ad-citizen,.ad-global,.ad-nabil,.ad-ntc,.ad-ncell,.ad-samsung,.ad-redmi{grid-column:span 1}.sponsor-ad{min-height:108px}.sponsor-brand{font-size:1.2rem}.sponsor-copy b{font-size:.9rem}.sponsor-copy span{font-size:.7rem}.sponsor-btn{display:none}}
+</style>
+
 </head>
 <body>
 
@@ -809,7 +838,6 @@
                 <div class="brand-photo-wrap"><img class="brand-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Buddha%20Seated%20in%20Meditation%2C%20Nepal%2C%2011th%20or%2012th%20century%2C%20gilt%20bronze%20-%20Cincinnati%20Art%20Museum%20-%20DSC03212.JPG" alt="निर्वाण/ध्यानको प्रतीक बुद्ध" loading="eager"></div>
                 <div class="brand-text">
                     <h1 id="site-name">झबिन्द्र पोखरेल</h1>
-                    <p>हजूर बुवामा सदैव समर्पित</p>
                     <small>PORTAL & KNOWLEDGE BASE</small>
                 </div>
             </a>
@@ -829,6 +857,20 @@
         </nav>
     <div style="text-align:center;margin:-.5rem auto 1rem"><button id="name-toggle" class="name-toggle" type="button">नेपाली / English</button></div></header>
 
+
+<!-- PREMIUM SPONSOR: TOP -->
+<div class="sponsor-strip" aria-label="प्रायोजक विज्ञापन">
+  <div class="sponsor-label">प्रायोजक / विज्ञापन</div>
+  <div class="sponsor-grid">
+    <a class="sponsor-ad ad-citizen" href="https://www.ctznbank.com/" target="_blank" rel="noopener sponsored">
+      <div class="sponsor-brand">CITIZEN BANK</div><div class="sponsor-copy"><b>नागरिकसँग, नागरिककै बैंक</b><span>बैंकिङ सेवा र डिजिटल समाधान</span></div><div class="sponsor-btn">थप जान्नुहोस् ↗</div>
+    </a>
+    <a class="sponsor-ad ad-global" href="https://www.globalimebank.com/" target="_blank" rel="noopener sponsored">
+      <div class="sponsor-brand">Global IME</div><div class="sponsor-copy"><b>सम्पूर्ण बैंकिङ, एउटै साथमा</b><span>डिजिटल तथा आधुनिक बैंकिङ सेवा</span></div><div class="sponsor-btn">थप जान्नुहोस् ↗</div>
+    </a>
+  </div>
+</div>
+
     <!-- 3. MAIN HERO: MT. EVEREST -->
     <section class="hero">
         <div class="hero-inner">
@@ -842,7 +884,118 @@
         </div>
     </section>
 
-    <!-- 4. BUDDHIST PHILOSOPHY (TRIRATNA BANNER) -->
+<style id="tv-breaking-news-style">
+/* TV-style Breaking News */
+.tv-news-wrap{margin:28px auto;max-width:1200px;border-radius:18px;overflow:hidden;background:#10131a;box-shadow:0 12px 35px rgba(0,0,0,.16)}
+.tv-news-head{display:flex;align-items:center;gap:14px;padding:12px 16px;background:linear-gradient(90deg,#b30000,#e11,#9b0000);color:#fff}
+.tv-live-dot{width:11px;height:11px;background:#fff;border-radius:50%;box-shadow:0 0 0 5px rgba(255,255,255,.16);animation:tvpulse 1s infinite}
+.tv-breaking{font-weight:900;font-size:1.05rem;letter-spacing:.4px;white-space:nowrap}
+.tv-news-clock{margin-left:auto;font-size:.82rem;opacity:.9;white-space:nowrap}
+.tv-ticker{display:flex;align-items:center;min-height:52px;background:#171b24;color:#fff}
+.tv-ticker-label{background:#f4c20d;color:#111;font-weight:900;padding:17px 15px;white-space:nowrap}
+.tv-ticker-window{overflow:hidden;flex:1;position:relative}
+.tv-ticker-track{display:inline-flex;gap:48px;white-space:nowrap;padding-left:100%;animation:tvticker 55s linear infinite}
+.tv-ticker-track:hover{animation-play-state:paused}
+.tv-ticker-item{font-size:.98rem;cursor:pointer}
+.tv-ticker-item b{color:#ffcf33;margin-right:7px}
+.tv-news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:15px;background:#0d1016}
+.tv-news-card{background:#1b202b;border:1px solid #2a3140;border-radius:12px;padding:14px;color:#fff;transition:.2s}
+.tv-news-card:hover{transform:translateY(-2px);border-color:#e11}
+.tv-source{font-size:.72rem;color:#ffcf33;font-weight:800;text-transform:uppercase;margin-bottom:7px}
+.tv-news-card a{color:#fff;text-decoration:none;font-weight:700;line-height:1.45}
+.tv-news-meta{font-size:.72rem;color:#aeb7c8;margin-top:8px}
+@keyframes tvticker{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+@keyframes tvpulse{50%{opacity:.35;transform:scale(.72)}}
+@media(max-width:800px){.tv-news-grid{grid-template-columns:1fr}.tv-news-clock{display:none}.tv-ticker-label{padding:15px 10px;font-size:.8rem}.tv-ticker-track{animation-duration:45s}}
+</style>
+
+<div class="tv-news-wrap" id="tvBreakingNews">
+  <div class="tv-news-head"><span class="tv-live-dot"></span><span class="tv-breaking">BREAKING NEWS</span><span class="tv-news-clock" id="tvNewsUpdated">LIVE • अपडेट हुँदैछ...</span></div>
+  <div class="tv-ticker"><div class="tv-ticker-label">ताजा खबर</div><div class="tv-ticker-window"><div class="tv-ticker-track" id="tvTickerTrack"><span class="tv-ticker-item"><b>LIVE</b> ताजा समाचार लोड हुँदैछ...</span></div></div></div>
+  <div class="tv-news-grid" id="tvNewsGrid"><div class="tv-news-card"><div class="tv-source">LIVE NEWS</div><a href="#">समाचारहरू स्वतः अपडेट हुँदैछन्...</a><div class="tv-news-meta">केही क्षण पर्खनुहोस्</div></div></div>
+</div>
+<script>
+(function(){
+ const feeds=[
+  ['Onlinekhabar','https://www.onlinekhabar.com/feed'],['Setopati','https://www.setopati.com/feed'],['Ujyaalo','https://ujyaaloonline.com/feed'],['eKantipur','https://ekantipur.com/rss'],['Annapurna Post','https://annapurnapost.com/rss'],['Himal Khabar','https://www.himalkhabar.com/feed'],['BBC Nepali','https://feeds.bbci.co.uk/nepali/rss.xml'],['TechPana','https://techpana.com/feed'],['Ratopati','https://www.ratopati.com/rss'],['Nepal Press','https://www.nepalpress.com/feed/'],['Himal Press','https://himalpress.com/feed/'],['Nagarik','https://nagariknews.nagariknetwork.com/feed/']
+ ];
+ const proxy=u=>'https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(u);
+ let all=[];
+ async function getFeed(src,url){try{let r=await fetch(proxy(url),{cache:'no-store'});let j=await r.json();return (j.items||[]).slice(0,5).map(x=>({source:src,title:x.title||'',link:x.link||'#',date:x.pubDate||''}));}catch(e){return []}}
+ async function load(){
+  const results=await Promise.all(feeds.map(f=>getFeed(f[0],f[1])));
+  all=results.flat().filter(x=>x.title);
+  const seen=new Set(); all=all.filter(x=>{let k=x.title.trim();if(seen.has(k))return false;seen.add(k);return true}).slice(0,36);
+  const track=document.getElementById('tvTickerTrack');
+  const grid=document.getElementById('tvNewsGrid');
+  if(!all.length){track.innerHTML='<span class="tv-ticker-item"><b>LIVE</b> समाचार फिड अहिले उपलब्ध हुन सकेन। केही समयपछि पुनः प्रयास गरिँदैछ...</span>';return}
+  track.innerHTML=all.slice(0,20).map(x=>`<span class="tv-ticker-item"><b>${x.source}</b> ${esc(x.title)}</span>`).join('');
+  grid.innerHTML=all.slice(0,12).map(x=>`<article class="tv-news-card"><div class="tv-source">${esc(x.source)}</div><a href="${safe(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a><div class="tv-news-meta">${fmt(x.date)}</div></article>`).join('');
+  document.getElementById('tvNewsUpdated').textContent='LIVE • अन्तिम अपडेट: '+new Date().toLocaleTimeString('ne-NP',{hour:'2-digit',minute:'2-digit'});
+ }
+ function esc(v){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+ function safe(v){return /^https?:\/\//i.test(v)?v:'#'}
+ function fmt(v){if(!v)return 'ताजा';let d=new Date(v);return isNaN(d)?'ताजा':d.toLocaleString('ne-NP',{dateStyle:'medium',timeStyle:'short'})}
+ load();setInterval(load,10*60*1000);
+})();
+</script>
+
+
+
+<!-- LIVE SHARE MARKET TV -->
+<style id="share-live-tv-style">
+.share-tv{max-width:1200px;margin:24px auto 10px;border-radius:18px;overflow:hidden;background:#0b111b;color:#fff;box-shadow:0 12px 34px rgba(2,8,23,.18)}
+.share-tv-head{display:flex;align-items:center;gap:12px;padding:12px 16px;background:linear-gradient(90deg,#064e3b,#047857,#065f46)}
+.share-live-dot{width:11px;height:11px;border-radius:50%;background:#86efac;box-shadow:0 0 0 5px rgba(134,239,172,.14);animation:tvpulse 1s infinite}
+.share-tv-title{font-weight:900;font-size:1.03rem}.share-tv-time{margin-left:auto;color:#d1fae5;font-size:.78rem}
+.share-ticker{display:flex;align-items:center;background:#101925;min-height:50px}.share-ticker-label{background:#facc15;color:#111827;font-weight:900;padding:15px 14px;white-space:nowrap}.share-ticker-window{overflow:hidden;flex:1}.share-ticker-track{display:inline-flex;gap:38px;white-space:nowrap;padding-left:100%;animation:shareticker 48s linear infinite}.share-ticker-track:hover{animation-play-state:paused}.share-ticker-item{font-size:.92rem;font-weight:700}.share-up{color:#86efac}.share-down{color:#fca5a5}
+.share-board{display:grid;grid-template-columns:1.1fr 2fr;gap:14px;padding:14px;background:#0a0f17}.share-index{background:linear-gradient(145deg,#111d2c,#0f1724);border:1px solid #263447;border-radius:15px;padding:18px}.share-index-label{color:#93c5fd;font-size:.76rem;font-weight:800;letter-spacing:1px}.share-index-value{font-size:2.35rem;font-weight:950;margin:6px 0}.share-index-change{font-weight:800}.share-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.share-stat{background:rgba(255,255,255,.05);border-radius:10px;padding:9px}.share-stat small{display:block;color:#94a3b8;font-size:.68rem}.share-stat b{font-size:.85rem}.share-stocks{background:#111827;border:1px solid #263447;border-radius:15px;padding:14px;overflow:auto}.share-stocks table{width:100%;border-collapse:collapse;min-width:560px}.share-stocks th,.share-stocks td{padding:9px 8px;border-bottom:1px solid #263447;text-align:left;font-size:.78rem}.share-stocks th{color:#93c5fd}.share-tv-foot{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 15px;background:#080c13;color:#94a3b8;font-size:.72rem}.share-tv-foot a{color:#7dd3fc;text-decoration:none;font-weight:800}
+@keyframes shareticker{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+@media(max-width:800px){.share-board{grid-template-columns:1fr}.share-time{display:none}.share-tv-time{display:none}.share-stats{grid-template-columns:repeat(3,1fr)}.share-ticker-label{padding:14px 9px;font-size:.78rem}}
+</style>
+<section id="share-live" class="container" style="padding-top:10px;padding-bottom:10px;">
+  <div class="share-tv">
+    <div class="share-tv-head"><span class="share-live-dot"></span><span class="share-tv-title">📈 शेयर बजार LIVE TV</span><span class="share-tv-time" id="shareUpdated">LIVE • डेटा जाँच हुँदैछ...</span></div>
+    <div class="share-ticker"><div class="share-ticker-label">शेयर LIVE</div><div style="overflow:hidden;flex:1"><div class="share-ticker-track" id="shareTickerTrack"><span class="share-ticker-item">NEPSE डेटा लोड हुँदैछ...</span></div></div></div>
+    <div class="share-board">
+      <div class="share-index">
+        <div class="share-index-label">NEPSE INDEX</div>
+        <div class="share-index-value" id="shareIndex">—</div>
+        <div class="share-index-change" id="shareChange">बजार डेटा लोड हुँदैछ...</div>
+        <div class="share-stats"><div class="share-stat"><small>कुल कारोबार</small><b id="shareTurnover">—</b></div><div class="share-stat"><small>कारोबार भएका शेयर</small><b id="shareVolume">—</b></div><div class="share-stat"><small>कम्पनी</small><b id="shareCompanies">—</b></div></div>
+      </div>
+      <div class="share-stocks"><table><thead><tr><th>Symbol</th><th>LTP</th><th>Change</th><th>%</th><th>Volume</th></tr></thead><tbody id="shareRows"><tr><td colspan="5">लाइभ शेयर डेटा लोड हुँदैछ...</td></tr></tbody></table></div>
+    </div>
+    <div class="share-tv-foot"><span>डेटा उपलब्ध भएमा स्वतः १ मिनेटमा अपडेट हुन्छ।</span><a href="https://hamroshare.com.np/nepse" target="_blank" rel="noopener">पूर्ण Live NEPSE Board ↗</a></div>
+  </div>
+</section>
+<script>
+(function(){
+ const $=id=>document.getElementById(id), esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+ const fallback={index:'२,५४२.७७',change:'+४.६६ (+०.१८%)',turnover:'रु. १.४४ अर्ब',volume:'३.५७ मिलियन',companies:'३४६',rows:[['SAPIL','१,०५४.७०','+१४.९९%','+',''],['NADEP','७४२.००','+६.००%','+',''],['DLBS','१,०३४.२०','-१०.०७%','-','']]};
+ function render(d){$('shareIndex').textContent=d.index;$('shareChange').innerHTML='<span class="'+(d.change.startsWith('-')?'share-down':'share-up')+'">'+esc(d.change)+'</span>';$('shareTurnover').textContent=d.turnover;$('shareVolume').textContent=d.volume;$('shareCompanies').textContent=d.companies;$('shareRows').innerHTML=d.rows.slice(0,8).map(r=>'<tr><td><b>'+esc(r[0])+'</b></td><td>'+esc(r[1])+'</td><td class="'+(r[2].startsWith('-')?'share-down':'share-up')+'">'+esc(r[2])+'</td><td class="'+(r[2].startsWith('-')?'share-down':'share-up')+'">'+(r[3]==='-'?'▼':'▲')+'</td><td>'+esc(r[4]||'—')+'</td></tr>').join('');$('shareTickerTrack').innerHTML=d.rows.slice(0,8).map(r=>'<span class="share-ticker-item"><b>'+esc(r[0])+'</b> '+esc(r[1])+' <span class="'+(r[2].startsWith('-')?'share-down':'share-up')+'">'+esc(r[2])+'</span></span>').join('');$('shareUpdated').textContent='LIVE • अन्तिम जाँच: '+new Date().toLocaleTimeString('ne-NP',{hour:'2-digit',minute:'2-digit'});}
+ async function load(){try{let html='';for(const p of ['https://api.allorigins.win/raw?url=','https://api.codetabs.com/v1/proxy?quest=']){try{let r=await fetch(p+encodeURIComponent('https://hamroshare.com.np/nepse'),{cache:'no-store'});if(r.ok){html=await r.text();if(html.length>5000)break}}catch(e){}}if(!html)throw 0;let doc=new DOMParser().parseFromString(html,'text/html');let rows=[...doc.querySelectorAll('table tbody tr')].map(tr=>[...tr.querySelectorAll('td')].map(td=>td.textContent.trim())).filter(r=>r.length>=8);if(!rows.length)throw 0;let parsed=rows.slice(0,8).map(r=>[r[0],r[1],r[2],r[2],r[5]]);let body=doc.body.innerText.replace(/\s+/g,' ');let im=body.match(/NEPSE\s*([0-9,]+\.\d+)\s*([+-][0-9.]+%?)/i);let tm=body.match(/total turnover\s*(Rs\s*[0-9.]+\s*Arb)/i);let vm=body.match(/total volume\s*([0-9,]+)/i);let cm=body.match(/(\d+) symbols/i);render({index:im?im[1]:'—',change:im?im[2]:'LIVE',turnover:tm?tm[1]:'—',volume:vm?vm[1]:'—',companies:cm?cm[1]:'—',rows:parsed});}catch(e){render(fallback)}}
+ load();setInterval(load,60000);
+})();
+</script>
+
+    
+<!-- PREMIUM SPONSOR: MID 1 -->
+<div class="sponsor-strip">
+  <div class="sponsor-grid">
+    <a class="sponsor-ad ad-nabil ad-mini" href="https://www.nabilbank.com/" target="_blank" rel="noopener sponsored">
+      <div class="sponsor-brand">Nabil Bank</div><div class="sponsor-copy"><b>तपाईंको बैंक, तपाईंको भरोसा</b><span>डिजिटल बैंकिङ र वित्तीय सेवा</span></div><div class="sponsor-btn">Visit ↗</div>
+    </a>
+    <a class="sponsor-ad ad-ntc ad-mini" href="https://www.ntc.net.np/" target="_blank" rel="noopener sponsored">
+      <div class="sponsor-brand">नेपाल टेलिकम</div><div class="sponsor-copy"><b>सधैं सम्पर्कमा</b><span>मोबाइल, डेटा तथा डिजिटल सेवा</span></div><div class="sponsor-btn">Visit ↗</div>
+    </a>
+    <a class="sponsor-ad ad-ncell ad-mini" href="https://www.ncell.com.np/" target="_blank" rel="noopener sponsored">
+      <div class="sponsor-brand">Ncell</div><div class="sponsor-copy"><b>हरेक पल, जोडिरहौं</b><span>मोबाइल र डिजिटल कनेक्टिभिटी</span></div><div class="sponsor-btn">Visit ↗</div>
+    </a>
+  </div>
+</div>
+
+<!-- 4. BUDDHIST PHILOSOPHY (TRIRATNA BANNER) -->
     <section class="buddha-section">
         <div class="buddha-mantra">
             बुद्धं शरणं गच्छामि । धर्मं शरणं गच्छामि । सङ्घं शरणं गच्छामि ।
@@ -876,12 +1029,6 @@
                 </p>
             </div>
         </div>
-    </section>
-
-        <!-- 6. LIVE NEWS -->
-    <section id="news" class="container">
-        <div class="section-header"><span class="section-tag">Live Update</span><h2 class="section-title">ताजा समाचार</h2><p class="section-subtitle">नेपाल तथा विश्वका प्रमुख समाचारहरू स्वचालित रूपमा अपडेट हुने व्यवस्था</p></div>
-        <div class="live-news-wrap"><div class="news-status"><span class="live-badge">LIVE NEWS</span><div><span id="news-updated" style="color:var(--text-muted);font-size:.82rem;">समाचार लोड हुँदैछ...</span> <button class="news-refresh" id="news-refresh" type="button">↻ अहिले अपडेट</button></div></div><div id="news-grid" class="news-grid" aria-live="polite"></div><div class="source-note">समाचार फिड: Onlinekhabar RSS · प्रत्येक १० मिनेटमा स्वचालित अपडेट</div></div>
     </section>
 
     <!-- 7. FOUR GREAT MARTYRS -->
@@ -1153,35 +1300,27 @@
     <section id="govt" class="container" style="background: #ffffff; border-radius: 16px; border: 1px solid var(--border-light);">
         <div class="section-header">
             <span class="section-tag">आधिकारिक स्रोत</span>
-            <h2 class="section-title">नेपालका मुख्य सरकारी वेबसाइटहरू</h2>
-            <p class="section-subtitle">कृषि, पशु सेवा, कानुन तथा मौसम सम्बन्धी आधिकारिक पोर्टलहरू</p>
+            <h2 class="section-title">उपयोगी तथा सरकारी लिंकहरू</h2>
+            <p class="section-subtitle">सरकारी सेवा, कृषि–पशु, बजार, मौसम तथा कानुनका महत्वपूर्ण लिंकहरू</p>
         </div>
 
-        <div class="govt-grid">
-            <a href="https://nepal.gov.np" target="_blank" class="govt-card">
-                <span>नेपाल सरकार राष्ट्रिय पोर्टल</span> ↗
-            </a>
-            <a href="https://moald.gov.np" target="_blank" class="govt-card">
-                <span>कृषि तथा पशुपन्छी विकास मन्त्रालय</span> ↗
-            </a>
-            <a href="https://dls.gov.np" target="_blank" class="govt-card">
-                <span>पशु सेवा विभाग (DLS)</span> ↗
-            </a>
-            <a href="https://doanepal.gov.np" target="_blank" class="govt-card">
-                <span>कृषि विभाग (DoA)</span> ↗
-            </a>
-            <a href="https://molmac.lumbini.gov.np" target="_blank" class="govt-card">
-                <span>कृषि मन्त्रालय, लुम्बिनी प्रदेश</span> ↗
-            </a>
-            <a href="https://kalimatimarket.gov.np" target="_blank" class="govt-card">
-                <span>कालीमाटी तरकारी बजार समिति</span> ↗
-            </a>
-            <a href="https://lawcommission.gov.np" target="_blank" class="govt-card">
-                <span>नेपाल कानुन आयोग</span> ↗
-            </a>
-            <a href="https://mfd.gov.np" target="_blank" class="govt-card">
-                <span>मौसम पूर्वानुमान महाशाखा</span> ↗
-            </a>
+        <div class="govt-groups">
+            <div class="govt-group"><h3>🏛️ सरकार तथा प्रशासन</h3><div class="govt-grid">
+                <a href="https://nepal.gov.np" target="_blank" class="govt-card"><span>नेपाल सरकार राष्ट्रिय पोर्टल</span> ↗</a>
+                <a href="https://lawcommission.gov.np" target="_blank" class="govt-card"><span>नेपाल कानुन आयोग</span> ↗</a>
+                <a href="https://mfd.gov.np" target="_blank" class="govt-card"><span>मौसम पूर्वानुमान महाशाखा</span> ↗</a>
+            </div></div>
+            <div class="govt-group"><h3>🌾 कृषि तथा पशुपन्छी</h3><div class="govt-grid">
+                <a href="https://moald.gov.np" target="_blank" class="govt-card"><span>कृषि तथा पशुपन्छी विकास मन्त्रालय</span> ↗</a>
+                <a href="https://dls.gov.np" target="_blank" class="govt-card"><span>पशु सेवा विभाग</span> ↗</a>
+                <a href="https://doanepal.gov.np" target="_blank" class="govt-card"><span>कृषि विभाग</span> ↗</a>
+                <a href="https://molmac.lumbini.gov.np" target="_blank" class="govt-card"><span>कृषि मन्त्रालय, लुम्बिनी प्रदेश</span> ↗</a>
+            </div></div>
+            <div class="govt-group"><h3>📊 बजार तथा मूल्य</h3><div class="govt-grid">
+                <a href="https://kalimatimarket.gov.np" target="_blank" class="govt-card"><span>कालीमाटी तरकारी बजार समिति</span> ↗</a>
+                <a href="https://www.nrb.org.np/forex/" target="_blank" class="govt-card"><span>नेपाल राष्ट्र बैंक — विदेशी मुद्रा</span> ↗</a>
+                <a href="https://hamroshare.com.np/nepse" target="_blank" class="govt-card"><span>NEPSE Live Share Board</span> ↗</a>
+            </div></div>
         </div>
     </section>
 
@@ -1210,7 +1349,21 @@
         </div>
     </section>
 
-    <section id="osho" class="container osho-section">
+    
+<!-- PREMIUM SPONSOR: TECH -->
+<div class="sponsor-strip">
+  <div class="sponsor-label">टेक्नोलोजी पार्टनर</div>
+  <div class="sponsor-grid">
+    <a class="sponsor-ad ad-samsung" href="https://www.samsung.com/np/" target="_blank" rel="noopener sponsored">
+      <div class="sponsor-brand">SAMSUNG</div><div class="sponsor-copy"><b>स्मार्ट जीवनका लागि स्मार्ट टेक्नोलोजी</b><span>मोबाइल, TV, उपकरण तथा डिजिटल इनोभेसन</span></div><div class="sponsor-btn">हेर्नुहोस् ↗</div>
+    </a>
+    <a class="sponsor-ad ad-redmi" href="https://www.mi.com/np/" target="_blank" rel="noopener sponsored">
+      <div class="sponsor-brand">REDMI</div><div class="sponsor-copy"><b>Power. Speed. Value.</b><span>स्मार्टफोन तथा आधुनिक टेक्नोलोजी</span></div><div class="sponsor-btn">हेर्नुहोस् ↗</div>
+    </a>
+  </div>
+</div>
+
+<section id="osho" class="container osho-section">
       <div class="section-header"><span class="section-tag">ध्यान र दर्शन</span><h2 class="section-title">Osho</h2><p class="section-subtitle">पृष्ठको अन्त्यमा ध्यान, चेतना र आत्मअन्वेषणको स्मरण</p></div>
       <div class="osho-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Osho%20Rajneesh.jpg" alt="Osho" loading="lazy"><div><h3>Osho — ध्यान र आत्मचेतनाको सन्देश</h3><p>शान्ति, ध्यान र भित्री जागरणतर्फ केन्द्रित विचारलाई सम्झाउने यो खण्ड वेबसाइटको अन्त्यमा राखिएको छ।</p><p class="source-note">फोटो स्रोत: Wikimedia Commons, CC0/Public Domain.</p></div></div>
     </section>
@@ -1314,62 +1467,6 @@
       updateForex();setInterval(updateForex,30*60*1000);
     })();
     </script>
-
-<style id="tv-breaking-news-style">
-/* TV-style Breaking News */
-.tv-news-wrap{margin:28px auto;max-width:1200px;border-radius:18px;overflow:hidden;background:#10131a;box-shadow:0 12px 35px rgba(0,0,0,.16)}
-.tv-news-head{display:flex;align-items:center;gap:14px;padding:12px 16px;background:linear-gradient(90deg,#b30000,#e11,#9b0000);color:#fff}
-.tv-live-dot{width:11px;height:11px;background:#fff;border-radius:50%;box-shadow:0 0 0 5px rgba(255,255,255,.16);animation:tvpulse 1s infinite}
-.tv-breaking{font-weight:900;font-size:1.05rem;letter-spacing:.4px;white-space:nowrap}
-.tv-news-clock{margin-left:auto;font-size:.82rem;opacity:.9;white-space:nowrap}
-.tv-ticker{display:flex;align-items:center;min-height:52px;background:#171b24;color:#fff}
-.tv-ticker-label{background:#f4c20d;color:#111;font-weight:900;padding:17px 15px;white-space:nowrap}
-.tv-ticker-window{overflow:hidden;flex:1;position:relative}
-.tv-ticker-track{display:inline-flex;gap:48px;white-space:nowrap;padding-left:100%;animation:tvticker 55s linear infinite}
-.tv-ticker-track:hover{animation-play-state:paused}
-.tv-ticker-item{font-size:.98rem;cursor:pointer}
-.tv-ticker-item b{color:#ffcf33;margin-right:7px}
-.tv-news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:15px;background:#0d1016}
-.tv-news-card{background:#1b202b;border:1px solid #2a3140;border-radius:12px;padding:14px;color:#fff;transition:.2s}
-.tv-news-card:hover{transform:translateY(-2px);border-color:#e11}
-.tv-source{font-size:.72rem;color:#ffcf33;font-weight:800;text-transform:uppercase;margin-bottom:7px}
-.tv-news-card a{color:#fff;text-decoration:none;font-weight:700;line-height:1.45}
-.tv-news-meta{font-size:.72rem;color:#aeb7c8;margin-top:8px}
-@keyframes tvticker{from{transform:translateX(0)}to{transform:translateX(-100%)}}
-@keyframes tvpulse{50%{opacity:.35;transform:scale(.72)}}
-@media(max-width:800px){.tv-news-grid{grid-template-columns:1fr}.tv-news-clock{display:none}.tv-ticker-label{padding:15px 10px;font-size:.8rem}.tv-ticker-track{animation-duration:45s}}
-</style>
-
-<div class="tv-news-wrap" id="tvBreakingNews">
-  <div class="tv-news-head"><span class="tv-live-dot"></span><span class="tv-breaking">BREAKING NEWS</span><span class="tv-news-clock" id="tvNewsUpdated">LIVE • अपडेट हुँदैछ...</span></div>
-  <div class="tv-ticker"><div class="tv-ticker-label">ताजा खबर</div><div class="tv-ticker-window"><div class="tv-ticker-track" id="tvTickerTrack"><span class="tv-ticker-item"><b>LIVE</b> ताजा समाचार लोड हुँदैछ...</span></div></div></div>
-  <div class="tv-news-grid" id="tvNewsGrid"><div class="tv-news-card"><div class="tv-source">LIVE NEWS</div><a href="#">समाचारहरू स्वतः अपडेट हुँदैछन्...</a><div class="tv-news-meta">केही क्षण पर्खनुहोस्</div></div></div>
-</div>
-<script>
-(function(){
- const feeds=[
-  ['Onlinekhabar','https://www.onlinekhabar.com/feed'],['Setopati','https://www.setopati.com/feed'],['Ujyaalo','https://ujyaaloonline.com/feed'],['eKantipur','https://ekantipur.com/rss'],['Annapurna Post','https://annapurnapost.com/rss'],['Himal Khabar','https://www.himalkhabar.com/feed'],['BBC Nepali','https://feeds.bbci.co.uk/nepali/rss.xml'],['TechPana','https://techpana.com/feed'],['Ratopati','https://www.ratopati.com/rss'],['Nepal Press','https://www.nepalpress.com/feed/'],['Himal Press','https://himalpress.com/feed/'],['Nagarik','https://nagariknews.nagariknetwork.com/feed/']
- ];
- const proxy=u=>'https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(u);
- let all=[];
- async function getFeed(src,url){try{let r=await fetch(proxy(url),{cache:'no-store'});let j=await r.json();return (j.items||[]).slice(0,5).map(x=>({source:src,title:x.title||'',link:x.link||'#',date:x.pubDate||''}));}catch(e){return []}}
- async function load(){
-  const results=await Promise.all(feeds.map(f=>getFeed(f[0],f[1])));
-  all=results.flat().filter(x=>x.title);
-  const seen=new Set(); all=all.filter(x=>{let k=x.title.trim();if(seen.has(k))return false;seen.add(k);return true}).slice(0,36);
-  const track=document.getElementById('tvTickerTrack');
-  const grid=document.getElementById('tvNewsGrid');
-  if(!all.length){track.innerHTML='<span class="tv-ticker-item"><b>LIVE</b> समाचार फिड अहिले उपलब्ध हुन सकेन। केही समयपछि पुनः प्रयास गरिँदैछ...</span>';return}
-  track.innerHTML=all.slice(0,20).map(x=>`<span class="tv-ticker-item"><b>${x.source}</b> ${esc(x.title)}</span>`).join('');
-  grid.innerHTML=all.slice(0,12).map(x=>`<article class="tv-news-card"><div class="tv-source">${esc(x.source)}</div><a href="${safe(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a><div class="tv-news-meta">${fmt(x.date)}</div></article>`).join('');
-  document.getElementById('tvNewsUpdated').textContent='LIVE • अन्तिम अपडेट: '+new Date().toLocaleTimeString('ne-NP',{hour:'2-digit',minute:'2-digit'});
- }
- function esc(v){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
- function safe(v){return /^https?:\/\//i.test(v)?v:'#'}
- function fmt(v){if(!v)return 'ताजा';let d=new Date(v);return isNaN(d)?'ताजा':d.toLocaleString('ne-NP',{dateStyle:'medium',timeStyle:'short'})}
- load();setInterval(load,10*60*1000);
-})();
-</script>
 
 </body>
 </html>
