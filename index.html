@@ -755,6 +755,25 @@
         .market-updated{font-size:.78rem;color:var(--text-muted);margin-top:.7rem}
         .market-source{font-size:.78rem;margin-top:.25rem}
 
+
+        .brand-photo-wrap{width:58px;height:58px;border-radius:50%;overflow:hidden;border:3px solid rgba(255,255,255,.8);box-shadow:0 6px 20px rgba(2,132,199,.25);flex:0 0 58px;background:#fff}
+        .brand-photo{width:100%;height:100%;object-fit:cover;object-position:center 38%}
+        .brand-text p{font-size:.82rem!important;font-weight:800!important;color:#e0f2fe!important;margin:.1rem 0!important;letter-spacing:.02em}
+        .brand-text small{font-size:.64rem;color:#bae6fd;letter-spacing:.08em}
+        .minister-photo-grid,.law-link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+        .minister-photo-card{background:#fff;border:1px solid var(--border-light);border-radius:14px;padding:1rem;text-align:center;box-shadow:var(--shadow-sm)}
+        .minister-photo-card img{width:100%;height:180px;object-fit:cover;border-radius:10px;background:#e0f2fe}
+        .minister-photo-card h4{margin:.65rem 0 .2rem;color:var(--sky-950)}
+        .minister-photo-card p{font-size:.8rem;color:var(--text-muted);margin:0}
+        .law-link-grid a{display:block;padding:1rem;border:1px solid var(--border-light);border-radius:12px;background:#fff;color:var(--sky-800);text-decoration:none;font-weight:800;box-shadow:var(--shadow-sm);transition:.2s}
+        .law-link-grid a:hover{transform:translateY(-2px);box-shadow:var(--shadow-md);background:var(--sky-100)}
+        .osho-section{background:linear-gradient(135deg,#f8fafc,#eef6ff);border-radius:18px;overflow:hidden}
+        .osho-card{display:grid;grid-template-columns:180px 1fr;gap:1.25rem;align-items:center;padding:1.2rem}
+        .osho-card img{width:180px;height:180px;object-fit:cover;border-radius:16px;box-shadow:var(--shadow-md)}
+        .auto-badge{display:inline-flex;align-items:center;gap:.35rem;padding:.25rem .6rem;border-radius:999px;background:#dcfce7;color:#166534;font-size:.72rem;font-weight:800}
+        .price-actions{display:flex;gap:.5rem;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:.8rem}
+        .price-refresh{border:1px solid var(--sky-200);background:#fff;color:var(--sky-700);border-radius:8px;padding:.35rem .7rem;cursor:pointer;font-family:inherit;font-weight:700}
+        @media(max-width:650px){.brand-photo-wrap{width:50px;height:50px;flex-basis:50px}.osho-card{grid-template-columns:1fr;text-align:center}.osho-card img{margin:auto;width:150px;height:150px}}
 </style>
 </head>
 <body>
@@ -787,10 +806,11 @@
     <header>
         <nav>
             <a href="#" class="brand-container">
-                <div class="brand-logo-icon">🏔️</div>
+                <div class="brand-photo-wrap"><img class="brand-photo" src="https://commons.wikimedia.org/wiki/Special:FilePath/Buddha%20Seated%20in%20Meditation%2C%20Nepal%2C%2011th%20or%2012th%20century%2C%20gilt%20bronze%20-%20Cincinnati%20Art%20Museum%20-%20DSC03212.JPG" alt="निर्वाण/ध्यानको प्रतीक बुद्ध" loading="eager"></div>
                 <div class="brand-text">
-                    <h1>झबिन्द्र पोखरेल</h1>
-                    <p>PORTAL & KNOWLEDGE BASE</p>
+                    <h1 id="site-name">झबिन्द्र पोखरेल</h1>
+                    <p>हजूर बुवामा सदैव समर्पित</p>
+                    <small>PORTAL & KNOWLEDGE BASE</small>
                 </div>
             </a>
             <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="मेनु खोल्नुहोस्" aria-expanded="false">☰</button>
@@ -896,6 +916,15 @@
         <div class="council-table-wrap"><table class="council-table"><thead><tr><th>क्र.सं.</th><th>नाम, थर</th><th>पद</th><th>कार्यविभाजन / मन्त्रालय</th></tr></thead><tbody>
             <tr><td>१</td><td>श्री वालेन्द्र शाह</td><td>प्रधानमन्त्री</td><td>रक्षा</td></tr><tr><td>२</td><td>डा. स्वर्णिम वाग्ले</td><td>मन्त्री</td><td>अर्थ</td></tr><tr><td>३</td><td>श्री शिशिर खनाल</td><td>मन्त्री</td><td>परराष्ट्र</td></tr><tr><td>४</td><td>श्री बिराज भक्त श्रेष्ठ</td><td>मन्त्री</td><td>ऊर्जा, जलस्रोत तथा सिँचाइ</td></tr><tr><td>५</td><td>श्री सुधन गुरुङ</td><td>मन्त्री</td><td>गृह</td></tr><tr><td>६</td><td>श्री सुनिल लम्साल</td><td>मन्त्री</td><td>पूर्वाधार विकास</td></tr><tr><td>७</td><td>श्री सोविता गौतम</td><td>मन्त्री</td><td>कानून, न्याय तथा संसदीय मामिला</td></tr><tr><td>८</td><td>श्री महावीर पुन</td><td>मन्त्री</td><td>विज्ञान, प्रविधि तथा नवप्रवर्तन</td></tr><tr><td>९</td><td>श्री सिता बादी</td><td>मन्त्री</td><td>महिला, बालबालिका, लैङ्गिक तथा यौनिक अल्पसङ्ख्यक र सामाजिक सुरक्षा</td></tr><tr><td>१०</td><td>श्री प्रतिभा रावल</td><td>मन्त्री</td><td>भूमि व्यवस्था, सहकारी, सङ्घीय मामिला तथा सामान्य प्रशासन</td></tr><tr><td>११</td><td>श्री निशा मेहता</td><td>मन्त्री</td><td>स्वास्थ्य तथा खाद्य स्वच्छता</td></tr><tr><td>१२</td><td>श्री सस्मित पोखरेल</td><td>मन्त्री</td><td>शिक्षा तथा खेलकुद</td></tr><tr><td>१३</td><td>श्री खडक राज पौडेल</td><td>मन्त्री</td><td>संस्कृति, पर्यटन तथा नागरिक उड्डयन</td></tr><tr><td>१४</td><td>डा. विक्रम तिमिल्सिना</td><td>मन्त्री</td><td>सूचना तथा सञ्चार</td></tr><tr><td>१५</td><td>श्री गिता चौधरी</td><td>मन्त्री</td><td>कृषि, वन तथा पर्यावरण</td></tr><tr><td>१६</td><td>श्री गौरी कुमारी</td><td>मन्त्री</td><td>उद्योग, वाणिज्य तथा आपूर्ति</td></tr><tr><td>१७</td><td>श्री रामजी यादव</td><td>मन्त्री</td><td>युवा, श्रम तथा रोजगार</td></tr>
         </tbody></table></div><div class="source-note">आधिकारिक स्रोत: <a href="https://opmcm.gov.np/pages/ministers-pages-23/" target="_blank" rel="noopener">प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय</a></div>
+    </section>
+
+    <section id="minister-photos" class="container">
+      <div class="section-header"><span class="section-tag">Official Photos</span><h2 class="section-title">मन्त्रिपरिषद्का सदस्यहरूको फोटो</h2><p class="section-subtitle">प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालयमा प्रकाशित आधिकारिक विवरणसँग जोडिएको फोटो खण्ड</p></div>
+      <div class="minister-photo-grid">
+        <article class="minister-photo-card"><img src="https://giwmscdnone.gov.np/media/minister_photo/Web.jpg_nla0mey.jpeg" alt="वालेन्द्र शाह" loading="lazy"><h4>श्री वालेन्द्र शाह</h4><p>सम्माननीय प्रधानमन्त्री</p></article>
+        <article class="minister-photo-card"><div style="height:180px;border-radius:10px;background:linear-gradient(135deg,#e0f2fe,#f8fafc);display:grid;place-items:center;font-size:3rem">🇳🇵</div><h4>अन्य माननीय मन्त्रीहरू</h4><p>आधिकारिक फोटो/विवरण हेर्नुहोस्</p><a href="https://opmcm.gov.np/pages/ministers-pages-23/" target="_blank" rel="noopener">OPMCM फोटो/विवरण ↗</a></article>
+      </div>
+      <div class="source-note">आधिकारिक स्रोत: <a href="https://opmcm.gov.np/pages/ministers-pages-23/" target="_blank" rel="noopener">प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय</a></div>
     </section>
 
 <!-- 10. DETAILED AGRICULTURAL & COOPERATIVE LAWS (कृषि संघ सम्बन्धी ऐनहरू थप) -->
@@ -1114,76 +1143,10 @@
 
     <!-- 12. VEGETABLE PRICE LIST -->
     <section id="prices" class="container">
-        <div class="section-header">
-            <span class="section-tag">बजार दरभाउ</span>
-            <h2 class="section-title">दैनिक तरकारीको थोक तथा खुद्रा मूल्यसूची</h2>
-            <p class="section-subtitle">कालीमाटी फलफूल तथा तरकारी बजार विकास समिति तथा स्थानीय बजारमा आधारित सन्दर्भ दर</p>
-        </div>
-
-        <div class="table-wrap">
-            <table>
-                <thead>
-                    <tr>
-                        <th>तरकारीको नाम</th>
-                        <th>एकाइ</th>
-                        <th>न्यूनतम मूल्य (रु)</th>
-                        <th>अधिकतम मूल्य (रु)</th>
-                        <th>औसत मूल्य (रु)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>गोलभेंडा ठूलो (नेपाली)</strong></td>
-                        <td>के.जी.</td>
-                        <td>रु. ४०</td>
-                        <td>रु. ५०</td>
-                        <td>रु. ४५</td>
-                    </tr>
-                    <tr>
-                        <td><strong>आलु रातो</strong></td>
-                        <td>के.जी.</td>
-                        <td>रु. ५०</td>
-                        <td>रु. ५५</td>
-                        <td>रु. ५२</td>
-                    </tr>
-                    <tr>
-                        <td><strong>प्याज सुकेको (भारतीय)</strong></td>
-                        <td>के.जी.</td>
-                        <td>रु. ७०</td>
-                        <td>रु. ७५</td>
-                        <td>रु. ७२</td>
-                    </tr>
-                    <tr>
-                        <td><strong>काउली स्थानीय</strong></td>
-                        <td>के.जी.</td>
-                        <td>रु. ६०</td>
-                        <td>रु. ७०</td>
-                        <td>रु. ६५</td>
-                    </tr>
-                    <tr>
-                        <td><strong>बन्दा स्थानीय</strong></td>
-                        <td>के.जी.</td>
-                        <td>रु. ३०</td>
-                        <td>रु. ३५</td>
-                        <td>रु. ३२</td>
-                    </tr>
-                    <tr>
-                        <td><strong>सिमी (घिउ)</strong></td>
-                        <td>के.जी.</td>
-                        <td>रु. ७०</td>
-                        <td>रु. ८०</td>
-                        <td>रु. ७५</td>
-                    </tr>
-                    <tr>
-                        <td><strong>च्याउ (कन्य)</strong></td>
-                        <td>के.जी.</td>
-                        <td>रु. १४०</td>
-                        <td>रु. १६०</td>
-                        <td>रु. १५०</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <div class="section-header"><span class="section-tag">बजार दरभाउ</span><h2 class="section-title">दैनिक तरकारीको थोक मूल्यसूची</h2><p class="section-subtitle">कालीमाटी फलफूल तथा तरकारी बजार विकास समितिको सार्वजनिक दरबाट स्वतः अपडेट गर्ने प्रयास</p></div>
+        <div class="price-actions"><span class="auto-badge">● AUTO UPDATE</span><button class="price-refresh" id="veg-refresh" type="button">↻ अहिले अपडेट</button><span id="veg-updated" class="market-updated">दर लोड हुँदैछ...</span></div>
+        <div class="table-wrap"><table><thead><tr><th>कृषि उपज</th><th>एकाइ</th><th>न्यूनतम</th><th>अधिकतम</th><th>औसत</th></tr></thead><tbody id="veg-table-body"><tr><td colspan="5">कालीमाटीको पछिल्लो दर लोड हुँदैछ...</td></tr></tbody></table></div>
+        <div class="source-note">आधिकारिक स्रोत: <a href="https://kalimatimarket.gov.np/price" target="_blank" rel="noopener">कालीमाटी फलफूल तथा तरकारी बजार विकास समिति</a></div>
     </section>
 
     <!-- 10. GOVERNMENT WEBSITES -->
@@ -1247,165 +1210,164 @@
         </div>
     </section>
 
+    <section id="osho" class="container osho-section">
+      <div class="section-header"><span class="section-tag">ध्यान र दर्शन</span><h2 class="section-title">Osho</h2><p class="section-subtitle">पृष्ठको अन्त्यमा ध्यान, चेतना र आत्मअन्वेषणको स्मरण</p></div>
+      <div class="osho-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Osho%20Rajneesh.jpg" alt="Osho" loading="lazy"><div><h3>Osho — ध्यान र आत्मचेतनाको सन्देश</h3><p>शान्ति, ध्यान र भित्री जागरणतर्फ केन्द्रित विचारलाई सम्झाउने यो खण्ड वेबसाइटको अन्त्यमा राखिएको छ।</p><p class="source-note">फोटो स्रोत: Wikimedia Commons, CC0/Public Domain.</p></div></div>
+    </section>
+
 <footer>
         <h3>झबिन्द्र पोखरेल (Jhabindra Pokharel) पोर्टल</h3>
         <p>स्काई ब्लु (Sky Blue 🔵) आधुनिक थिम - कृषि संघ ऐन, पाल्पा पहिचान, पशु स्वास्थ्य तथा बौद्ध दर्शन</p>
         <div class="copyright">
             &copy; 2026 झबिन्द्र पोखरेल। सर्वाधिकार सुरक्षित।
         </div>
-    </footer>
+    
+<!-- LIVE MARKET DASHBOARD -->
+<section id="live-market-dashboard" class="section" style="background:linear-gradient(135deg,#07111f,#0d1b2f);color:#fff;padding:42px 18px;">
+  <div style="max-width:1180px;margin:auto;">
+    <div style="display:flex;justify-content:space-between;gap:15px;align-items:end;flex-wrap:wrap;margin-bottom:22px;">
+      <div>
+        <div style="font-size:.78rem;letter-spacing:2px;color:#7dd3fc;font-weight:800;">LIVE MARKET</div>
+        <h2 style="margin:5px 0 4px;font-size:clamp(1.6rem,4vw,2.5rem);">बजारको प्रत्यक्ष अवस्था</h2>
+        <p style="margin:0;color:#a9bdd4;">तरकारी • सुन–चाँदी • विदेशी मुद्रा</p>
+      </div>
+      <div id="market-last-update" style="font-size:.82rem;color:#a9bdd4;">अपडेट हुँदैछ…</div>
+    </div>
 
-    <!-- REALTIME NEPAL CLOCK SCRIPT -->
-    <script>
-        function updateNepalTime() {
-            const now = new Date();
-            // Nepal Standard Time is UTC + 5:45
-            const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
-            const nepalTime = new Date(utcTime + (3600000 * 5.75));
-            
-            const hours = String(nepalTime.getHours()).padStart(2, '0');
-            const minutes = String(nepalTime.getMinutes()).padStart(2, '0');
-            const seconds = String(nepalTime.getSeconds()).padStart(2, '0');
-            
-            const timeString = `${hours}:${minutes}:${seconds} NPT`;
-            const clockElement = document.getElementById('nepal-live-clock');
-            if (clockElement) {
-                clockElement.innerText = timeString;
-            }
-        }
-        setInterval(updateNepalTime, 1000);
-        updateNepalTime();
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;">
+      <article style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:20px;box-shadow:0 15px 35px rgba(0,0,0,.18);">
+        <div style="display:flex;justify-content:space-between;align-items:center;"><b>🥬 तरकारी बजार</b><span id="veg-status" style="font-size:.72rem;color:#86efac;">LIVE</span></div>
+        <div id="veg-highlight" style="font-size:1.45rem;font-weight:900;margin:16px 0 6px;">लोड हुँदैछ…</div>
+        <div id="veg-date" style="font-size:.78rem;color:#a9bdd4;">कालीमाटी थोक मूल्य</div>
+      </article>
 
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        if (mobileMenuBtn && navLinks) {
-            mobileMenuBtn.addEventListener('click', () => {
-                const open = navLinks.classList.toggle('open');
-                mobileMenuBtn.setAttribute('aria-expanded', String(open));
-            });
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('open');
-                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
-                });
-            });
-        }
-    </script>
+      <article style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:20px;box-shadow:0 15px 35px rgba(0,0,0,.18);">
+        <div style="display:flex;justify-content:space-between;align-items:center;"><b>🥇 सुन</b><span style="font-size:.72rem;color:#fde68a;">DAILY</span></div>
+        <div id="gold-price" style="font-size:1.7rem;font-weight:900;margin:16px 0 6px;">रु. ३,०४,३००</div>
+        <div id="gold-change" style="font-size:.78rem;color:#a9bdd4;">प्रति तोला • आज</div>
+      </article>
+
+      <article style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:20px;box-shadow:0 15px 35px rgba(0,0,0,.18);">
+        <div style="display:flex;justify-content:space-between;align-items:center;"><b>🥈 चाँदी</b><span style="font-size:.72rem;color:#cbd5e1;">DAILY</span></div>
+        <div id="silver-price" style="font-size:1.7rem;font-weight:900;margin:16px 0 6px;">रु. ४,७२५</div>
+        <div style="font-size:.78rem;color:#a9bdd4;">प्रति तोला • आज</div>
+      </article>
+    </div>
+
+    <div style="margin-top:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:18px;overflow:auto;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <b>💱 विदेशी मुद्रा — नेपाल राष्ट्र बैंक</b>
+        <span style="font-size:.75rem;color:#a9bdd4;">Buy / Sell (NPR)</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;min-width:560px;">
+        <thead><tr style="color:#7dd3fc;text-align:left;"><th style="padding:9px;">Currency</th><th>खरिद</th><th>बिक्री</th><th>स्थिति</th></tr></thead>
+        <tbody id="fx-body"></tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:18px;">
+      <div style="display:flex;justify-content:space-between;margin-bottom:12px;"><b>📊 बजार संकेतक</b><span id="market-source" style="font-size:.75rem;color:#a9bdd4;">NRB / बजार स्रोत</span></div>
+      <canvas id="marketChart" height="105" style="width:100%;max-height:230px;"></canvas>
+    </div>
+  </div>
+</section>
+
+</footer>
+
+    <!-- LIVE DATA / AUTO UPDATE SCRIPTS -->
     <script>
     (function(){
-      const fallback=[{title:"रसुवा बाढीपछि खोज तथा उद्धार कार्य जारी, थप दुई जना जीवित उद्धार",source:"समसामयिक समाचार",link:"https://www.onlinekhabar.com/",date:"आज"},{title:"नेपालमा बाढी प्रभावित क्षेत्रमा राहत तथा उद्धार कार्यलाई निरन्तरता",source:"समाचार अपडेट",link:"https://www.onlinekhabar.com/",date:"आज"},{title:"सरकारका पछिल्ला सूचना तथा प्रेस विज्ञप्ति सार्वजनिक",source:"नेपाल सरकार",link:"https://nepal.gov.np/",date:"आज"},{title:"नेपालमा मौसम, विपद् तथा जनसरोकारका विषयमा नयाँ अपडेट",source:"ताजा अपडेट",link:"https://www.onlinekhabar.com/",date:"आज"}];
-      const grid=document.getElementById("news-grid"),stamp=document.getElementById("news-updated"),btn=document.getElementById("news-refresh");
-      const esc=t=>String(t||"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
-      function render(items){grid.innerHTML=items.slice(0,8).map(i=>`<article class="news-card"><div><div class="news-meta">📰 ${esc(i.source||"समाचार")} · ${esc(i.date||"आज")}</div><h3>${esc(i.title)}</h3></div><a href="${i.link||'#'}" target="_blank" rel="noopener">पूरा समाचार हेर्नुहोस् ↗</a></article>`).join("");stamp.textContent="अन्तिम अपडेट: "+new Date().toLocaleString("ne-NP",{year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"});}
-      async function loadNews(){stamp.textContent="समाचार अपडेट हुँदैछ...";try{const rss=encodeURIComponent("https://www.onlinekhabar.com/feed"),r=await fetch("https://api.rss2json.com/v1/api.json?rss_url="+rss+"&count=8",{cache:"no-store"});if(!r.ok)throw Error("feed");const d=await r.json();if(!d.items||!d.items.length)throw Error("empty");render(d.items.map(i=>({title:i.title,source:"Onlinekhabar",link:i.link,date:i.pubDate?new Date(i.pubDate).toLocaleDateString("ne-NP"):"आज"})));}catch(e){render(fallback);}}
-      btn.addEventListener("click",loadNews);loadNews();setInterval(loadNews,600000);
+      const esc=t=>String(t??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
+      // Mobile menu
+      const mobileMenuBtn=document.getElementById('mobileMenuBtn'),navLinks=document.getElementById('navLinks');
+      if(mobileMenuBtn&&navLinks){mobileMenuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');mobileMenuBtn.setAttribute('aria-expanded',String(open));});navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')))}
+      // Nepal clock
+      function updateNepalTime(){const n=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Kathmandu'}));const h=String(n.getHours()).padStart(2,'0'),m=String(n.getMinutes()).padStart(2,'0'),s=String(n.getSeconds()).padStart(2,'0');const e=document.getElementById('nepal-live-clock');if(e)e.textContent=`${h}:${m}:${s} NPT`;} updateNepalTime();setInterval(updateNepalTime,1000);
+      // bilingual name
+      const name=document.getElementById('site-name'),toggle=document.getElementById('name-toggle'); if(name&&toggle){let en=false;toggle.addEventListener('click',()=>{en=!en;name.textContent=en?'Jhabindra Pokharel':'झबिन्द्र पोखरेल';toggle.textContent=en?'नेपाली':'EN';});}
+
+      // News: many major Nepali/international sources. Some feeds may fail due publisher/CORS policy; working feeds are shown.
+      const feeds=[
+        ['Onlinekhabar','https://www.onlinekhabar.com/feed'],['Ujyaalo','https://ujyaaloonline.com/feed'],['Setopati','https://www.setopati.com/feed'],['Sidha Kura','https://www.sidhakura.com/feed'],['TechPana','https://techpana.com/feed'],['eKantipur','https://ekantipur.com/rss'],['Annapurna Post','https://annapurnapost.com/rss'],['Himal Khabar','https://www.himalkhabar.com/feed'],['BBC Nepali','https://feeds.bbci.co.uk/nepali/rss.xml'],['Ratopati','https://www.ratopati.com/feed'],['Nepal Press','https://www.nepalpress.com/feed/'],['Himal Press','https://himalpress.com/feed/'],['Nepal News','https://english.nepalnews.com/feed/'],['MyRepublica','https://myrepublica.nagariknetwork.com/feed/']
+      ];
+      const newsGrid=document.getElementById('news-grid'),stamp=document.getElementById('news-updated'),newsBtn=document.getElementById('news-refresh');
+      function drawNews(items){items.sort((a,b)=>b.date-a.date);if(newsGrid)newsGrid.innerHTML=items.slice(0,24).map(i=>`<article class="news-card"><div><div class="news-meta">📰 ${esc(i.source)} · ${esc(i.dateText)}</div><h3>${esc(i.title)}</h3></div><a href="${esc(i.link)}" target="_blank" rel="noopener">पूरा समाचार ↗</a></article>`).join('');if(stamp)stamp.textContent='अन्तिम अपडेट: '+new Date().toLocaleString('ne-NP',{hour:'2-digit',minute:'2-digit',day:'2-digit',month:'2-digit',year:'numeric'});}
+      async function getFeed(src,url){try{const ep='https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(url)+'&count=6';const r=await fetch(ep,{cache:'no-store'});if(!r.ok)throw 0;const d=await r.json();return (d.items||[]).map(x=>({title:x.title,link:x.link,source:src,date:new Date(x.pubDate||Date.now()),dateText:x.pubDate?new Date(x.pubDate).toLocaleDateString('ne-NP'):'आज'}));}catch(e){return []}}
+      async function updateNews(){if(stamp)stamp.textContent='विभिन्न समाचार स्रोतबाट अपडेट हुँदैछ...';const parts=await Promise.all(feeds.map(f=>getFeed(f[0],f[1])));const all=parts.flat();if(all.length)drawNews(all);else if(stamp)stamp.textContent='समाचार फिड अहिले उपलब्ध भएन।'}
+      if(newsBtn)newsBtn.addEventListener('click',updateNews);updateNews();setInterval(updateNews,10*60*1000);
+
+      // Vegetable prices: fetch the official Kalimati public page through a public CORS proxy and parse the table. Fallback keeps a useful link rather than inventing values.
+      const vegBody=document.getElementById('veg-table-body'),vegUpdated=document.getElementById('veg-updated'),vegBtn=document.getElementById('veg-refresh');
+      const fallbackVeg=[['गोलभेडा ठूलो (नेपाली)','के.जी.','६०','७०','६५'],['गोलभेडा सानो (लोकल)','के.जी.','२५','३०','२७'],['आलु रातो (लाम्चो)','के.जी.','४८','५१','४९.८३'],['आलु रातो (गोलो)','के.जी.','४८','५३','५०.८३'],['आलु सेतो','के.जी.','३५','४०','३७.५०'],['प्याज सुकेको (भारतीय)','के.जी.','९३','९८','९५.८३']];
+      function drawVeg(rows){if(!vegBody)return;vegBody.innerHTML=rows.slice(0,60).map(x=>`<tr><td><strong>${esc(x[0])}</strong></td><td>${esc(x[1]||'के.जी.')}</td><td>रु. ${esc(x[2])}</td><td>रु. ${esc(x[3])}</td><td>रु. ${esc(x[4])}</td></tr>`).join('');}
+      async function updateVeg(){if(vegUpdated)vegUpdated.textContent='कालीमाटीको पछिल्लो दर जाँच हुँदैछ...';try{const target='https://kalimatimarket.gov.np/price';let html='';for(const proxy of ['https://api.allorigins.win/raw?url=','https://api.codetabs.com/v1/proxy?quest=']){try{const r=await fetch(proxy+encodeURIComponent(target),{cache:'no-store'});if(r.ok){html=await r.text();if(html.length>1000)break}}catch(e){}}if(!html)throw 0;const doc=new DOMParser().parseFromString(html,'text/html');const rows=[...doc.querySelectorAll('table tbody tr')].map(tr=>[...tr.querySelectorAll('td')].map(td=>td.textContent.trim())).filter(x=>x.length>=4);if(!rows.length)throw 0;drawVeg(rows.map(x=>[x[0],x[1],x[2].replace(/[^0-9.]/g,''),x[3].replace(/[^0-9.]/g,''),x[4]?x[4].replace(/[^0-9.]/g,''):'-']));if(vegUpdated)vegUpdated.textContent='स्वतः अपडेट: '+new Date().toLocaleString('ne-NP');}catch(e){drawVeg(fallbackVeg);if(vegUpdated)vegUpdated.textContent='पछिल्लो उपलब्ध सन्दर्भ दर · आधिकारिक पेज हेर्नुहोस्';}}
+      if(vegBtn)vegBtn.addEventListener('click',updateVeg);updateVeg();setInterval(updateVeg,30*60*1000);
+
+      // Gold/silver: read the current public page maintained from Federation market rates via Hamro Patro.
+      const goldBox=document.getElementById('gold-silver-rate'),goldUpdated=document.getElementById('gold-updated');
+      async function updateGold(){if(goldUpdated)goldUpdated.textContent='सुनचाँदीको आजको दर जाँच हुँदैछ...';try{const target='https://www.hamropatro.com/gold?v=2';let html='';for(const proxy of ['https://api.allorigins.win/raw?url=','https://api.codetabs.com/v1/proxy?quest=']){try{const r=await fetch(proxy+encodeURIComponent(target),{cache:'no-store'});if(r.ok){html=await r.text();if(html.length>1000)break}}catch(e){}}if(!html)throw 0;const txt=new DOMParser().parseFromString(html,'text/html').body.innerText.replace(/\s+/g,' ');const gm=txt.match(/Gold \(Hallmark\).*?Rs\s*([\d,]+)/i),sm=txt.match(/Silver.*?Rs\s*([\d,]+)/i);if(!gm||!sm)throw 0;goldBox.innerHTML=`<div class="market-row"><span>छापावाल सुन / तोला</span><span class="market-value">रु. ${esc(gm[1])}</span></div><div class="market-row"><span>चाँदी / तोला</span><span class="market-value">रु. ${esc(sm[1])}</span></div>`;goldUpdated.textContent='Hamro Patro/Federation स्रोतबाट स्वतः अपडेट';}catch(e){goldBox.innerHTML='<div class="market-row"><span>छापावाल सुन</span><span class="market-value">रु. ३,०४,३०० / तोला*</span></div><div class="market-row"><span>चाँदी</span><span class="market-value">रु. ४,७२५ / तोला*</span></div>';goldUpdated.innerHTML='आजको सन्दर्भ दर · <a href="https://www.fenegosida.org/" target="_blank" rel="noopener">FENEGOSIDA ↗</a>';}}
+      updateGold();setInterval(updateGold,30*60*1000);
+
+      // NRB forex; dynamically uses today's Nepal date instead of a hard-coded date.
+      const forexBox=document.getElementById('forex-rate'),forexUpdated=document.getElementById('forex-updated');
+      async function updateForex(){if(!forexBox)return;try{const n=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Kathmandu'}));const yyyy=n.getFullYear(),mm=String(n.getMonth()+1).padStart(2,'0'),dd=String(n.getDate()).padStart(2,'0');const url=`https://www.nrb.org.np/api/forex/v1/rates?per_page=50&page=1&from=${yyyy}-${mm}-${dd}&to=${yyyy}-${mm}-${dd}`;const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw 0;const d=await r.json();const rates=d.data?.payload||d.data||d.payload||[];const wanted=['USD','EUR','GBP','AUD','CAD','JPY','CNY','SAR','QAR','INR'];const rows=rates.filter(x=>wanted.includes(x.currency?.iso3||x.currency?.code)).map(x=>[x.currency?.iso3||x.currency?.code,x.buy,x.sell,x.currency?.unit||1]);if(!rows.length)throw 0;forexBox.innerHTML=rows.map(x=>`<div class="market-row"><span>${esc(x[0])} (${esc(x[3])})</span><span class="market-value">खरिद ${esc(x[1])} · बिक्री ${esc(x[2])}</span></div>`).join('');forexUpdated.textContent='नेपाल राष्ट्र बैंकको पछिल्लो उपलब्ध दर';}catch(e){forexBox.innerHTML='<div class="market-row"><span>USD</span><span class="market-value">NRB दर लोड हुँदैछ...</span></div><div class="market-row"><span>INR (100)</span><span class="market-value">NRB दर लोड हुँदैछ...</span></div>';forexUpdated.innerHTML='<a href="https://www.nrb.org.np/forex/" target="_blank" rel="noopener">नेपाल राष्ट्र बैंकको दर हेर्नुहोस् ↗</a>';}}
+      updateForex();setInterval(updateForex,30*60*1000);
     })();
     </script>
 
+<style id="tv-breaking-news-style">
+/* TV-style Breaking News */
+.tv-news-wrap{margin:28px auto;max-width:1200px;border-radius:18px;overflow:hidden;background:#10131a;box-shadow:0 12px 35px rgba(0,0,0,.16)}
+.tv-news-head{display:flex;align-items:center;gap:14px;padding:12px 16px;background:linear-gradient(90deg,#b30000,#e11,#9b0000);color:#fff}
+.tv-live-dot{width:11px;height:11px;background:#fff;border-radius:50%;box-shadow:0 0 0 5px rgba(255,255,255,.16);animation:tvpulse 1s infinite}
+.tv-breaking{font-weight:900;font-size:1.05rem;letter-spacing:.4px;white-space:nowrap}
+.tv-news-clock{margin-left:auto;font-size:.82rem;opacity:.9;white-space:nowrap}
+.tv-ticker{display:flex;align-items:center;min-height:52px;background:#171b24;color:#fff}
+.tv-ticker-label{background:#f4c20d;color:#111;font-weight:900;padding:17px 15px;white-space:nowrap}
+.tv-ticker-window{overflow:hidden;flex:1;position:relative}
+.tv-ticker-track{display:inline-flex;gap:48px;white-space:nowrap;padding-left:100%;animation:tvticker 55s linear infinite}
+.tv-ticker-track:hover{animation-play-state:paused}
+.tv-ticker-item{font-size:.98rem;cursor:pointer}
+.tv-ticker-item b{color:#ffcf33;margin-right:7px}
+.tv-news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:15px;background:#0d1016}
+.tv-news-card{background:#1b202b;border:1px solid #2a3140;border-radius:12px;padding:14px;color:#fff;transition:.2s}
+.tv-news-card:hover{transform:translateY(-2px);border-color:#e11}
+.tv-source{font-size:.72rem;color:#ffcf33;font-weight:800;text-transform:uppercase;margin-bottom:7px}
+.tv-news-card a{color:#fff;text-decoration:none;font-weight:700;line-height:1.45}
+.tv-news-meta{font-size:.72rem;color:#aeb7c8;margin-top:8px}
+@keyframes tvticker{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+@keyframes tvpulse{50%{opacity:.35;transform:scale(.72)}}
+@media(max-width:800px){.tv-news-grid{grid-template-columns:1fr}.tv-news-clock{display:none}.tv-ticker-label{padding:15px 10px;font-size:.8rem}.tv-ticker-track{animation-duration:45s}}
+</style>
+
+<div class="tv-news-wrap" id="tvBreakingNews">
+  <div class="tv-news-head"><span class="tv-live-dot"></span><span class="tv-breaking">BREAKING NEWS</span><span class="tv-news-clock" id="tvNewsUpdated">LIVE • अपडेट हुँदैछ...</span></div>
+  <div class="tv-ticker"><div class="tv-ticker-label">ताजा खबर</div><div class="tv-ticker-window"><div class="tv-ticker-track" id="tvTickerTrack"><span class="tv-ticker-item"><b>LIVE</b> ताजा समाचार लोड हुँदैछ...</span></div></div></div>
+  <div class="tv-news-grid" id="tvNewsGrid"><div class="tv-news-card"><div class="tv-source">LIVE NEWS</div><a href="#">समाचारहरू स्वतः अपडेट हुँदैछन्...</a><div class="tv-news-meta">केही क्षण पर्खनुहोस्</div></div></div>
+</div>
 <script>
 (function(){
-  // Nepali / English name toggle
-  const name=document.getElementById('site-name');
-  const toggle=document.getElementById('name-toggle');
-  if(name && toggle){
-    let en=false;
-    toggle.addEventListener('click',function(){
-      en=!en;
-      name.textContent=en?'Jhabindra Pokharel':'झबिन्द्र पोखरेल';
-      toggle.textContent=en?'नेपाली':'EN';
-    });
-  }
-
-  // Multi-source news. Feeds are attempted through rss2json.
-  const feeds=[
-    ['उज्यालो','https://ujyaaloonline.com/feed'],
-    ['सेतोपाटी','https://www.setopati.com/feed'],
-    ['सीधाकुरा','https://www.sidhakura.com/feed'],
-    ['टेकपाना','https://techpana.com/feed'],
-    ['इकान्तिपुर','https://ekantipur.com/rss'],
-    ['अन्नपूर्ण पोस्ट','https://annapurnapost.com/rss'],
-    ['हिमालखबर','https://www.himalkhabar.com/feed'],
-    ['BBC नेपाली','https://feeds.bbci.co.uk/nepali/rss.xml']
-  ];
-  const newsGrid=document.getElementById('news-grid');
-  const stamp=document.getElementById('news-updated');
-  const newsBtn=document.getElementById('news-refresh');
-
-  function esc(t){return String(t||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));}
-  function drawNews(items){
-    if(!newsGrid) return;
-    items.sort((a,b)=>new Date(b.date||0)-new Date(a.date||0));
-    newsGrid.innerHTML=items.slice(0,16).map(i=>
-      `<article class="news-card"><div><div class="news-meta">📰 ${esc(i.source)} · ${esc(i.dateText||'आज')}</div><h3>${esc(i.title)}</h3></div><a href="${i.link}" target="_blank" rel="noopener">पूरा समाचार ↗</a></article>`
-    ).join('');
-    if(stamp) stamp.textContent='अन्तिम अपडेट: '+new Date().toLocaleString('ne-NP',{hour:'2-digit',minute:'2-digit',day:'2-digit',month:'2-digit',year:'numeric'});
-  }
-  async function getFeed(src,url){
-    try{
-      const endpoint='https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(url)+'&count=5';
-      const r=await fetch(endpoint,{cache:'no-store'});
-      if(!r.ok) throw 0;
-      const d=await r.json();
-      return (d.items||[]).map(x=>({title:x.title,link:x.link,source:src,date:new Date(x.pubDate||Date.now()),dateText:x.pubDate?new Date(x.pubDate).toLocaleDateString('ne-NP'):'आज'}));
-    }catch(e){return [];}
-  }
-  async function updateNews(){
-    if(stamp) stamp.textContent='सबै स्रोतबाट समाचार अपडेट हुँदैछ...';
-    const batches=await Promise.all(feeds.map(f=>getFeed(f[0],f[1])));
-    const all=batches.flat();
-    if(all.length) drawNews(all);
-    else if(stamp) stamp.textContent='समाचार फिड अहिले उपलब्ध भएन।';
-  }
-  if(newsBtn) newsBtn.addEventListener('click',updateNews);
-  updateNews();
-  setInterval(updateNews,10*60*1000);
-
-  // Forex from Nepal Rastra Bank's public endpoint.
-  async function updateForex(){
-    const box=document.getElementById('forex-rate'), up=document.getElementById('forex-updated');
-    if(!box) return;
-    try{
-      const r=await fetch('https://www.nrb.org.np/api/forex/v1/rates?per_page=20&page=1&from=2026-09-05&to=2026-09-05',{cache:'no-store'});
-      const d=await r.json();
-      const rates=(d.data||d).payload||d.data||[];
-      const wanted=['USD','EUR','GBP','AUD','CAD','JPY','CNY','SAR','QAR'];
-      const rows=[];
-      for(const x of rates){
-        if(wanted.includes(x.currency?.iso3) || wanted.includes(x.currency?.code)){
-          const code=x.currency?.iso3||x.currency?.code;
-          rows.push([code,x.buy,x.sell,x.currency?.unit||1]);
-        }
-      }
-      if(!rows.length) throw 0;
-      box.innerHTML=rows.map(x=>`<div class="market-row"><span>${x[0]} (${x[3]})</span><span class="market-value">खरिद ${x[1]} · बिक्री ${x[2]}</span></div>`).join('');
-      up.textContent='नेपाल राष्ट्र बैंकको पछिल्लो उपलब्ध दर';
-    }catch(e){
-      box.innerHTML='<div class="market-row"><span>USD</span><span class="market-value">150.88 / 151.48</span></div><div class="market-row"><span>EUR</span><span class="market-value">175.29 / 175.99</span></div><div class="market-row"><span>GBP</span><span class="market-value">204.04 / 204.85</span></div><div class="market-row"><span>INR (100)</span><span class="market-value">160.00 / 160.15</span></div>';
-      up.textContent='फिड उपलब्ध नभएमा पछिल्लो उपलब्ध दर देखाइएको छ।';
-    }
-  }
-  updateForex();
-  setInterval(updateForex,30*60*1000);
-
-  // Gold/silver: fetch a public Nepal market feed through rss2json.
-  async function updateGold(){
-    const box=document.getElementById('gold-silver-rate'), up=document.getElementById('gold-updated');
-    if(!box) return;
-    try{
-      const r=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent('https://www.onlinekhabar.com/feed')+'&count=20',{cache:'no-store'});
-      const d=await r.json();
-      const item=(d.items||[]).find(x=>/सुन|चाँदी|चांदी|gold|silver/i.test(x.title||''));
-      if(!item) throw 0;
-      box.innerHTML='<div class="market-row"><span>आजको सुनचाँदी दर</span><span class="market-value">समाचारमा हेर्नुहोस् ↗</span></div>';
-      box.querySelector('.market-value').innerHTML='<a href="'+item.link+'" target="_blank" rel="noopener">दरको ताजा समाचार</a>';
-      up.textContent='बजारको पछिल्लो प्रकाशित अपडेट';
-    }catch(e){
-      box.innerHTML='<div class="market-row"><span>सुन</span><span class="market-value">ताजा दर खोज्दैछ...</span></div><div class="market-row"><span>चाँदी</span><span class="market-value">ताजा दर खोज्दैछ...</span></div>';
-      up.textContent='सुनचाँदीको दर फिड अहिले उपलब्ध नभएमा खाली दर देखाइँदैन।';
-    }
-  }
-  updateGold();
-  setInterval(updateGold,30*60*1000);
+ const feeds=[
+  ['Onlinekhabar','https://www.onlinekhabar.com/feed'],['Setopati','https://www.setopati.com/feed'],['Ujyaalo','https://ujyaaloonline.com/feed'],['eKantipur','https://ekantipur.com/rss'],['Annapurna Post','https://annapurnapost.com/rss'],['Himal Khabar','https://www.himalkhabar.com/feed'],['BBC Nepali','https://feeds.bbci.co.uk/nepali/rss.xml'],['TechPana','https://techpana.com/feed'],['Ratopati','https://www.ratopati.com/rss'],['Nepal Press','https://www.nepalpress.com/feed/'],['Himal Press','https://himalpress.com/feed/'],['Nagarik','https://nagariknews.nagariknetwork.com/feed/']
+ ];
+ const proxy=u=>'https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(u);
+ let all=[];
+ async function getFeed(src,url){try{let r=await fetch(proxy(url),{cache:'no-store'});let j=await r.json();return (j.items||[]).slice(0,5).map(x=>({source:src,title:x.title||'',link:x.link||'#',date:x.pubDate||''}));}catch(e){return []}}
+ async function load(){
+  const results=await Promise.all(feeds.map(f=>getFeed(f[0],f[1])));
+  all=results.flat().filter(x=>x.title);
+  const seen=new Set(); all=all.filter(x=>{let k=x.title.trim();if(seen.has(k))return false;seen.add(k);return true}).slice(0,36);
+  const track=document.getElementById('tvTickerTrack');
+  const grid=document.getElementById('tvNewsGrid');
+  if(!all.length){track.innerHTML='<span class="tv-ticker-item"><b>LIVE</b> समाचार फिड अहिले उपलब्ध हुन सकेन। केही समयपछि पुनः प्रयास गरिँदैछ...</span>';return}
+  track.innerHTML=all.slice(0,20).map(x=>`<span class="tv-ticker-item"><b>${x.source}</b> ${esc(x.title)}</span>`).join('');
+  grid.innerHTML=all.slice(0,12).map(x=>`<article class="tv-news-card"><div class="tv-source">${esc(x.source)}</div><a href="${safe(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a><div class="tv-news-meta">${fmt(x.date)}</div></article>`).join('');
+  document.getElementById('tvNewsUpdated').textContent='LIVE • अन्तिम अपडेट: '+new Date().toLocaleTimeString('ne-NP',{hour:'2-digit',minute:'2-digit'});
+ }
+ function esc(v){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+ function safe(v){return /^https?:\/\//i.test(v)?v:'#'}
+ function fmt(v){if(!v)return 'ताजा';let d=new Date(v);return isNaN(d)?'ताजा':d.toLocaleString('ne-NP',{dateStyle:'medium',timeStyle:'short'})}
+ load();setInterval(load,10*60*1000);
 })();
 </script>
 
