@@ -780,30 +780,9 @@
 .govt-groups{display:grid;gap:18px}.govt-group{background:#f8fbff;border:1px solid var(--border-light);border-radius:16px;padding:16px}.govt-group h3{margin:0 0 12px;color:#0f3d66;font-size:1rem}.govt-group .govt-grid{margin:0}.govt-card{min-height:58px;display:flex;align-items:center;justify-content:space-between;gap:10px}.govt-card span{line-height:1.35}@media(max-width:650px){.govt-group{padding:12px}}
 </style>
 
-<style id="premium-ads-style">
-/* Premium rotating sponsor/ad placements */
-.sponsor-strip{max-width:1200px;margin:18px auto;padding:0 14px}
-.sponsor-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-.sponsor-ad{position:relative;overflow:hidden;border-radius:18px;min-height:118px;padding:18px 20px;color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:space-between;gap:15px;box-shadow:0 10px 28px rgba(15,23,42,.14);border:1px solid rgba(255,255,255,.25);transition:transform .25s ease,box-shadow .25s ease}
-.sponsor-ad:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(15,23,42,.22)}
-.sponsor-ad::before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-70px;top:-85px;background:rgba(255,255,255,.14)}
-.sponsor-ad::after{content:"विज्ञापन";position:absolute;top:8px;right:12px;font-size:.62rem;font-weight:800;letter-spacing:.7px;background:rgba(255,255,255,.18);padding:3px 7px;border-radius:999px}
-.sponsor-brand{font-size:1.45rem;font-weight:900;letter-spacing:-.5px;white-space:nowrap;position:relative;z-index:1}
-.sponsor-copy{position:relative;z-index:1;flex:1}
-.sponsor-copy b{display:block;font-size:1rem;margin-bottom:4px}.sponsor-copy span{display:block;font-size:.78rem;opacity:.9;line-height:1.35}
-.sponsor-btn{position:relative;z-index:1;background:rgba(255,255,255,.95);color:#0f172a;border-radius:999px;padding:8px 13px;font-size:.72rem;font-weight:900;white-space:nowrap}
-.ad-citizen{grid-column:span 6;background:linear-gradient(135deg,#073b8f,#0b63c7)}
-.ad-global{grid-column:span 6;background:linear-gradient(135deg,#073b5c,#0a7893)}
-.ad-nabil{grid-column:span 4;background:linear-gradient(135deg,#0b6b46,#18a05e)}
-.ad-ntc{grid-column:span 4;background:linear-gradient(135deg,#0054a6,#0089d0)}
-.ad-ncell{grid-column:span 4;background:linear-gradient(135deg,#72206b,#b22a8d)}
-.ad-samsung{grid-column:span 6;background:linear-gradient(135deg,#061a63,#1467d8)}
-.ad-redmi{grid-column:span 6;background:linear-gradient(135deg,#9d130d,#ed3b24)}
-.ad-mini{min-height:104px}
-.sponsor-label{font-size:.7rem;color:#64748b;text-align:center;margin-bottom:7px;font-weight:800;letter-spacing:1px}
-@media(max-width:800px){.sponsor-grid{grid-template-columns:1fr}.sponsor-ad,.ad-citizen,.ad-global,.ad-nabil,.ad-ntc,.ad-ncell,.ad-samsung,.ad-redmi{grid-column:span 1}.sponsor-ad{min-height:108px}.sponsor-brand{font-size:1.2rem}.sponsor-copy b{font-size:.9rem}.sponsor-copy span{font-size:.7rem}.sponsor-btn{display:none}}
+<style id="awards-weather-update">
+.awards-section{margin-top:30px;margin-bottom:30px}.awards-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.award-panel{background:#fff;border:1px solid var(--border-light);border-radius:20px;padding:20px;box-shadow:var(--shadow-lg)}.award-title{display:flex;gap:12px;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--sky-100)}.award-title>span{font-size:2rem}.award-title h3{color:var(--sky-900);margin:0}.award-title small{color:var(--text-muted)}.award-list{display:grid;gap:8px}.award-list>div{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;background:var(--sky-50);border-radius:10px}.award-list b{color:var(--text-dark)}.award-list span{color:var(--text-muted);text-align:right}.two-col{grid-template-columns:1fr 1fr}.award-note{margin-top:12px;color:var(--text-muted);font-size:.85rem}@media(max-width:800px){.awards-grid{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.award-list>div{flex-direction:column;gap:0}.award-list span{text-align:left}}
 </style>
-
 </head>
 <body>
 
@@ -820,8 +799,8 @@
                     <strong id="nepal-live-clock">लोड हुँदैछ...</strong>
                 </div>
                 <div class="capsule">
-                    <span>⛅ पाल्पा मौसम:</span>
-                    <strong>२६°C | सफा / आंशिक बदली</strong>
+                    <span>⛅ रैनादेवी छहरा मौसम:</span>
+                    <strong id="rainadevi-weather">मौसम लोड हुँदैछ...</strong>
                 </div>
                 <div class="capsule">
                     <span>📅 संवत्:</span>
@@ -851,27 +830,13 @@
                 <li><a href="#livestock">पशु-पंक्षी स्वास्थ्य</a></li>
                 <li><a href="#prices">तरकारी दरभाउ</a></li>
                 <li><a href="#emergency">जरुरी फोन</a></li>
+                <li><a href="#awards">पुरस्कार</a></li>
                 <li><a href="#market-rates">सुनचाँदी/मुद्रा</a></li>
                 <li><a href="#govt" class="nav-cta">सरकारी पोर्टलहरू ↗</a></li>
             </ul>
         </nav>
     <div style="text-align:center;margin:-.5rem auto 1rem"><button id="name-toggle" class="name-toggle" type="button">नेपाली / English</button></div></header>
-
-
-<!-- PREMIUM SPONSOR: TOP -->
-<div class="sponsor-strip" aria-label="प्रायोजक विज्ञापन">
-  <div class="sponsor-label">प्रायोजक / विज्ञापन</div>
-  <div class="sponsor-grid">
-    <a class="sponsor-ad ad-citizen" href="https://www.ctznbank.com/" target="_blank" rel="noopener sponsored">
-      <div class="sponsor-brand">CITIZEN BANK</div><div class="sponsor-copy"><b>नागरिकसँग, नागरिककै बैंक</b><span>बैंकिङ सेवा र डिजिटल समाधान</span></div><div class="sponsor-btn">थप जान्नुहोस् ↗</div>
-    </a>
-    <a class="sponsor-ad ad-global" href="https://www.globalimebank.com/" target="_blank" rel="noopener sponsored">
-      <div class="sponsor-brand">Global IME</div><div class="sponsor-copy"><b>सम्पूर्ण बैंकिङ, एउटै साथमा</b><span>डिजिटल तथा आधुनिक बैंकिङ सेवा</span></div><div class="sponsor-btn">थप जान्नुहोस् ↗</div>
-    </a>
-  </div>
-</div>
-
-    <!-- 3. MAIN HERO: MT. EVEREST -->
+<!-- 3. MAIN HERO: MT. EVEREST -->
     <section class="hero">
         <div class="hero-inner">
             <div class="hero-badge">🏔️ गौरवमय सर्वोच्च शिखर (८,८४८.८६ मिटर)</div>
@@ -930,7 +895,7 @@
   const grid=document.getElementById('tvNewsGrid');
   if(!all.length){track.innerHTML='<span class="tv-ticker-item"><b>LIVE</b> समाचार फिड अहिले उपलब्ध हुन सकेन। केही समयपछि पुनः प्रयास गरिँदैछ...</span>';return}
   track.innerHTML=all.slice(0,20).map(x=>`<span class="tv-ticker-item"><b>${x.source}</b> ${esc(x.title)}</span>`).join('');
-  grid.innerHTML=all.slice(0,12).map(x=>`<article class="tv-news-card"><div class="tv-source">${esc(x.source)}</div><a href="${safe(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a><div class="tv-news-meta">${fmt(x.date)}</div></article>`).join('');
+  grid.innerHTML=all.slice(0,18).map(x=>`<article class="tv-news-card"><div class="tv-source">${esc(x.source)}</div><a href="${safe(x.link)}" target="_blank" rel="noopener">${esc(x.title)}</a><div class="tv-news-meta">${fmt(x.date)}</div></article>`).join('');
   document.getElementById('tvNewsUpdated').textContent='LIVE • अन्तिम अपडेट: '+new Date().toLocaleTimeString('ne-NP',{hour:'2-digit',minute:'2-digit'});
  }
  function esc(v){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
@@ -978,23 +943,6 @@
  load();setInterval(load,60000);
 })();
 </script>
-
-    
-<!-- PREMIUM SPONSOR: MID 1 -->
-<div class="sponsor-strip">
-  <div class="sponsor-grid">
-    <a class="sponsor-ad ad-nabil ad-mini" href="https://www.nabilbank.com/" target="_blank" rel="noopener sponsored">
-      <div class="sponsor-brand">Nabil Bank</div><div class="sponsor-copy"><b>तपाईंको बैंक, तपाईंको भरोसा</b><span>डिजिटल बैंकिङ र वित्तीय सेवा</span></div><div class="sponsor-btn">Visit ↗</div>
-    </a>
-    <a class="sponsor-ad ad-ntc ad-mini" href="https://www.ntc.net.np/" target="_blank" rel="noopener sponsored">
-      <div class="sponsor-brand">नेपाल टेलिकम</div><div class="sponsor-copy"><b>सधैं सम्पर्कमा</b><span>मोबाइल, डेटा तथा डिजिटल सेवा</span></div><div class="sponsor-btn">Visit ↗</div>
-    </a>
-    <a class="sponsor-ad ad-ncell ad-mini" href="https://www.ncell.com.np/" target="_blank" rel="noopener sponsored">
-      <div class="sponsor-brand">Ncell</div><div class="sponsor-copy"><b>हरेक पल, जोडिरहौं</b><span>मोबाइल र डिजिटल कनेक्टिभिटी</span></div><div class="sponsor-btn">Visit ↗</div>
-    </a>
-  </div>
-</div>
-
 <!-- 4. BUDDHIST PHILOSOPHY (TRIRATNA BANNER) -->
     <section class="buddha-section">
         <div class="buddha-mantra">
@@ -1040,6 +988,46 @@
             <article class="martyr-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dasarath%20chanda.jpg" alt="दशरथ चन्द" loading="lazy"><div class="martyr-info"><h3>दशरथ चन्द</h3><p>नेपालका चार शहीदमध्ये एक · प्रजातान्त्रिक आन्दोलनका अमर योद्धा</p></div></article>
             <article class="martyr-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ganga%20lal%20shrestha.jpg" alt="गङ्गालाल श्रेष्ठ" loading="lazy"><div class="martyr-info"><h3>गङ्गालाल श्रेष्ठ</h3><p>नेपालका चार शहीदमध्ये एक · राणा शासनविरुद्धको संघर्षका अमर शहीद</p></div></article>
         </div><p class="martyr-note">फोटो स्रोत: Wikimedia Commons; सम्बन्धित फोटोको लाइसेन्स/क्रेडिट विवरण जाँच गर्नुहोस्।</p>
+    </section>
+
+    <!-- 8. MADAN PRIZE & NOBEL LAUREATES -->
+    <section id="awards" class="container awards-section">
+      <div class="section-header"><span class="section-tag">पुरस्कार तथा साहित्य</span><h2>मदन पुरस्कार र नोबेल पुरस्कार</h2><p class="section-lead">नेपाली साहित्यका मदन पुरस्कार प्राप्त कृतिहरू तथा विश्वका चर्चित नोबेल पुरस्कार विजेताहरूको संक्षिप्त सूची।</p></div>
+      <div class="awards-grid">
+        <div class="award-panel">
+          <div class="award-title"><span>📚</span><div><h3>मदन पुरस्कार विजेता कृति</h3><small>चयनित महत्वपूर्ण कृति तथा लेखक</small></div></div>
+          <div class="award-list">
+            <div><b>शिरीषको फूल</b><span>पारिजात</span></div>
+            <div><b>नौलो मुलुक</b><span>सत्यमोहन जोशी</span></div>
+            <div><b>माधवी</b><span>मदनमणि दीक्षित</span></div>
+            <div><b>अन्तर्मनको यात्रा</b><span>जगदीश घिमिरे</span></div>
+            <div><b>दमिनी भीर</b><span>राजन मुकारुङ</span></div>
+            <div><b>खाना पुगोस, दिन पुगोस</b><span>कृष्ण अविरल</span></div>
+            <div><b>लिम्बुवानको ऐतिहासिक वृत्तान्त</b><span>भगिराज इङ्नाम</span></div>
+            <div><b>फातसुङ</b><span>छुदेन काविमो</span></div>
+            <div><b>अग्नि</b><span>नवराज लम्साल</span></div>
+            <div><b>अर्थात् अनुपस्थित</b><span>सञ्जीव उप्रेती</span></div>
+          </div>
+        </div>
+        <div class="award-panel">
+          <div class="award-title"><span>🏅</span><div><h3>नोबेल पुरस्कार विजेता</h3><small>चयनित विश्वप्रसिद्ध विजेताहरू</small></div></div>
+          <div class="award-list two-col">
+            <div><b>Marie Curie</b><span>Physics, Chemistry</span></div>
+            <div><b>Albert Einstein</b><span>Physics</span></div>
+            <div><b>Rabindranath Tagore</b><span>Literature</span></div>
+            <div><b>Martin Luther King Jr.</b><span>Peace</span></div>
+            <div><b>Mother Teresa</b><span>Peace</span></div>
+            <div><b>Nelson Mandela</b><span>Peace</span></div>
+            <div><b>Amartya Sen</b><span>Economic Sciences</span></div>
+            <div><b>Malala Yousafzai</b><span>Peace</span></div>
+            <div><b>Abhijit Banerjee</b><span>Economic Sciences</span></div>
+            <div><b>Emmanuelle Charpentier</b><span>Chemistry</span></div>
+            <div><b>Jon Fosse</b><span>Literature</span></div>
+            <div><b>Han Kang</b><span>Literature</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="award-note">नोट: सूचीलाई वेबसाइटमा थप सामग्री राख्न मिल्ने गरी चयनित रूपमा राखिएको हो; पूर्ण आधिकारिक विजेता सूची सम्बन्धित पुरस्कार संस्थाको स्रोतबाट हेर्नुहोस्।</p>
     </section>
 
     <!-- 8. IMPORTANT EMERGENCY NUMBERS -->
@@ -1348,21 +1336,6 @@
             </article>
         </div>
     </section>
-
-    
-<!-- PREMIUM SPONSOR: TECH -->
-<div class="sponsor-strip">
-  <div class="sponsor-label">टेक्नोलोजी पार्टनर</div>
-  <div class="sponsor-grid">
-    <a class="sponsor-ad ad-samsung" href="https://www.samsung.com/np/" target="_blank" rel="noopener sponsored">
-      <div class="sponsor-brand">SAMSUNG</div><div class="sponsor-copy"><b>स्मार्ट जीवनका लागि स्मार्ट टेक्नोलोजी</b><span>मोबाइल, TV, उपकरण तथा डिजिटल इनोभेसन</span></div><div class="sponsor-btn">हेर्नुहोस् ↗</div>
-    </a>
-    <a class="sponsor-ad ad-redmi" href="https://www.mi.com/np/" target="_blank" rel="noopener sponsored">
-      <div class="sponsor-brand">REDMI</div><div class="sponsor-copy"><b>Power. Speed. Value.</b><span>स्मार्टफोन तथा आधुनिक टेक्नोलोजी</span></div><div class="sponsor-btn">हेर्नुहोस् ↗</div>
-    </a>
-  </div>
-</div>
-
 <section id="osho" class="container osho-section">
       <div class="section-header"><span class="section-tag">ध्यान र दर्शन</span><h2 class="section-title">Osho</h2><p class="section-subtitle">पृष्ठको अन्त्यमा ध्यान, चेतना र आत्मअन्वेषणको स्मरण</p></div>
       <div class="osho-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Osho%20Rajneesh.jpg" alt="Osho" loading="lazy"><div><h3>Osho — ध्यान र आत्मचेतनाको सन्देश</h3><p>शान्ति, ध्यान र भित्री जागरणतर्फ केन्द्रित विचारलाई सम्झाउने यो खण्ड वेबसाइटको अन्त्यमा राखिएको छ।</p><p class="source-note">फोटो स्रोत: Wikimedia Commons, CC0/Public Domain.</p></div></div>
@@ -1468,5 +1441,20 @@
     })();
     </script>
 
+<script id="rainadevi-weather-script">
+(function(){
+ const el=document.getElementById('rainadevi-weather'); if(!el)return;
+ const nepali=['आइतबार','सोमबार','मङ्गलबार','बुधबार','बिहीबार','शुक्रबार','शनिबार'];
+ const icons={0:'☀️',1:'🌤️',2:'⛅',3:'☁️',45:'🌫️',48:'🌫️',51:'🌦️',53:'🌦️',55:'🌧️',61:'🌧️',63:'🌧️',65:'🌧️',71:'🌨️',73:'🌨️',75:'❄️',80:'🌦️',81:'🌧️',82:'⛈️',95:'⛈️',96:'⛈️',99:'⛈️'};
+ async function load(){try{
+  const g=await fetch('https://geocoding-api.open-meteo.com/v1/search?name=Rainadevi%20Chhahara&count=5&language=en&format=json',{cache:'no-store'}).then(r=>r.json());
+  const place=(g.results||[]).find(x=>/rainadevi/i.test(x.name))||g.results?.[0]; if(!place)throw 0;
+  const w=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${place.latitude}&longitude=${place.longitude}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FKathmandu&forecast_days=1`,{cache:'no-store'}).then(r=>r.json());
+  const c=w.current,d=w.daily; const code=c.weather_code; el.textContent=`${icons[code]||'🌦️'} ${Math.round(c.temperature_2m)}°C · आर्द्रता ${Math.round(c.relative_humidity_2m)}% · वर्षा सम्भावना ${d.precipitation_probability_max?.[0]??0}%`;
+  el.title=`रैनादेवी छहरा · अधिकतम ${Math.round(d.temperature_2m_max[0])}°C / न्यूनतम ${Math.round(d.temperature_2m_min[0])}°C · हावा ${Math.round(c.wind_speed_10m)} km/h`;
+ }catch(e){el.textContent='मौसम सेवा अहिले उपलब्ध छैन';}}
+ load(); setInterval(load,15*60*1000);
+})();
+</script>
 </body>
 </html>
