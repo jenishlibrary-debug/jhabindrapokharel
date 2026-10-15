@@ -52,6 +52,9 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* -------------------------------------------------------------
+           CLEAN & ELEGANT TOP STATUS BAR
+        ------------------------------------------------------------- */
         .top-bar {
             background: linear-gradient(90deg, var(--sky-900) 0%, var(--sky-800) 100%);
             color: #f8fafc;
@@ -75,6 +78,7 @@
             align-items: center;
             gap: 0.8rem;
             flex-wrap: wrap;
+            margin: 0 auto;
         }
 
         .capsule {
@@ -95,9 +99,13 @@
             font-weight: 600;
         }
 
+        /* -------------------------------------------------------------
+           CLEAN GLASSMORPHIC HEADER & NAVIGATION
+        ------------------------------------------------------------- */
         header {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -121,11 +129,31 @@
             text-decoration: none;
         }
 
+        .brand-logo-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, var(--sky-600), var(--sky-800));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.35rem;
+            box-shadow: 0 4px 10px rgba(2, 132, 199, 0.25);
+        }
+
         .brand-text h1 {
             font-size: 1.25rem;
             font-weight: 700;
             color: var(--sky-900);
             line-height: 1.2;
+        }
+
+        .brand-text p {
+            font-size: 0.78rem;
+            color: var(--sky-600);
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
 
         .nav-links {
@@ -153,8 +181,16 @@
         .nav-cta {
             background: var(--sky-600) !important;
             color: white !important;
+            box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);
         }
 
+        .nav-cta:hover {
+            background: var(--sky-700) !important;
+        }
+
+        /* -------------------------------------------------------------
+           SHARED SECTION UTILITIES
+        ------------------------------------------------------------- */
         .container {
             max-width: 1240px;
             margin: 0 auto;
@@ -193,6 +229,9 @@
             margin: 0 auto;
         }
 
+        /* -------------------------------------------------------------
+           LIVESTOCK HEALTH & DISEASES
+        ------------------------------------------------------------- */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -205,6 +244,12 @@
             padding: 1.6rem;
             border: 1px solid var(--border-light);
             box-shadow: var(--shadow-md);
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
         }
 
         .card-category-badge {
@@ -248,6 +293,125 @@
             line-height: 1.5;
         }
 
+        /* GOVERNMENT PORTAL LINKS */
+        .govt-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1rem;
+        }
+
+        .govt-card {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: var(--sky-900);
+            font-weight: 600;
+            transition: all 0.2s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .govt-card:hover {
+            background: var(--sky-600);
+            color: #ffffff;
+            border-color: var(--sky-600);
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--sky-950);
+            color: #e2e8f0;
+            padding: 3rem 1.5rem 2rem 1.5rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        footer p {
+            color: var(--sky-200);
+            font-size: 0.92rem;
+        }
+
+        .copyright {
+            margin-top: 1.8rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            border: 0;
+            background: var(--sky-600);
+            color: #fff;
+            border-radius: 8px;
+            padding: 0.45rem 0.7rem;
+            font-size: 1.15rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 860px) {
+            nav {
+                position: relative;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: calc(100% + 1px);
+                left: 0;
+                right: 0;
+                background: #fff;
+                padding: 0.7rem 1.0rem 1rem;
+                border-bottom: 1px solid var(--sky-100);
+                box-shadow: var(--shadow-lg);
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links a {
+                display: block;
+                width: 100%;
+            }
+            .top-bar-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .live-capsules {
+                justify-content: center;
+            }
+        }
+    
+        .name-toggle {
+            border: 1px solid var(--sky-200);
+            background: #fff;
+            color: var(--sky-700);
+            border-radius: 999px;
+            padding: .25rem .65rem;
+            margin-left: .5rem;
+            font-family: inherit;
+            font-weight: 800;
+            cursor: pointer;
+            font-size: .78rem;
+        }
+
         .market-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -263,4 +427,371 @@
         }
 
         .market-card h3 {
-            margin
+            margin-bottom: .65rem;
+            color: var(--sky-900);
+        }
+
+        .market-row {
+            display: flex;
+            justify-content: space-between;
+            gap: .5rem;
+            padding: .45rem 0;
+            border-bottom: 1px solid #eef2f7;
+            font-size: .9rem;
+        }
+
+        .market-row:last-child {
+            border-bottom: 0;
+        }
+
+        .market-value {
+            font-weight: 800;
+            color: var(--sky-800);
+        }
+
+        .market-updated {
+            font-size: .78rem;
+            color: var(--text-muted);
+            margin-top: .7rem;
+        }
+
+        .market-source {
+            font-size: .78rem;
+            margin-top: .25rem;
+        }
+
+        .brand-photo-wrap {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255,255,255,.8);
+            box-shadow: 0 6px 20px rgba(2,132,199,.25);
+            flex: 0 0 58px;
+            background: #fff;
+        }
+
+        .brand-text p {
+            font-size: .82rem !important;
+            font-weight: 800 !important;
+            color: #e0f2fe !important;
+            margin: .1rem 0 !important;
+            letter-spacing: .02em;
+        }
+
+        .brand-text small {
+            font-size: .64rem;
+            color: #bae6fd;
+            letter-spacing: .08em;
+        }
+
+        .osho-card, .inspiration-section {
+            background: linear-gradient(135deg,#f8fafc,#eef6ff);
+            border-radius: 18px;
+            overflow: hidden;
+        }
+
+        .osho-card {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 1.25rem;
+            align-items: center;
+            padding: 1.2rem;
+        }
+
+        .osho-card img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            object-position: center;
+        }
+
+        .source-note {
+            margin-top: .9rem;
+            color: var(--text-muted);
+            font-size: .82rem;
+        }
+
+        .source-note a {
+            color: var(--sky-700);
+            font-weight: 700;
+        }
+
+        @media(max-width: 650px) {
+            .brand-photo-wrap { width: 50px; height: 50px; flex-basis: 50px; }
+            .osho-card { grid-template-columns: 1fr; text-align: center; }
+            .osho-card img { margin: auto; width: 150px; height: 150px; }
+        }
+</style>
+
+<style id="organized-links-style">
+.govt-groups { display: grid; gap: 18px; }
+.govt-group { background: #f8fbff; border: 1px solid var(--border-light); border-radius: 16px; padding: 16px; }
+.govt-group h3 { margin: 0 0 12px; color: #0f3d66; font-size: 1rem; }
+.govt-group .govt-grid { margin: 0; }
+.govt-card { min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.govt-card span { line-height: 1.35; }
+@media(max-width: 650px) { .govt-group { padding: 12px; } }
+</style>
+
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div class="live-capsules">
+                <div class="capsule">
+                    <span>⏰ आधिकारिक समय:</span>
+                    <strong id="nepal-live-clock">लोड हुँदैछ...</strong>
+                </div>
+                <div class="capsule">
+                    <span>📅 संवत्:</span>
+                    <strong>२०८३ (नेपाल संवत् ११४६)</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <nav>
+            <a href="#" class="brand-container">
+                <div class="brand-photo-wrap"><span style="display:grid;place-items:center;width:100%;height:100%;background:#075985;color:white;font-weight:900">झ</span></div>
+                <div class="brand-text">
+                    <h1 id="site-name">झबिन्द्र पोखरेल</h1>
+                    <small>PORTAL & KNOWLEDGE BASE</small>
+                </div>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="मेनु खोल्नुहोस्" aria-expanded="false">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#livestock">पशु-पंक्षी स्वास्थ्य</a></li>
+                <li><a href="#market-rates">सुनचाँदी/मुद्रा</a></li>
+                <li><a href="#job-search">जागिर खोज्नुहोस्</a></li>
+                <li><a href="#nobel-2026">नोबेल २०२६</a></li>
+                <li><a href="#inspiration">प्रेरणा</a></li>
+                <li><a href="#govt" class="nav-cta">सरकारी पोर्टलहरू ↗</a></li>
+            </ul>
+        </nav>
+
+        <style id="identity-tv-ticker-style">
+        .identity-tv-ticker { width: 100%; overflow: hidden; background: linear-gradient(90deg,#071a35,#075985,#0f766e); color: #fff; border-top: 2px solid #38bdf8; border-bottom: 2px solid #34d399; white-space: nowrap; box-shadow: 0 5px 18px rgba(2,8,23,.18); }
+        .identity-tv-track { display: inline-flex; align-items: center; gap: 44px; min-width: max-content; padding: 12px 0; animation: identityTicker 22s linear infinite; font-weight: 850; letter-spacing: .3px; font-size: clamp(15px,2vw,20px); }
+        .identity-tv-track span { display: inline-flex; align-items: center; gap: 10px; }
+        .identity-tv-tag { background: #facc15; color: #172554; border-radius: 5px; padding: 3px 8px; font-size: .72em; letter-spacing: 1px; }
+        @keyframes identityTicker { from { transform: translateX(100vw); } to { transform: translateX(-100%); } }
+        .identity-tv-ticker:hover .identity-tv-track { animation-play-state: paused; }
+        </style>
+        <div class="identity-tv-ticker" role="marquee" aria-label="झविन्द्र पोखरेलको परिचय"><div class="identity-tv-track"><span><b class="identity-tv-tag">PERSONALITY</b> Jhabindra Pokharel (जेनिश)</span><span><b class="identity-tv-tag">CONTACT</b> zhabindra@gmail.com</span></div></div>
+
+        <section class="container festival-greeting" aria-label="२०८३ सालको दशैँ तथा तिहारको शुभकामना">
+          <div class="festival-poster">
+            <div class="festival-sparkle" aria-hidden="true">✦ ✧ ✦ ✧ ✦</div>
+            <div class="festival-kicker">शुभकामना</div>
+            <h2>विजया दशमी तथा शुभ दीपावलीको हार्दिक मंगलमय शुभकामना</h2>
+            <p>दशैँले सुख, शान्ति र समृद्धि ल्याओस्। तिहारले जीवनमा उज्यालो, उमङ्ग र नयाँ आशा छरियोस्।</p>
+            <div class="festival-icons" aria-hidden="true"><span>🪔</span><span>🌼</span><span>🌺</span><span>🪔</span></div>
+          </div>
+        </section>
+        
+        <style>
+        .festival-greeting { margin: 20px auto; }
+        .festival-poster { position: relative; overflow: hidden; text-align: center; padding: clamp(22px,4vw,46px); border-radius: 22px; color: #fff7d6; background: radial-gradient(circle at 50% 0%,#fbbf24 0,#9f1239 34%,#4c0519 72%,#1e1b4b 100%); border: 3px solid #f5d477; box-shadow: 0 16px 36px #7f1d1d2b; }
+        .festival-poster:before, .festival-poster:after { content: "✦  ❋  ✦  ❋  ✦"; position: absolute; color: #fcd34d; opacity: .55; font-size: clamp(18px,3vw,30px); letter-spacing: 12px; }
+        .festival-poster:before { top: 10px; left: 12px; }
+        .festival-poster:after { bottom: 10px; right: 12px; }
+        .festival-sparkle { color: #fde68a; letter-spacing: 12px; font-size: 20px; }
+        .festival-kicker { display: inline-block; margin: 8px auto; padding: 6px 14px; border: 1px solid #fcd34d; border-radius: 99px; font-weight: 800; letter-spacing: 1px; }
+        .festival-poster h2 { max-width: 900px; margin: 14px auto; color: #fff7cc; font-size: clamp(24px,4vw,42px); line-height: 1.45; text-shadow: 0 3px 8px #3f0712; }
+        .festival-poster p { max-width: 760px; margin: 10px auto 18px; font-size: clamp(15px,2vw,19px); line-height: 1.8; }
+        .festival-icons { display: flex; justify-content: center; gap: 20px; font-size: clamp(28px,4vw,42px); margin: 16px; }
+        .inspiration-quote { transition: opacity .25s ease; font-size: 1.15rem; line-height: 1.9; font-weight: 800; color: #075985; min-height: 3.8em; }
+        .nobel-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap: 14px; }
+        .nobel-card { background: #fff; border: 1px solid #dbeafe; border-radius: 14px; padding: 16px; box-shadow: 0 4px 12px #0f172a0a; }
+        .nobel-card h3 { margin: 0 0 8px; color: #075985; }
+        .nobel-card p { margin: 0; line-height: 1.7; }
+        .nobel-note { font-size: .88rem; color: #64748b; margin-top: 12px; }
+        </style>
+
+        <div style="text-align:center;margin:-.5rem auto 1rem"><button id="name-toggle" class="name-toggle" type="button">नेपाली / English</button></div>
+    </header>
+
+    <!-- LIVESTOCK HEALTH & DISEASES -->
+    <section id="livestock" class="container" style="background: var(--sky-100); border-radius: 16px;">
+        <div class="section-header">
+            <span class="section-tag">पशु-पंक्षी उपचार तथा सचेतना</span>
+            <h2 class="section-title">पशु तथा पंक्षीमा लाग्ने मुख्य रोगहरू</h2>
+            <p class="section-subtitle">गाईभैंसी, कुखुरा र बंगुरमा देखिने प्रमुख लक्षण, घरेलु सावधानी र रोकथाम</p>
+        </div>
+
+        <div class="grid-3">
+            <div class="card">
+                <span class="card-category-badge">गाई / भैंसी / बाख्रा</span>
+                <h3>पशुका मुख्य रोगहरू</h3>
+                <div class="disease-item">
+                    <div class="disease-name">१. खोरेत (Foot and Mouth Disease)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> गिँजा र खुरको कापमा पानीका फोका, र्‍याल चुहिने र हिंड्न नसक्ने。<br><strong>रोकथाम:</strong> वर्षको २ पटक नियमित खोप लगाउने।</div>
+                </div>
+                <div class="disease-item">
+                    <div class="disease-name">२. लम्पी स्किन (Lumpy Skin Disease)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> कडा ज्वरो, शरीरभरि गाँठागुँठी देखिने र खुट्टा सुन्निने。<br><strong>रोकथाम:</strong> गोटपक्स भ्याक्सिन लगाउने, लामखुट्टे नियन्त्रण गर्ने।</div>
+                </div>
+                <div class="disease-item">
+                    <div class="disease-name">३. भ्यागुते रोग (Haemorrhagic Septicaemia)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> घाँटी सुन्निने, घुरघुर आवाज निकालेर सास फेर्ने。<br><strong>रोकथाम:</strong> बर्खा सुरु हुनुअघि नै भ्यागुते खोप लगाउने।</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-category-badge">कुखुरा (Poultry)</span>
+                <h3>कुखुराका मुख्य रोगहरू</h3>
+                <div class="disease-item">
+                    <div class="disease-name">१. रानीखेत (Newcastle Disease)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> हरियो छेर्ने, घाँटी बटार्ने, सास फेर्न गाह्रो हुने。<br><strong>रोकथाम:</strong> F1 र LaSota खोप नियमित तालिका अनुसार अनिवार्य दिने।</div>
+                </div>
+                <div class="disease-item">
+                    <div class="disease-name">२. गम्बोरो (IBD)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> सेतो पानीजस्तो दिशा गर्ने, कुखुरा झोक्राउने。<br><strong>रोकथाम:</strong> कडा जैविक सुरक्षा (Biosecurity) र IBD खोप।</div>
+                </div>
+                <div class="disease-item">
+                    <div class="disease-name">३. कक्सिडिओसिस (रगत छेर्ने)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> दिसामा रगत देखिने, तौल घट्ने र झोक्राउने。<br><strong>रोकथाम:</strong> खोरको सोत्तर सधैं सुक्खा राख्ने र एम्पोलियम चलाउने।</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-category-badge">बंगुर (Swine)</span>
+                <h3>बंगुरका मुख्य रोगहरू</h3>
+                <div class="disease-item">
+                    <div class="disease-name">१. अफ्रिकन स्वाइन फिभर (ASF)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> कडा ज्वरो, कान र पेटको छालामा नीलो/रातो डाम, मृत्युदर १००% सम्म。<br><strong>रोकथाम:</strong> होटलको फोहोर दाना नउमाली नखुवाउने।</div>
+                </div>
+                <div class="disease-item">
+                    <div class="disease-name">२. स्वाइन फिभर (Classical Swine Fever)</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> आँखामा चिप्रा, कडा पखाला र शरीर काम्ने。<br><strong>रोकथाम:</strong> ६-६ महिनामा स्वाइन फिभरको खोप लगाउने।</div>
+                </div>
+                <div class="disease-item">
+                    <div class="disease-name">३. आन्तरिक परजीवी तथा जुका</div>
+                    <div class="disease-text"><strong>लक्षण:</strong> पेट फुल्ने, दाना खाए पनि तौल नबढ्ने。<br><strong>रोकथाम:</strong> ३ महिनाको फरकमा जुकाको औषधि दिने।</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GOVERNMENT WEBSITES -->
+    <section id="govt" class="container" style="background: #ffffff; border-radius: 16px; border: 1px solid var(--border-light);">
+        <div class="section-header">
+            <span class="section-tag">आधिकारिक स्रोत</span>
+            <h2 class="section-title">उपयोगी तथा सरकारी लिंकहरू</h2>
+            <p class="section-subtitle">सरकारी सेवा, कृषि–पशु, बजार, मौसम तथा कानुनका महत्वपूर्ण लिंकहरू</p>
+        </div>
+
+        <div class="govt-groups">
+            <div class="govt-group"><h3>🏛️ सरकार तथा प्रशासन</h3><div class="govt-grid">
+                <a href="https://nepal.gov.np" target="_blank" class="govt-card"><span>नेपाल सरकार राष्ट्रिय पोर्टल</span> ↗</a>
+                <a href="https://lawcommission.gov.np" target="_blank" class="govt-card"><span>नेपाल कानुन आयोग</span> ↗</a>
+                <a href="https://mfd.gov.np" target="_blank" class="govt-card"><span>मौसम पूर्वानुमान महाशाखा</span> ↗</a>
+            </div></div>
+            <div class="govt-group"><h3>🌾 कृषि तथा पशुपन्छी</h3><div class="govt-grid">
+                <a href="https://moald.gov.np" target="_blank" class="govt-card"><span>कृषि तथा पशुपन्छी विकास मन्त्रालय</span> ↗</a>
+                <a href="https://dls.gov.np" target="_blank" class="govt-card"><span>पशु सेवा विभाग</span> ↗</a>
+                <a href="https://doanepal.gov.np" target="_blank" class="govt-card"><span>कृषि विभाग</span> ↗</a>
+                <a href="https://molmac.lumbini.gov.np" target="_blank" class="govt-card"><span>कृषि मन्त्रालय, लुम्बिनी प्रदेश</span> ↗</a>
+            </div></div>
+            <div class="govt-group"><h3>📊 बजार तथा मूल्य</h3><div class="govt-grid">
+                <a href="https://www.nrb.org.np/forex/" target="_blank" class="govt-card"><span>नेपाल राष्ट्र बैंक — विदेशी मुद्रा</span> ↗</a>
+                <a href="https://hamroshare.com.np/nepse" target="_blank" class="govt-card"><span>NEPSE Live Share Board</span> ↗</a>
+            </div></div>
+        </div>
+    </section>
+
+    <!-- MARKET RATES -->
+    <section id="market-rates" class="container" style="background:var(--sky-100);border-radius:16px;">
+        <div class="section-header">
+            <span class="section-tag">Live Market</span>
+            <h2 class="section-title">सुनचाँदी तथा विदेशी मुद्रा दर</h2>
+            <p class="section-subtitle">नेपालका आधिकारिक/विश्वसनीय बजार स्रोतबाट स्वतः अपडेट हुने दरहरू</p>
+        </div>
+        <div class="market-grid">
+            <article class="market-card">
+                <h3>🪙 सुनचाँदीको दर</h3>
+                <div id="gold-silver-rate">दर लोड हुँदैछ...</div>
+                <div id="gold-updated" class="market-updated">अपडेट जाँच हुँदैछ...</div>
+                <div class="market-source">स्रोत: नेपाल सुनचाँदी व्यवसायी महासंघ/विश्वसनीय बजार फिड</div>
+            </article>
+            <article class="market-card">
+                <h3>💱 विदेशी मुद्रा</h3>
+                <div id="forex-rate">दर लोड हुँदैछ...</div>
+                <div id="forex-updated" class="market-updated">नेपाल राष्ट्र बैंकको दर जाँच हुँदैछ...</div>
+                <div class="market-source">स्रोत: Nepal Rastra Bank</div>
+            </article>
+        </div>
+    </section>
+
+    <section class="container inspiration-section" id="inspiration">
+      <div class="section-header">
+        <span class="section-tag">सकारात्मक सोच</span>
+        <h2 class="section-title">प्रेरणाको सन्देश</h2>
+        <p class="section-subtitle">हरेक केही सेकेन्डमा नयाँ प्रेरणादायी सन्देश</p>
+      </div>
+      <div class="osho-card inspiration-card">
+        <img src="https://vishwopariwar.com/wp-content/uploads/2025/06/about.jpg" alt="डा. योगी विकाशानन्द" loading="lazy" referrerpolicy="no-referrer">
+        <div>
+          <h3>डा. योगी विकाशानन्द</h3>
+          <p id="inspiration-quote" class="inspiration-quote" aria-live="polite">आजको सानो सकारात्मक कदमले भोलिको ठूलो परिवर्तनको बाटो खोल्छ।</p>
+          <p class="source-note">तस्बिर स्रोत: Eco Spiritual Yoga Ashram को सार्वजनिक परिचय पृष्ठ।</p>
+          <p><a href="https://vishwopariwar.com/team/dr-yogi-vikashananda/" target="_blank" rel="noopener">परिचय हेर्नुहोस् ↗</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="nobel-2026" style="margin-top:24px">
+      <div class="section-header">
+        <span class="section-tag">विश्व सम्मान</span>
+        <h2 class="section-title">नोबेल पुरस्कार २०२६ — सबै ६ विधाका विजेता</h2>
+        <p class="section-subtitle">२०२६ का घोषित पुरस्कार विजेताहरूको सूची।</p>
+      </div>
+      <div class="nobel-grid">
+        <article class="nobel-card"><h3>चिकित्सा तथा शरीरक्रिया विज्ञान</h3><p><strong>Karl Deisseroth, Peter Hegemann र Georg Nagel</strong><br>प्रकाश-संवेदनशील आयन च्यानल तथा optogenetics सम्बन्धी खोजका लागि।</p></article>
+        <article class="nobel-card"><h3>भौतिकशास्त्र</h3><p><strong>Francis Halzen</strong><br>IceCube Neutrino Observatory र उच्च-ऊर्जाका खगोलीय न्यूट्रिनो पत्ता लगाउने योगदानका लागि।</p></article>
+        <article class="nobel-card"><h3>रसायनशास्त्र</h3><p><strong>Henri B. Kagan र Kenso Soai</strong><br>असममित जैविक संश्लेषणमा autocatalysis तथा nonlinear effects सम्बन्धी कामका लागि।</p></article>
+        <article class="nobel-card"><h3>साहित्य</h3><p><strong>Anne Carson</strong><br>शास्त्रीय र आधुनिक साहित्यलाई नयाँ ढङ्गले जोड्ने सिर्जनात्मक कृतिका लागि।</p></article>
+        <article class="nobel-card"><h3>शान्ति</h3><p><strong>Navanethem “Navi” Pillay</strong><br>शान्ति र अन्तर्राष्ट्रिय कानुन प्रवर्द्धनका प्रयासका लागि।</p></article>
+        <article class="nobel-card"><h3>आर्थिक विज्ञान</h3><p><strong>Robert E. Hall र Michael Woodford</strong><br>आर्थिक स्थिरीकरणका सूक्ष्म-आर्थिक आधारसम्बन्धी योगदानका लागि।</p></article>
+      </div>
+      <p class="nobel-note">स्रोत: Nobel Prize घोषणासम्बन्धी आधिकारिक/विश्वसनीय समाचार स्रोतहरू। आर्थिक विज्ञानको पुरस्कार मूल पाँच नोबेल पुरस्कारभन्दा छुट्टै स्मृति पुरस्कार हो।</p>
+    </section>
+
+    <section id="job-search" class="container" style="background:linear-gradient(135deg,#eff6ff,#f0fdfa);border:1px solid #cbd5e1;border-radius:18px;padding:24px;margin-top:24px">
+      <div class="section-header"><span class="section-tag">रोजगारी तथा अवसर</span><h2 class="section-title">पशु सेवा तथा पशुपालनसम्बन्धी जागिर खोज्नुहोस्</h2><p class="section-subtitle">नेपाल र अन्तर्राष्ट्रिय क्षेत्रमा पशु सेवा, पशु स्वास्थ्य, पशुपालन, भेटेरिनरी तथा विकास परियोजनासम्बन्धी रिक्त पद हेर्न उपयोगी पोर्टलहरू। उपलब्ध पद र अन्तिम मिति सम्बन्धित वेबसाइटमा जाँच गर्नुहोस्।</p></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px">
+        <article style="background:white;border:1px solid #dbeafe;border-radius:14px;padding:16px"><h3>🇳🇵 नेपालका अवसर</h3><p>सरकारी सेवा, स्थानीय तह र प्राविधिक पदका सूचना खोज्नुहोस्।</p><ul><li><a href="https://psc.gov.np/" target="_blank" rel="noopener">लोक सेवा आयोग — विज्ञापन</a></li><li><a href="https://www.jobsnepal.com/" target="_blank" rel="noopener">JobsNepal — NGO/INGO तथा प्राविधिक पद</a></li><li><a href="https://merojob.com/" target="_blank" rel="noopener">Merojob — रोजगारी खोजी</a></li><li><a href="https://www.vacancynepal.com/" target="_blank" rel="noopener">Vacancy Nepal — नयाँ विज्ञापन</a></li></ul></article>
+        <article style="background:white;border:1px solid #d1fae5;border-radius:14px;padding:16px"><h3>🌍 अन्तर्राष्ट्रिय अवसर</h3><p>पशु स्वास्थ्य, खाद्य सुरक्षा, पशुपालन र विकास परियोजनाका अवसर।</p><ul><li><a href="https://www.fao.org/employment/home/en/" target="_blank" rel="noopener">FAO — कृषि तथा पशुपालनसम्बन्धी पद</a></li><li><a href="https://www.woah.org/en/who-we-are/vacancies/" target="_blank" rel="noopener">WOAH — पशु स्वास्थ्यसम्बन्धी अवसर</a></li><li><a href="https://jobs.undp.org/" target="_blank" rel="noopener">UNDP Jobs — विकास परियोजना</a></li><li><a href="https://reliefweb.int/jobs" target="_blank" rel="noopener">ReliefWeb Jobs — मानवीय तथा विकास क्षेत्र</a></li></ul></article>
+      </div>
+      <p style="font-size:.88rem;color:#475569;margin-top:14px">खोज्न उपयोगी शब्द: <strong>Livestock Technician, Veterinary Technician, Animal Health Worker, Livestock Officer, Animal Production, Veterinary Assistant</strong>। यो सूची जागिर पोर्टलका लिंक हो; कुनै पद हाल खुला छ भन्ने दाबी होइन।</p>
+    </section>
+
+    <section id="job" class="container">
+      <div class="section-header">
+        <span class="section-tag">पेशागत परिचय</span>
+        <h2 class="section-title">मेरो काम तथा अनुभव</h2>
+      </div>
+      <div class="card">
+        <p><strong>कार्यरत संस्था:</strong> रैनादेवी छहरा गाउँपालिका, पाल्पा जिल्ला, लुम्बिनी प्रदेश</p>
+        <p><strong>कार्यअनुभव:</strong> करिब १० वर्षदेखि निरन्तर पशु सेवा क्षेत्रमा कार्यरत।</p>
+        <p><strong>मुख्य जिम्मेवारीहरू:</strong></p>
+        <ul style="padding-left:1.3rem;margin:.5rem 0 1rem">
+          <li>पशुहरूको स्वास्थ्य जाँच, प्राथमिक उपचार तथा रोग रोकथामसम्बन्धी प्राविधिक सेवा।</li>
+          <li>खोप, जैविक सुरक्षा र पशु रोग नियन्त्रणसम्बन्धी कृषकलाई परामर्श।</li>
+          <li>गाईभैंसी, बाख्रा, भेडा तथा अन्य पशुपन्छीको उचित पालनपोषण र व्यवस्थापनमा सहयोग।</li>
+          <li>पशु उत्पादन तथा उत्पादकत्व बढाउन कृषकलाई प्राविधिक सल्लाह र सेवा प्रवाह।</li>
+          <li>स्थानीय तहका पशु सेवा तथा पशुपालन प्रवर्द्धन कार्यक्रम कार्यान्वयनमा सहयोग।</li>
+        </ul>
+        <p><strong>सम्पर्क इमेल:</strong> <a href="mailto:zhabindra@gmail.com">zhabindra@gmail.com</a></p>
+      </div>
+    </section>
+
+    <!-- LIVE SHARE MARKET TV -->
+    <style
